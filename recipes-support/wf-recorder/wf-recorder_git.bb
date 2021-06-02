@@ -16,12 +16,14 @@ DEPENDS = " \
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = " \
-	https://github.com/ammen99/wf-recorder/releases/download/v${PV}/wf-recorder-${PV}.tar.xz \
+	git://github.com/ammen99/wf-recorder.git;protocol=https \
 "
+SRCREV = "2a901365571de8b86a7eaf95fe9d0cd5a5645579"
 
-SRC_URI[sha256sum] = "bfe51f4f88ba755ac0ad993d00da706496f84e60b53de0ae24fe1c654cfaa376"
+S = "${WORKDIR}/git"
+PV = "0.2.1+${SRCREV}"
 
-S = "${WORKDIR}/${PN}-${PV}"
+
 
 inherit meson pkgconfig features_check
 
