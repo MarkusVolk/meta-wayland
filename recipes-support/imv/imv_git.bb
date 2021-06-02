@@ -40,6 +40,6 @@ S = "${WORKDIR}/git"
 PV = "4.2.0"
 SRCREV = "v${PV}"
 
-inherit meson pkgconfig mime-xdg features-check
+inherit meson pkgconfig mime-xdg features_check
 
 BBCLASSEXTEND = ""
