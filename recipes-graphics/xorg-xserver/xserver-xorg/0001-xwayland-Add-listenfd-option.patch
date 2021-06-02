@@ -1,0 +1,79 @@
+From b3f3d65ed302baf78befe45eed458e666e1ff143 Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <ofourdan@redhat.com>
+Date: Wed, 19 Jun 2019 09:19:24 +0200
+Subject: [PATCH 001/322] xwayland: Add "-listenfd" option
+
+Using the existing command line option "-listen" for passing file
+descriptors between the Wayland compositor and Xwayland is misleading,
+Xwayland should add is own command line option for that specific use.
+
+As XWayland is spawned by the Wayland compositor, we cannot just change
+the option, as that would break all existing Wayland compositors using
+Xwayland, so we add a new options "-listenfd" and mark the previous one
+as deprecated and log a warning, but it still works for backward
+compatibility.
+
+Signed-off-by: Olivier Fourdan <ofourdan@redhat.com>
+https://gitlab.freedesktop.org/xorg/xserver/merge_requests/214
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+---
+ hw/xwayland/xwayland.c | 28 ++++++++++++++++++++++------
+ 1 file changed, 22 insertions(+), 6 deletions(-)
+
+diff --git a/hw/xwayland/xwayland.c b/hw/xwayland/xwayland.c
+index 72b2be1b6..fe8b1abdc 100644
+--- a/hw/xwayland/xwayland.c
++++ b/hw/xwayland/xwayland.c
+@@ -98,7 +98,8 @@ ddxUseMsg(void)
+ {
+     ErrorF("-rootless              run rootless, requires wm support\n");
+     ErrorF("-wm fd                 create X client for wm on given fd\n");
+-    ErrorF("-listen fd             add give fd as a listen socket\n");
++    ErrorF("-listenfd fd           add give fd as a listen socket\n");
++    ErrorF("-listen fd             deprecated, use \"-listenfd\" instead\n");
+     ErrorF("-eglstream             use eglstream backend for nvidia GPUs\n");
+ }
+ 
+@@ -106,6 +107,17 @@ static int wm_fd = -1;
+ static int listen_fds[5] = { -1, -1, -1, -1, -1 };
+ static int listen_fd_count = 0;
+ 
++static void
++xwl_add_listen_fd(int argc, char *argv[], int i)
++{
++    NoListenAll = TRUE;
++    if (listen_fd_count == ARRAY_SIZE(listen_fds))
++        FatalError("Too many -listen arguments given, max is %zu\n",
++                   ARRAY_SIZE(listen_fds));
++
++    listen_fds[listen_fd_count++] = atoi(argv[i + 1]);
++}
++
+ int
+ ddxProcessArgument(int argc, char *argv[], int i)
+ {
+@@ -119,12 +131,16 @@ ddxProcessArgument(int argc, char *argv[], int i)
+         if (!isdigit(*argv[i + 1]))
+             return 0;
+ 
+-        NoListenAll = TRUE;
+-        if (listen_fd_count == ARRAY_SIZE(listen_fds))
+-            FatalError("Too many -listen arguments given, max is %zu\n",
+-                       ARRAY_SIZE(listen_fds));
++        LogMessage(X_WARNING, "Option \"-listen\" for file descriptors is deprecated\n"
++                              "Please use \"-listenfd\" instead.\n");
++
++        xwl_add_listen_fd (argc, argv, i);
++        return 2;
++    }
++    else if (strcmp(argv[i], "-listenfd") == 0) {
++        CHECK_FOR_REQUIRED_ARGUMENTS(1);
+ 
+-        listen_fds[listen_fd_count++] = atoi(argv[i + 1]);
++        xwl_add_listen_fd (argc, argv, i);
+         return 2;
+     }
+     else if (strcmp(argv[i], "-wm") == 0) {
+-- 
+2.25.1
+
