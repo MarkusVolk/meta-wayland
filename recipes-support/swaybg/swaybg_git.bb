@@ -17,12 +17,12 @@ DEPENDS = " \
            "
 
 SRC_URI = " \
-	https://github.com/swaywm/swaybg/archive/refs/tags/${PV}.tar.gz \
+	git://github.com/swaywm/swaybg.git;protocol=https \
 "
 
-SRC_URI[sha256sum] = "a23f1cde07138b865630172eff83db916d2f0989b75fb318def85dcfc3120fbd"
-
-S = "${WORKDIR}/${PN}-${PV}"
+S = "${WORKDIR}/git"
+PV = "1.0"
+SRCREV = "${PV}"
 
 inherit meson pkgconfig features_check
 
