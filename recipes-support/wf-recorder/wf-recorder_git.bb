@@ -23,8 +23,6 @@ SRCREV = "2a901365571de8b86a7eaf95fe9d0cd5a5645579"
 S = "${WORKDIR}/git"
 PV = "0.2.1+${SRCREV}"
 
-
-
 inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
