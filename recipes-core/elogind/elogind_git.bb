@@ -5,12 +5,13 @@ SECTION = "base/shell"
 LICENSE = "LGPL-2.1"
 LIC_FILES_CHKSUM = "file://LICENSE.LGPL2.1;md5=4fbd65380cdd255951079008b364516c"
 
-SRC_URI = "git://github.com/elogind/elogind.git;protocol=https;branch=main"
-SRCREV = "3b9af47ffd29082bee325900d02cf76d5702ab4f"
+SRC_URI = "git://github.com/elogind/elogind.git;protocol=https;branch=v246-stable"
 
 DEPENDS += "gperf-native libcap eudev"
 
 S = "${WORKDIR}/git"
+PV = "246.10"
+SRCREV = "${PV}"
 
 inherit meson
 
