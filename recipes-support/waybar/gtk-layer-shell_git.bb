@@ -21,9 +21,10 @@ DEPENDS += " \
 "
 
 SRC_URI = "git://github.com/wmww/gtk-layer-shell.git;protocol=https"
-SRCREV = "6ddf8f48a5659108550303dc84b99a472f9ef622"
 
 S = "${WORKDIR}/git"
+PV = "0.6.0"
+SRCREV = "v${PV}"
 
 inherit meson pkgconfig features_check
 FILES_${PN} = "${datadir} ${libdir}"
