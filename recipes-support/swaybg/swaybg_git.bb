@@ -1,4 +1,4 @@
-SUMMARY = "A Wayland WM"
+SUMMARY = "swaybg is a wallpaper utility for Wayland compositors."
 HOMEPAGE = "https://github.com/swaywm/swaybg"
 BUGTRACKER = "https://github.com/swaywm/swaybg/issues"
 SECTION = "graphics"
