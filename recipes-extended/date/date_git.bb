@@ -10,9 +10,9 @@ SRC_URI = " \
 	file://date.pc \	
 "
 
-SRCREV = "v3.0.0"
-
 S = "${WORKDIR}/git"
+PV = "3.0.1"
+SRCREV = "v${PV}"
 
 inherit cmake
 
