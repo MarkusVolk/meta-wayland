@@ -7,7 +7,6 @@ LICENSE = "BSD-0-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=715a99d2dd552e6188e74d4ed2914d5a"
 
 SRC_URI = "git://git.sr.ht/~kennylevinsen/seatd;protocol=https"
-SRCREV = "355cc9c944a29d29736de84e782a2e91168f1a59"
 
 PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,elogind"
@@ -18,6 +17,8 @@ PACKAGECONFIG ?= " \
 "
 
 S = "${WORKDIR}/git"
+PV = "0.5.0"
+SRCREV = "${PV}"
 
 inherit meson
 
