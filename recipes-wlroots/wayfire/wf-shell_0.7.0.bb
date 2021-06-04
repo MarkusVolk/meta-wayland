@@ -1,4 +1,4 @@
-SUMMARY = "A Wayland WM"
+SUMMARY = "A GTK3-based panel for wayfire"
 HOMEPAGE = "https://github.com/WayfireWM/wf-shell"
 BUGTRACKER = "https://github.com/WayfireWM/wf-shell/issues"
 SECTION = "graphics"

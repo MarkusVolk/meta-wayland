@@ -1,4 +1,4 @@
-SUMMARY = "A Wayland WM"
+SUMMARY = "A library for managing configuration files, written for wayfire "
 HOMEPAGE = "https://github.com/WayfireWM/wf-config"
 BUGTRACKER = "https://github.com/WayfireWM/wf-config/issues"
 SECTION = "graphics"

@@ -1,14 +1,14 @@
+SUMMARY = " C++ binding for Wayland using the most modern C++ technology"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=7f6b13e4480850c59e176edd427d996e"
 
-PV = "0.2.8"
 SRC_URI = "git://github.com/NilsBrause/waylandpp.git;tag=${PV}"
 
 DEPENDS_append_class-native = " pugixml-native"
 DEPENDS_append_class-target = " waylandpp-native wayland virtual/egl"
 
-
 S = "${WORKDIR}/git"
+PV = "0.2.8"
 
 inherit cmake
 
