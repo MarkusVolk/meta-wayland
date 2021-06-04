@@ -17,8 +17,8 @@ PACKAGECONFIG ?= " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.5.0"
-SRCREV = "${PV}"
+PV = "0.5.0+${SRCREV}"
+SRCREV = "fc97206df9b8fbba09de8b320fab6f75235a5c7f"
 
 inherit meson
 
