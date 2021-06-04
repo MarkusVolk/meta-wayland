@@ -1,4 +1,4 @@
-SUMMARY = "A date and time library based on the C++11/14/17."
+SUMMARY = "A date and time library based on C++11/14/17."
 AUTHOR = "Howard Hinnant"
 HOMEPAGE = "https://github.com/HowardHinnant/date.git"
 SECTION = "libs"
