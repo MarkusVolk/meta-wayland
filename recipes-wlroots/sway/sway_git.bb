@@ -24,6 +24,8 @@ DEPENDS += " \
 	wayland-native \
 	wayland-protocols \
 "
+# sways default config makes use of it
+RDEPENDS_${PN} = "swaybg"
 
 SRC_URI = " \
 	git://github.com/swaywm/sway.git;protocol=https \
@@ -45,6 +47,7 @@ PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,libxcb"
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
 	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
+	default-wallpaper \
 	gdk-pixbuf \
 "
 
