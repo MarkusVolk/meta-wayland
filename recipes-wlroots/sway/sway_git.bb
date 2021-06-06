@@ -25,7 +25,11 @@ DEPENDS += " \
 	wayland-protocols \
 "
 # sways default config makes use of it
-RDEPENDS_${PN} = "swaybg"
+RDEPENDS_${PN} ?= "swaybg"
+
+RRECOMMENDS_${PN} ?= " \
+	foot \
+"
 
 SRC_URI = " \
 	git://github.com/swaywm/sway.git;protocol=https \
