@@ -18,6 +18,8 @@ DEPENDS = " \
 	wayland-native \
 "
 
+RRECOMMENDS_${PN} = "xdg-utils"
+
 SRC_URI = " \
 	git://codeberg.org/dnkl/foot.git;protocol=https \
 	file://0001-meson.build-avoid-scdoc-dependency.patch \
@@ -27,9 +29,12 @@ S = "${WORKDIR}/git"
 PV = "1.7.2"
 SRCREV = "${PV}"
 
-inherit meson pkgconfig features_check
+PACKAGECONFIG[terminfo] = "-Dterminfo=enabled,-Dterminfo=disabled,ncurses-native"
 
-EXTRA_OEMESON += "-Dterminfo=disabled"
+PACKAGECONFIG ?= " \
+"
+
+inherit meson pkgconfig features_check
 
 FILES_${PN} = " \
 	${bindir} \
