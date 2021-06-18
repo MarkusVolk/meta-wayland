@@ -16,13 +16,13 @@ DEPENDS = " \
 	pixman \
 	wayland \
 	wayland-native \
+	scdoc-native \
 "
 
 RRECOMMENDS_${PN} = "xdg-utils"
 
 SRC_URI = " \
 	git://codeberg.org/dnkl/foot.git;protocol=https \
-	file://0001-meson.build-avoid-scdoc-dependency.patch \
 "
 
 S = "${WORKDIR}/git"

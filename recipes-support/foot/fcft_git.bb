@@ -12,11 +12,11 @@ DEPENDS = " \
 	harfbuzz \
 	pixman \
 	tllist \
+	scdoc-native \
 "
 
 SRC_URI = " \
 	git://codeberg.org/dnkl/fcft.git;protocol=https \
-	file://0001-meson.build-avoid-scdoc-dependency.patch \
 "
 
 S = "${WORKDIR}/git"
