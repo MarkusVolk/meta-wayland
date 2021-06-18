@@ -12,7 +12,7 @@ DEPENDS = " \
             wayland \
             wayland-native \
             wayland-protocols \
-           "
+"
 
 SRC_URI = " \
 	git://github.com/swaywm/swayidle.git;protocol=https \

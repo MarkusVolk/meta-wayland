@@ -6,7 +6,7 @@ LICENSE = "MIT"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=b53d9ec16b9125995437ac9efab1b450"
 
-REQUIRED_DISTRO_FEATURES = "wayland systemd"
+REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS = " \
             cairo \
@@ -14,7 +14,7 @@ DEPENDS = " \
             wayland \
             wayland-native \
             wayland-protocols \
-           "
+"
 
 SRC_URI = " \
 	git://github.com/swaywm/swaybg.git;protocol=https \
