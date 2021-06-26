@@ -36,8 +36,8 @@ RRECOMMENDS_${PN} += " \
 "
 
 PACKAGECONFIG[gles32] = "-Denable_gles32=true,-Denable_gles32=false"
-PACKAGECONFIG[use_system_wfconfig] = "-Duse_system_wfconfig=enabled,-Duse_system_wfconfig=disabled,wlroots"
-PACKAGECONFIG[use_system_wlroots] = "-Duse_system_wlroots=enabled,-Duse_system_wlroots=disabled,wf-config"
+PACKAGECONFIG[use_system_wfconfig] = "-Duse_system_wfconfig=enabled,-Duse_system_wfconfig=disabled,wf-config"
+PACKAGECONFIG[use_system_wlroots] = "-Duse_system_wlroots=enabled,-Duse_system_wlroots=disabled,wlroots"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled"
 
 PACKAGECONFIG ?= " \
