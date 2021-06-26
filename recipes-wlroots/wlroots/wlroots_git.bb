@@ -36,8 +36,8 @@ PACKAGECONFIG ?= " \
 "
 
 SRC_URI = "git://github.com/swaywm/wlroots.git;protocol=https"
-SRCREV = "c85789a3a9f6f851e6fbc900495057ba91b3e255"
-PV = "0.13+${SRCREV}"
+SRCREV = "${PV}"
+PV = "0.14.0"
 
 S = "${WORKDIR}/git"
 
