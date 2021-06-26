@@ -45,9 +45,9 @@ PACKAGECONFIG ?= " \
 	use_system_wlroots \
 "
 
-SRC_URI = "git://github.com/WayfireWM/wayfire.git;protocol=https"
-SRCREV = "be207f693675d0b48e79d7a5f4adb6f46cd228e2"
-
+SRC_URI = "git://github.com/WayfireWM/wayfire.git;protocol=https;branch=0.7.x"
+SRCREV = "v${PV}"
+PV = "0.7.2"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
