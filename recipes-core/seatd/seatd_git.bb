@@ -13,6 +13,7 @@ SRC_URI = "git://git.sr.ht/~kennylevinsen/seatd;protocol=https"
 PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[elogind] = ",,elogind"
 PACKAGECONFIG[standalone] = "-Dbuiltin=enabled,-Dbuiltin=disabled"
+PACKAGECONFIG[man-pages] = ",,scdoc-native"
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
