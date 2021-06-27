@@ -8,12 +8,14 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=715a99d2dd552e6188e74d4ed2914d5a"
 
 SRC_URI = "git://git.sr.ht/~kennylevinsen/seatd;protocol=https"
 
-PACKAGECONFIG[systemd] = ",,systemd"
-PACKAGECONFIG[sysvinit] = ",,elogind"
+# On systems without logind/elogind, you need to suid the sway binary.
+# Sway will drop root permissions shortly after startup.
+PACKAGECONFIG[logind] = ",,systemd"
+PACKAGECONFIG[elogind] = ",,elogind"
+PACKAGECONFIG[standalone] = "-Dbuiltin=enabled,-Dbuiltin=disabled"
 
 PACKAGECONFIG ?= " \
-    ${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
-    ${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
+	logind \
 "
 
 S = "${WORKDIR}/git"
