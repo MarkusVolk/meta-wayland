@@ -44,13 +44,13 @@ inherit meson pkgconfig features_check
 PACKAGECONFIG[default-wallpaper] = "-Ddefault-wallpaper=true,-Ddefault-wallpaper=false"
 PACKAGECONFIG[gdk-pixbuf] = "-Dgdk-pixbuf=enabled,-Dgdk-pixbuf=disabled,gdk-pixbuf"
 PACKAGECONFIG[systemd] = "-Dsd-bus-provider=libsystemd,,systemd"
-PACKAGECONFIG[sysvinit] = "-Dsd-bus-provider=libelogind,,eudev elogind"
+PACKAGECONFIG[elogind] = "-Dsd-bus-provider=libelogind,,elogind"
+PACKAGECONFIG[basu] = "-Dsd-bus-provider=basu,,basu"
 PACKAGECONFIG[tray] = "-Dtray=enabled,-Dtray=disabled"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,libxcb"
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
-	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
 	default-wallpaper \
 	gdk-pixbuf \
 "
