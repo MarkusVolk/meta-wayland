@@ -30,8 +30,10 @@ PV = "1.8.0"
 SRCREV = "${PV}"
 
 PACKAGECONFIG[terminfo] = "-Dterminfo=enabled,-Dterminfo=disabled,ncurses-native"
+PACKAGECONFIG[grapheme-clustering] = "-Dgrapheme-clustering=enabled,-Dgrapheme-clustering=disabled,utf8proc"
 
 PACKAGECONFIG ?= " \
+	grapheme-clustering \
 "
 
 inherit meson pkgconfig features_check
