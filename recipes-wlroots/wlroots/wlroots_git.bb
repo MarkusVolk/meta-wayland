@@ -24,14 +24,10 @@ DEPENDS += " \
 "
 
 PACKAGECONFIG[gles2] = "-Drenderers=gles2"
-PACKAGECONFIG[systemd] = ",,systemd"
-PACKAGECONFIG[sysvinit] = ",,eudev elogind"
 PACKAGECONFIG[x11-backend] = "-Dx11-backend=enabled,-Dx11-backend=disabled,xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xserver-xorg xcb-util-wm"
 
 PACKAGECONFIG ?= " \
-	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
-	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
 	gles2 \
 "
 
