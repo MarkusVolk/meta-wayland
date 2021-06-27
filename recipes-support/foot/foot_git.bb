@@ -26,7 +26,7 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.7.2"
+PV = "1.8.0"
 SRCREV = "${PV}"
 
 PACKAGECONFIG[terminfo] = "-Dterminfo=enabled,-Dterminfo=disabled,ncurses-native"
