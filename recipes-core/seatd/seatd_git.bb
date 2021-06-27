@@ -10,12 +10,12 @@ SRC_URI = "git://git.sr.ht/~kennylevinsen/seatd;protocol=https"
 
 # On systems without logind/elogind, you need to suid the sway binary.
 # Sway will drop root permissions shortly after startup.
-PACKAGECONFIG[logind] = ",,systemd"
+PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[elogind] = ",,elogind"
 PACKAGECONFIG[standalone] = "-Dbuiltin=enabled,-Dbuiltin=disabled"
 
 PACKAGECONFIG ?= " \
-	logind \
+	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
 "
 
 S = "${WORKDIR}/git"
