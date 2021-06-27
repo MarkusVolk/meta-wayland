@@ -19,6 +19,7 @@ DEPENDS += " \
 	spdlog \
 	gtk+3 \
 	gobject-introspection \
+	spdlog \
 	wayland \
 	wayland-native \
 	wayland-protocols \
@@ -32,8 +33,6 @@ PACKAGECONFIG[mpd] = ",,libmpdclient"
 PACKAGECONFIG[network] = ",,libnl"
 PACKAGECONFIG[sysvinit] = ",,eudev"
 PACKAGECONFIG[systemd] = ",,systemd"
-# this would rdepend on a bunch of libindicator recipes we dont provide
-PACKAGECONFIG[tray] = ",,libdbusmenu"
 
 PACKAGECONFIG ?= " \
     ${@bb.utils.filter('DISTRO_FEATURES', 'bluetooth', d)} \
@@ -52,8 +51,8 @@ RRECOMMENDS_${PN} += " \
 SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https"
 
 S = "${WORKDIR}/git"
-PV = "0.9.7"
-SRCREV = "${PV}"
+PV = "0.9.7+${SRCREV}"
+SRCREV = "36857ae72b267fdcf4d2f993d3fe1e84066de754"
 
 inherit meson pkgconfig features_check
 
