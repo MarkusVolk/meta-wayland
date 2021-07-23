@@ -7,10 +7,13 @@ SRC_URI = " \
 "
 
 DEPENDS = " \
-	python3 \
-	python3-six \
 	python3-wheel-native \
 	python3-pip-native \
+"
+
+RDEPENDS_${PN} = " \
+	python3 \	
+	python3-six \
 "
 
 inherit setuptools3
