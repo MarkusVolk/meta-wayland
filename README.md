@@ -5,7 +5,7 @@ Main layer maintainer: Markus Volk <f_l_k@t-online.de>
 Description
 
 This layer adds recipes to build wlroots based compositors under wayland.
-It contains wlroots, sway, wayfire and some additional recipes that might come useful.
+It contains wlroots, sway, wayfire, nwg-shell and some additional recipes that might come useful.
 
 Dependencies
 
