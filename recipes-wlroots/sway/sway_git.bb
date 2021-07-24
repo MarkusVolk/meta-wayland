@@ -1,3 +1,4 @@
+
 SUMMARY = "A Wayland WM"
 HOMEPAGE = "https://github.com/swaywm/sway"
 BUGTRACKER = "https://github.com/swaywm/sway/issues"
@@ -29,6 +30,10 @@ RDEPENDS_${PN} ?= "swaybg"
 
 RRECOMMENDS_${PN} ?= " \
 	foot \
+	jq \
+	grim \
+	slurp \
+	wl-clipboard \
 "
 
 SRC_URI = " \
@@ -56,6 +61,10 @@ PACKAGECONFIG ?= " \
 "
 
 EXTRA_OEMESON += "--buildtype release"
+
+do_install_append() {
+	install -m 755 ${S}/contrib/grimshot ${D}${bindir}
+}
 
 FILES_${PN}_append = " \
 	${datadir} \
