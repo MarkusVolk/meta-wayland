@@ -1,0 +1,26 @@
+From 2520ce268d028e775179f9a48903827c56399528 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Tue, 27 Jul 2021 03:47:22 +0200
+Subject: [PATCH] nwg_tools.cc: fix build without gdk-x11
+
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+---
+ common/nwg_tools.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/common/nwg_tools.cc b/common/nwg_tools.cc
+index 834a9e3..92bae6a 100644
+--- a/common/nwg_tools.cc
++++ b/common/nwg_tools.cc
+@@ -83,7 +83,7 @@ std::string detect_wm(const Glib::RefPtr<Gdk::Display>& display, const Glib::Ref
+      * but let's try to find a WM name if possible. If not, let it be just "other" */
+     std::string wm_name{"other"};
+ 
+-#ifdef GDK_WINDOWING_X11
++#ifdef HAVE_GDK_X11
+     {
+         auto* g_display = display->gobj();
+         auto* g_screen  = screen->gobj();
+-- 
+2.25.1
+
