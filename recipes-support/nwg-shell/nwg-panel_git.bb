@@ -7,6 +7,7 @@ SRC_URI = " \
 "
 
 RDEPENDS_${PN} = "\
+	light \
 	python3 \
 	python3-pygobject \
 	python3-psutil \
