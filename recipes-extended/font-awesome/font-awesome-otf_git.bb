@@ -22,7 +22,7 @@ do_install () {
 	done
 }
 
-FILES_${PN} = " \
+FILES:${PN} = " \
 	${datadir}/fonts \
 "
 

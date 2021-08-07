@@ -37,7 +37,7 @@ inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES_${PN} += "${datadir}"
+FILES:${PN} += "${datadir}"
 
 BBCLASSEXTEND = ""
 

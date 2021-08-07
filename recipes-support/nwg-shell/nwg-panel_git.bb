@@ -6,7 +6,7 @@ SRC_URI = " \
 	git://github.com/nwg-piotr/nwg-panel.git;protocol=https \
 "
 
-RDEPENDS_${PN} = "\
+RDEPENDS:${PN} = "\
 	light \
 	python3 \
 	python3-pygobject \
@@ -20,5 +20,5 @@ S = "${WORKDIR}/git"
 PV = "0.3.3"
 SRCREV = "v${PV}"
 
-INSANE_SKIP_${PN} = "file-rdeps"
+INSANE_SKIP:${PN} = "file-rdeps"
 

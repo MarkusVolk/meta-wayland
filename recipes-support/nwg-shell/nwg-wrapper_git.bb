@@ -7,7 +7,7 @@ SRC_URI = " \
 "
 
 DEPENDS = "python3"
-RDEPENDS_${PN} = "python3-pygobject"
+RDEPENDS:${PN} = "python3-pygobject"
 
 inherit setuptools3 gobject-introspection
 

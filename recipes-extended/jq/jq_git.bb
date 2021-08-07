@@ -16,6 +16,6 @@ SRCREV = "jq-${PV}"
 
 inherit autotools
 
-do_configure_prepend() {
+do_configure:prepend() {
 	autoreconf -f
 }

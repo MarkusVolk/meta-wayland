@@ -33,7 +33,7 @@ PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
 "
 
-FILES_${PN} += "${datadir}"
+FILES:${PN} += "${datadir}"
 
 EXTRA_OEMESON += "--buildtype release"
 

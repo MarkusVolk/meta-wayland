@@ -6,7 +6,7 @@ SRC_URI = " \
 	git://github.com/nwg-piotr/azote.git;protocol=https \
 "
 
-RDEPENDS_${PN} = " \
+RDEPENDS:${PN} = " \
 	python3 \
 	gtk+3 \
 	python3-pygobject \
@@ -26,7 +26,7 @@ S = "${WORKDIR}/git"
 PV = "1.9.1"
 SRCREV = "v${PV}"
 
-do_install_append() {
+do_install:append() {
 	install -d ${D}${bindir} ${D}${datadir}/azote ${D}${datadir}/pixmaps ${D}${datadir}/applications
 	install -m 755 ${S}/dist/azote ${D}${bindir}
 	install -m 644 ${S}/dist/azote.desktop ${D}${datadir}/applications
@@ -35,7 +35,7 @@ do_install_append() {
 	install -m 644 ${S}/dist/indicator_attention.png ${D}${datadir}/azote
 }
 
-FILES_${PN}_append = " \
+FILES:${PN}:append = " \
 	${datadir} \
 	${bindir} \
 "

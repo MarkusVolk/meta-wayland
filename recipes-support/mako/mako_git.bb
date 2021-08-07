@@ -21,9 +21,9 @@ DEPENDS = " \
 	wayland-protocols \
 "
 
-RDEPENDS_${PN} = "dbus"
+RDEPENDS:${PN} = "dbus"
 
-RRECOMMENDS_${PN} = "jq"
+RRECOMMENDS:${PN} = "jq"
 
 inherit meson pkgconfig features_check
 
@@ -45,7 +45,7 @@ SRCREV = "v${PV}"
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES_${PN} += "${datadir}"
+FILES:${PN} += "${datadir}"
 
 BBCLASSEXTEND = ""
 

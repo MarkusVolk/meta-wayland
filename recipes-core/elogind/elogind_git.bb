@@ -17,5 +17,5 @@ inherit meson
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES_${PN} += "/usr"
+FILES:${PN} += "/usr"
 

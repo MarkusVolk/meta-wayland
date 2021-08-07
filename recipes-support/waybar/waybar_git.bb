@@ -44,7 +44,7 @@ PACKAGECONFIG ?= " \
     date \
 "
 
-RRECOMMENDS_${PN} += " \
+RRECOMMENDS:${PN} += " \
 	font-awesome-otf \
 "
 
@@ -58,7 +58,7 @@ inherit meson pkgconfig features_check
 
 PACKAGES += "${PN}-systemd"
 
-FILES_${PN}-systemd += "${libdir}/systemd"
+FILES:${PN}-systemd += "${libdir}/systemd"
 
 BBCLASSEXTEND = ""
 

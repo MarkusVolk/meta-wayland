@@ -8,7 +8,7 @@ SRC_URI = " \
 
 DEPENDS = "python3-wheel-native"
 
-RDEPENDS_${PN} = "python-i3ipc"
+RDEPENDS:${PN} = "python-i3ipc"
 
 inherit setuptools3
 

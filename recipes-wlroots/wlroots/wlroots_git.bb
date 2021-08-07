@@ -41,11 +41,11 @@ inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES_${PN} = "${bindir} \
+FILES:${PN} = "${bindir} \
                ${libdir} \
               "
 
-FILES_${PN}-dev = "${includedir} \
+FILES:${PN}-dev = "${includedir} \
                    ${libdir}/libwlroots.so \
 "
 

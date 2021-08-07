@@ -28,7 +28,7 @@ inherit meson pkgconfig features_check
 EXTRA_OEMESON += "--buildtype release"
 GIR_EXTRA_LIBS_PATH="${WORKDIR}"
 
-FILES_${PN} += "${prefix}"
+FILES:${PN} += "${prefix}"
 
 BBCLASSEXTEND = ""
 

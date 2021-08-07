@@ -11,7 +11,7 @@ DEPENDS = " \
 	python3-pip-native \
 "
 
-RDEPENDS_${PN} = " \
+RDEPENDS:${PN} = " \
 	python3 \	
 	python3-six \
 "

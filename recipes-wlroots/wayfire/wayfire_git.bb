@@ -27,7 +27,7 @@ DEPENDS += " \
 	wayland-protocols \
 "
 
-RRECOMMENDS_${PN} += " \
+RRECOMMENDS:${PN} += " \
 	wlroots \
 	wcm \
 	wf-config \

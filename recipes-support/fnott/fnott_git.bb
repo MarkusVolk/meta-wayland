@@ -24,7 +24,7 @@ DEPENDS = " \
 	wayland-protocols \
 "
 
-RDEPENDS_${PN} = " \
+RDEPENDS:${PN} = " \
 	fontconfig \
 	freetype \
 	wlroots \
@@ -39,6 +39,6 @@ SRCREV = "${PV}"
 EXTRA_OEMESON += "--buildtype release"
 
 PACKAGES += "${PN}-zsh-completion"
-FILES_${PN}-zsh-completion = "${datadir}/zsh"
+FILES:${PN}-zsh-completion = "${datadir}/zsh"
 
 BBCLASSEXTEND = ""

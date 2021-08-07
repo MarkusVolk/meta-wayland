@@ -24,7 +24,7 @@ EXTRA_OECMAKE += " \
 	-DUSE_SYSTEM_TZ_DB=ON \
 "
 
-do_install_append() {
+do_install:append() {
 	# source lacks pkgconfig support. Include a pc file, so 'date' can be found using pkgconfig
 	install -d ${D}${libdir}/pkgconfig
 	install -m 0644 ${WORKDIR}/date.pc ${D}${libdir}/pkgconfig

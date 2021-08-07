@@ -26,9 +26,9 @@ DEPENDS += " \
 	wayland-protocols \
 "
 # sways default config makes use of it
-RDEPENDS_${PN} ?= "swaybg"
+RDEPENDS:${PN} ?= "swaybg"
 
-RRECOMMENDS_${PN} ?= " \
+RRECOMMENDS:${PN} ?= " \
 	foot \
 	jq \
 	grim \
@@ -62,11 +62,11 @@ PACKAGECONFIG ?= " \
 
 EXTRA_OEMESON += "--buildtype release"
 
-do_install_append() {
+do_install:append() {
 	install -m 755 ${S}/contrib/grimshot ${D}${bindir}
 }
 
-FILES_${PN}_append = " \
+FILES:${PN}:append = " \
 	${datadir} \
 "
 

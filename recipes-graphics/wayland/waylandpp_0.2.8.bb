@@ -4,8 +4,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=7f6b13e4480850c59e176edd427d996e"
 
 SRC_URI = "git://github.com/NilsBrause/waylandpp.git;tag=${PV}"
 
-DEPENDS_append_class-native = " pugixml-native"
-DEPENDS_append_class-target = " waylandpp-native wayland virtual/egl"
+DEPENDS:append:class-native = " pugixml-native"
+DEPENDS:append:class-target = " waylandpp-native wayland virtual/egl"
 
 S = "${WORKDIR}/git"
 PV = "0.2.8"
@@ -13,7 +13,7 @@ PV = "0.2.8"
 inherit cmake
 
 
-EXTRA_OECMAKE_append_class-native = " \
+EXTRA_OECMAKE:append:class-native = " \
     -DBUILD_SCANNER=ON \
     -DBUILD_LIBRARIES=OFF \
     -DBUILD_DOCUMENTATION=OFF \
@@ -21,7 +21,7 @@ EXTRA_OECMAKE_append_class-native = " \
     -DCMAKE_VERBOSE_MAKEFILE=TRUE \
     "
 
-EXTRA_OECMAKE_append_class-target = " \
+EXTRA_OECMAKE:append:class-target = " \
     -DBUILD_SCANNER=OFF \
     -DBUILD_LIBRARIES=ON \
     -DBUILD_DOCUMENTATION=OFF \
@@ -35,11 +35,11 @@ EXTRA_OECMAKE_append_class-target = " \
     -DCMAKE_EXE_LINKER_FLAGS="-Wl,--enable-new-dtags" \
     "
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     ${libdir}/libwayland*.so* \
     "
 
-FILES_${PN}-dev  = " \
+FILES:${PN}-dev  = " \
     ${includedir}/* \
     ${libdir}/pkgconfig/* \
     ${libdir}/cmake/waylandpp/* \
@@ -47,7 +47,7 @@ FILES_${PN}-dev  = " \
     "
 
 FILES_SOLIBSDEV = ""
-INSANE_SKIP_${PN} += "dev-so"
+INSANE_SKIP:${PN} += "dev-so"
 
 BBCLASSEXTEND += "native nativesdk"
 

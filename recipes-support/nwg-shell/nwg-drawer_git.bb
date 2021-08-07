@@ -7,7 +7,7 @@ DEPENDS = " \
 	gtk-layer-shell \
 "
 
-RRECOMMENDS_${PN} = " \
+RRECOMMENDS:${PN} = " \
 	thunar \
 	foot \
 "
@@ -23,7 +23,7 @@ inherit go go-mod
 
 GO_INSTALL = "${GO_IMPORT}"
 
-do_install_append() {
+do_install:append() {
 	# remove precompiled x86 binary
 	rm -r ${D}${libdir}/go/src/${GO_IMPORT}/bin
 }

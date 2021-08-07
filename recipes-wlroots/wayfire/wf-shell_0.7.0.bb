@@ -17,7 +17,7 @@ DEPENDS = " \
 	libnotify3 \
 "
 
-DEPENDS_append_class-target = " gobject-introspection-native qemu-native prelink-native"
+DEPENDS:append:class-target = " gobject-introspection-native qemu-native prelink-native"
 
 REQUIRED_DISTRO_FEATURES = "wayland gobject-introspection-data"
 
@@ -33,7 +33,7 @@ inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES_${PN} += "${prefix}"
+FILES:${PN} += "${prefix}"
 
 BBCLASSEXTEND = ""
 

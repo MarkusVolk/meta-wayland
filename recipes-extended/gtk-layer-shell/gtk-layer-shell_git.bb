@@ -27,7 +27,7 @@ PV = "0.6.0"
 SRCREV = "v${PV}"
 
 inherit meson pkgconfig features_check
-FILES_${PN} = "${datadir} ${libdir}"
+FILES:${PN} = "${datadir} ${libdir}"
 
 BBCLASSEXTEND = ""
 

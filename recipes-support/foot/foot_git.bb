@@ -19,7 +19,7 @@ DEPENDS = " \
 	scdoc-native \
 "
 
-RRECOMMENDS_${PN} = "xdg-utils"
+RRECOMMENDS:${PN} = "xdg-utils"
 
 SRC_URI = " \
 	git://codeberg.org/dnkl/foot.git;protocol=https \
@@ -38,7 +38,7 @@ PACKAGECONFIG ?= " \
 
 inherit meson pkgconfig features_check
 
-FILES_${PN} = " \
+FILES:${PN} = " \
 	${bindir} \
 	${datadir} \
 "

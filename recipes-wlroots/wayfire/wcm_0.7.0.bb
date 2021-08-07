@@ -25,7 +25,7 @@ inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES_${PN} += "${prefix}"
+FILES:${PN} += "${prefix}"
 
 BBCLASSEXTEND = ""
 

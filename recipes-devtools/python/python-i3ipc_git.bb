@@ -6,7 +6,7 @@ SRC_URI = " \
 	git://github.com/altdesktop/i3ipc-python.git;protocol=https \
 "
 
-RDEPENDS_${PN} = " \
+RDEPENDS:${PN} = " \
 	python3 \
 	python-xlib \
 "
