@@ -60,6 +60,8 @@ PACKAGECONFIG ?= " \
 	gdk-pixbuf \
 "
 
+# Reproducibility issue. Fix me!
+CFLAGS:append = " -Wno-error=date-time"
 EXTRA_OEMESON += "--buildtype release"
 
 do_install:append() {
