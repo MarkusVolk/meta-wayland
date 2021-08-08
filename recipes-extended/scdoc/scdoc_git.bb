@@ -15,8 +15,8 @@ S = "${WORKDIR}/git"
 PV = "1.11.0"
 SRCREV = "${PV}"
 
-EXTRA_OEMAKE_class-native = "PREFIX=${prefix}"
-EXTRA_OEMAKE_class-target = "PREFIX=${prefix} HOST_SCDOC=${STAGING_BINDIR_NATIVE}/scdoc"
+EXTRA_OEMAKE:class-native = "PREFIX=${prefix}"
+EXTRA_OEMAKE:class-target = "PREFIX=${prefix} HOST_SCDOC=${STAGING_BINDIR_NATIVE}/scdoc"
 
 inherit autotools-brokensep
 	
