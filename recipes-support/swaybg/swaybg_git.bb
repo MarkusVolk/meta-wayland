@@ -20,6 +20,9 @@ SRC_URI = " \
 	git://github.com/swaywm/swaybg.git;protocol=https \
 "
 
+# Reproducibility issue. Fix me!
+CFLAGS:append = " -Wno-error=date-time"
+
 S = "${WORKDIR}/git"
 PV = "1.1"
 SRCREV = "v${PV}"
