@@ -31,9 +31,9 @@ PACKAGECONFIG ?= " \
 	gles2 \
 "
 
-SRC_URI = "git://github.com/swaywm/wlroots.git;protocol=https"
+SRC_URI = "git://github.com/swaywm/wlroots.git;branch=0.14;protocol=https"
 SRCREV = "${PV}"
-PV = "0.14.0"
+PV = "0.14.1"
 
 S = "${WORKDIR}/git"
 
