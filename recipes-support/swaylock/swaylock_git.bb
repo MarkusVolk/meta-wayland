@@ -18,12 +18,11 @@ DEPENDS = " \
 
 SRC_URI = " \
 	git://github.com/swaywm/swaylock.git;protocol=https \
-	file://0001-load_config-fix-mismatched-allocation-function.patch \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.5"
-SRCREV = "${PV}"
+PV = "1.5+${SRCREV}"
+SRCREV = "2bf76009e1d279a4194d37b9ee4f2bf0d9424d62"
 
 PACKAGECONFIG[pam] = ",,libpam"
 PACKAGECONFIG[gdk-pixbuf] = ",,gdk-pixbuf"
