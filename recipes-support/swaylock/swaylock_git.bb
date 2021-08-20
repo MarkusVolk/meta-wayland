@@ -18,6 +18,7 @@ DEPENDS = " \
 
 SRC_URI = " \
 	git://github.com/swaywm/swaylock.git;protocol=https \
+	file://0001-load_config-fix-mismatched-allocation-function.patch \
 "
 
 S = "${WORKDIR}/git"
@@ -32,6 +33,9 @@ PACKAGECONFIG ?= " \
 	gdk-pixbuf \
 	pam \
 "
+
+# Reproducibility issue. Fix me!
+CFLAGS:append = " -Wno-error=date-time"
 
 inherit meson pkgconfig features_check
 

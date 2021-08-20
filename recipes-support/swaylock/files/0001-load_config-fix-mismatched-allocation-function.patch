@@ -1,0 +1,31 @@
+From 3e861934074148dc803e70508ad99dfbd0d14765 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Fri, 20 Aug 2021 13:42:57 +0200
+Subject: [PATCH] load_config: fix mismatched allocation function
+
+| In function 'load_config',
+|     inlined from 'main' at ../git/main.c:1138:23:
+| ../git/main.c:1060:25: error: 'free' called on pointer returned from a mismatched allocation function [-Werror=mismatched-dealloc]
+|  1060 |                         free(config);
+
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+---
+ main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/main.c b/main.c
+index c65d68a..7921770 100644
+--- a/main.c
++++ b/main.c
+@@ -1057,7 +1057,7 @@ static int load_config(char *path, struct swaylock_state *state,
+ 		char *flag = malloc(nread + 3);
+ 		if (flag == NULL) {
+ 			free(line);
+-			free(config);
++			fclose(config);
+ 			swaylock_log(LOG_ERROR, "Failed to allocate memory");
+ 			return 0;
+ 		}
+-- 
+2.25.1
+
