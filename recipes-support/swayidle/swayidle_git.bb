@@ -19,7 +19,7 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.6"
+PV = "1.7"
 SRCREV = "${PV}"
 
 inherit meson pkgconfig features_check
@@ -32,6 +32,9 @@ PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
 	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
 "
+
+# Reproducibility issue. Fix me!
+CFLAGS:append = " -Wno-error=date-time"
 
 FILES:${PN} += "${datadir}"
 
