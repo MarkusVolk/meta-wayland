@@ -20,7 +20,7 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "2.4.3"
+PV = "2.4.5"
 SRCREV = "${PV}"
 
 inherit meson pkgconfig
