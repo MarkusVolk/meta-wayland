@@ -12,10 +12,10 @@ Dependencies
 This layer depends on:
 
     URI: git://github.com/openembedded/openembedded-core
-        branch: hardknott
+        branch: honister
         revision: HEAD
     URI: git://github.com/openembedded/meta-openembedded
-        branch: hardknott
+        branch: honister
         revision: HEAD
 
 Building
