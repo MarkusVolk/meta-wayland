@@ -16,7 +16,6 @@ DEPENDS = " \
 	pixman \
 	wayland \
 	wayland-native \
-	scdoc-native \
 "
 
 RRECOMMENDS:${PN} = "xdg-utils"
@@ -26,11 +25,12 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.8.2"
+PV = "1.9.0"
 SRCREV = "${PV}"
 
 PACKAGECONFIG[terminfo] = "-Dterminfo=enabled,-Dterminfo=disabled,ncurses-native"
 PACKAGECONFIG[grapheme-clustering] = "-Dgrapheme-clustering=enabled,-Dgrapheme-clustering=disabled,utf8proc"
+PACKAGECONFIG[docs] = "-Ddocs=enabled,-Ddocs=disabled,scdoc-native"
 
 PACKAGECONFIG ?= " \
 	grapheme-clustering \
