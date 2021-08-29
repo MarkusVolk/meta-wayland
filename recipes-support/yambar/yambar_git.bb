@@ -28,7 +28,7 @@ RRECOMMENDS:${PN} += " \
 inherit meson pkgconfig
 
 S = "${WORKDIR}/git"
-PV = "1.6.1"
+PV = "1.6.2"
 SRCREV = "${PV}"
 
 PACKAGECONFIG[wayland] = "-Dbackend-wayland=enabled,-Dbackend-wayland=disabled,wayland wayland-native wayland-protocols"
