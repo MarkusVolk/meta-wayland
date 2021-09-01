@@ -52,8 +52,9 @@ S = "${WORKDIR}/git"
 PV = "2.99.6"
 SRCREV = "GIMP_2_99_6"
 
-PACKAGECONFIG[appdata-test] = "-Dappdata-test=enabled,-Dappdata-test=disabled,appstream-glib-native"
+PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
 PACKAGECONFIG[alsa] = "-Dalsa=enabled,-Dalsa=disabled,alsa-lib"
+PACKAGECONFIG[appdata-test] = "-Dappdata-test=enabled,-Dappdata-test=disabled,appstream-glib-native"
 PACKAGECONFIG[bzip2] = ",,bzip2"
 PACKAGECONFIG[cairo-pdf] = "-Dcairo-pdf=enabled,-Dcairo-pdf=disabled"
 PACKAGECONFIG[check-update] = "-Dcheck-update=true,-Dcheck-update=false"
@@ -80,6 +81,7 @@ PACKAGECONFIG[xpm] = "-Dxpm=enabled,-Dxpm=disabled,libexif"
 PACKAGECONFIG[zlib] = ",,zlib"
 
 PACKAGECONFIG ?= " \
+    aa \
     alsa \
     bzip2 \
     cairo-pdf \
