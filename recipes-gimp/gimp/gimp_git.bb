@@ -4,6 +4,8 @@ SECTION = "graphics"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://COPYING;md5=c678957b0c8e964aa6c70fd77641a71e"
 
+REQUIRED_DISTRO_FEATURES = "gobject-introspection-data"
+
 DEPENDS = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'libxmu libxpm', '', d)} \
     appstream-glib \
@@ -25,7 +27,6 @@ DEPENDS = " \
     json-glib \
     lcms \
     libarchive \
-    libgudev \
     libmypaint \
     libxslt-native \
     mypaint-brushes-1.0 \
@@ -41,7 +42,7 @@ DEPENDS = " \
 DEPENDS:append:libc-musl = " libexecinfo"
 RDEPENDS:${PN} += "mypaint-brushes-1.0 glib-networking"
 
-inherit meson gtk-icon-cache mime-xdg pkgconfig
+inherit meson gtk-icon-cache mime-xdg pkgconfig features_check
 
 SRC_URI = " \
     git://github.com/GNOME/gimp.git;protocol=https \
@@ -51,26 +52,30 @@ S = "${WORKDIR}/git"
 PV = "2.99.6"
 SRCREV = "GIMP_2_99_6"
 
-PACKAGECONFIG[alsa] = ",,alsa-lib"
+PACKAGECONFIG[appdata-test] = "-Dappdata-test=enabled,-Dappdata-test=disabled,appstream-glib-native"
+PACKAGECONFIG[alsa] = "-Dalsa=enabled,-Dalsa=disabled,alsa-lib"
 PACKAGECONFIG[bzip2] = ",,bzip2"
 PACKAGECONFIG[cairo-pdf] = "-Dcairo-pdf=enabled,-Dcairo-pdf=disabled"
 PACKAGECONFIG[check-update] = "-Dcheck-update=true,-Dcheck-update=false"
 PACKAGECONFIG[enable-console-bin] = "-Denable-console-bin=true,-Denable-console-bin=false"
-PACKAGECONFIG[ghostscript] = ",,ghostscript"
+PACKAGECONFIG[ghostscript] = "-Dghostscript=enabled,-Dghostscript=disabled,ghostscript"
+PACKAGECONFIG[gtk-doc] = "-Dgtk-doc=true,-Dgtk-doc=false,gtk-doc-native"
+PACKAGECONFIG[gtk-doc-app] = "-Dgtk-doc-app=true,-Dgtk-doc-app=false,gtk-doc-native"
+PACKAGECONFIG[gudev] = "-Dgudev=enabled,-Dgudev=disabled,libgudev"
 PACKAGECONFIG[javascript] = "-Djavascript=true,-Djavascript=false,,openjre-8"
-PACKAGECONFIG[jpeg2000] = ",,jasper"
+PACKAGECONFIG[jpeg2000] = "-Djpeg2000=enabled,-Djpeg2000=disabled,jasper"
 PACKAGECONFIG[jpeg] = ",,jpeg"
 PACKAGECONFIG[lua] = "-Dlua=true,-Dlua=false,,luajit lgi"
 PACKAGECONFIG[lzma] = ",,xz"
-PACKAGECONFIG[mng] = ",,libmng"
-PACKAGECONFIG[png] = ",,libpng"
+PACKAGECONFIG[mng] = "-Dmng=enabled,-Dmng=disabled,libmng"
+PACKAGECONFIG[png] = "-Dpng=enabled,-Dpng=disabled,libpng"
 PACKAGECONFIG[python] = "-Dpython=true,-Dpython=false,,python3 python3-pygobject"
 PACKAGECONFIG[rsvg] = ",,librsvg"
 PACKAGECONFIG[tiff] = ",,tiff"
 PACKAGECONFIG[vala-plugins] = "-Dvala-plugins=enabled,-Dvala-plugins=disabled"
-PACKAGECONFIG[webkit] = ",,webkitgtk"
-PACKAGECONFIG[webp] = ",,libwebp"
-PACKAGECONFIG[xcursor] = ",,libxcursor"
+PACKAGECONFIG[webkit] = "-Dwebkit=enabled,-Dwebkit=disabled,webkitgtk"
+PACKAGECONFIG[webp] = "-Dwebp=enabled,-Dwebp=disabled,libwebp"
+PACKAGECONFIG[xcursor] = "-Dxcursor=enabled,-Dxcursor=disabled,libxcursor"
 PACKAGECONFIG[xpm] = "-Dxpm=enabled,-Dxpm=disabled,libexif"
 PACKAGECONFIG[zlib] = ",,zlib"
 
@@ -78,6 +83,8 @@ PACKAGECONFIG ?= " \
     alsa \
     bzip2 \
     cairo-pdf \
+    gtk-doc-app \
+    gudev \
     jpeg \
     jpeg2000 \
     lua \
@@ -94,13 +101,14 @@ PACKAGECONFIG ?= " \
 "
 
 FILES:${PN} += " \
-    ${datadir} \
+    ${datadir}/metainfo \
+    ${datadir}/gir-1.0 \
+    ${datadir}/appdata \ 
     ${libdir}/girepository-1.0 \
 "
 
 EXTRA_OEMESON = " \
     -Dshmem-type=posix \
-    -Dgtk-doc=false \
     -Dcan-crosscompile-gir=true \
     --buildtype release \
 "
