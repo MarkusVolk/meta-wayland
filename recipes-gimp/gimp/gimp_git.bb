@@ -70,7 +70,6 @@ PACKAGECONFIG[tiff] = ",,tiff"
 PACKAGECONFIG[vala-plugins] = "-Dvala-plugins=enabled,-Dvala-plugins=disabled"
 PACKAGECONFIG[webkit] = ",,webkitgtk"
 PACKAGECONFIG[webp] = ",,libwebp"
-PACKAGECONFIG[wmf] = ",,libwmf"
 PACKAGECONFIG[xcursor] = ",,libxcursor"
 PACKAGECONFIG[xpm] = "-Dxpm=enabled,-Dxpm=disabled,libexif"
 PACKAGECONFIG[zlib] = ",,zlib"
@@ -89,7 +88,6 @@ PACKAGECONFIG ?= " \
     rsvg \
     tiff \
     webp \
-    wmf \
     xcursor \
     xpm \
     zlib \
