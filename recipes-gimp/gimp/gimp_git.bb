@@ -7,7 +7,6 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=c678957b0c8e964aa6c70fd77641a71e"
 REQUIRED_DISTRO_FEATURES = "gobject-introspection-data"
 
 DEPENDS = " \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'libxmu libxpm', '', d)} \
     appstream-glib \
     atk \
     babl \
@@ -20,34 +19,31 @@ DEPENDS = " \
     gegl \
     gegl-native \
     gexiv2 \
-    gobject-introspection-native \
     gtk+3 \
     harfbuzz \
     intltool-native \
     json-glib \
     lcms \
     libarchive \
+    libexif \
     libmypaint \
     libxslt-native \
     mypaint-brushes-1.0 \
     pango \
     poppler \
     poppler-data \
-    prelink-native \
-    python3-native \
-    python3-pygobject-native \
-    qemuwrapper-cross \
 "
 
 DEPENDS:append:libc-musl = " libexecinfo"
-RDEPENDS:${PN} += "mypaint-brushes-1.0 glib-networking"
+RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking"
 
-inherit meson gtk-icon-cache mime-xdg pkgconfig features_check
+inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection
 
 SRC_URI = " \
     git://github.com/GNOME/gimp.git;protocol=https \
     file://0001-meson-make-gir-buildable.patch \
 "
+
 S = "${WORKDIR}/git"
 PV = "2.99.6"
 SRCREV = "GIMP_2_99_6"
@@ -77,10 +73,11 @@ PACKAGECONFIG[vala-plugins] = "-Dvala-plugins=enabled,-Dvala-plugins=disabled"
 PACKAGECONFIG[webkit] = "-Dwebkit=enabled,-Dwebkit=disabled,webkitgtk"
 PACKAGECONFIG[webp] = "-Dwebp=enabled,-Dwebp=disabled,libwebp"
 PACKAGECONFIG[xcursor] = "-Dxcursor=enabled,-Dxcursor=disabled,libxcursor"
-PACKAGECONFIG[xpm] = "-Dxpm=enabled,-Dxpm=disabled,libexif"
+PACKAGECONFIG[x11] = "-Dxpm=enabled,-Dxpm=disabled,libxpm libxmu"
 PACKAGECONFIG[zlib] = ",,zlib"
 
 PACKAGECONFIG ?= " \
+    ${@bb.utils.filter('DISTRO_FEATURES', 'x11', d)} \
     aa \
     alsa \
     bzip2 \
@@ -97,8 +94,6 @@ PACKAGECONFIG ?= " \
     rsvg \
     tiff \
     webp \
-    xcursor \
-    xpm \
     zlib \
 "
 
@@ -109,9 +104,8 @@ FILES:${PN} += " \
     ${libdir}/girepository-1.0 \
 "
 
-EXTRA_OEMESON = " \
+EXTRA_OEMESON += " \
     -Dshmem-type=posix \
-    -Dcan-crosscompile-gir=true \
     --buildtype release \
 "
 

@@ -21,7 +21,7 @@ index 9e7b4fbbe3..99614733d7 100644
  ]
  
 -if meson.is_cross_build()
-+if meson.is_cross_build() and not get_option('can-crosscompile-gir')
++if meson.is_cross_build() and not get_option('introspection')
    have_gobject_introspection = false
    gobject_introspection_warning = '\n      '.join(['',
      'GObject Introspection is disabled while cross-compiling because',
@@ -34,7 +34,7 @@ index 7b6ad78045..c29fdb5b40 100644
  option('gtk-doc-app',       type: 'boolean', value: false,  description: 'Build developer documentation for app')
  option('g-ir-doc',          type: 'boolean', value: false,  description: 'Build developer documentation for introspected API')
 -
-+option('can-crosscompile-gir',   type: 'boolean', value: false,  description: 'GIR is buildable even if crosscompiling')
++option('introspection',   type: 'boolean', value: false,  description: 'GIR is buildable even if crosscompiling')
  option('linux-input',       type: 'feature', value: 'auto', description: 'Linux input event controller module')
  option('vec-icons',         type: 'boolean', value: true,   description: 'Use vector icons rather than raster ones')
  
