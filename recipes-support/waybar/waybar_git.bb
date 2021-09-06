@@ -11,12 +11,13 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=98f7e9dc79966298d76caf1b0a6d35c1"
 REQUIRED_DISTRO_FEATURES = "wayland gobject-introspection-data"
 
 DEPENDS += " \
+	fmt \
 	glib-2.0-native \
 	gtkmm3 \
 	jsoncpp \
+	libevdev \
 	libsigc++-3 \
-	fmt \
-	spdlog \
+	libxkbcommon \
 	gtk+3 \
 	gobject-introspection \
 	spdlog \
@@ -51,8 +52,8 @@ RRECOMMENDS:${PN} += " \
 SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https"
 
 S = "${WORKDIR}/git"
-PV = "0.9.7+${SRCREV}"
-SRCREV = "91cdf80c65dcecf16922e4ac724f37471cbad529"
+PV = "0.9.8"
+SRCREV = "${PV}"
 
 inherit meson pkgconfig features_check
 
