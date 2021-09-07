@@ -28,7 +28,6 @@ S = "${WORKDIR}/git"
 PV = "1.9.0"
 SRCREV = "${PV}"
 
-PACKAGECONFIG[terminfo] = "-Dterminfo=enabled,-Dterminfo=disabled,ncurses-native"
 PACKAGECONFIG[grapheme-clustering] = "-Dgrapheme-clustering=enabled,-Dgrapheme-clustering=disabled,utf8proc"
 PACKAGECONFIG[docs] = "-Ddocs=enabled,-Ddocs=disabled,scdoc-native"
 
@@ -36,11 +35,13 @@ PACKAGECONFIG ?= " \
 	grapheme-clustering \
 "
 
+EXTRA_OEMESON += "--buildtype=release -Dterminfo=disabled"
+
 # Hack! tic from ncurses-native fails to generate the terminfo files. Use hosts tic instead. 
 # ncurses-bin needs to be installed.
 do_install:append() {
-	install -d ${D}${datadir}/foot/terminfo
-	/usr/bin/tic -o ${D}${datadir}/foot/terminfo -x -e foot,foot-direct ${S}/foot.info
+	install -d ${D}${datadir}/terminfo
+	/usr/bin/tic -o ${D}${datadir}/terminfo -x -e foot,foot-direct ${S}/foot.info
 }
 
 inherit meson pkgconfig features_check
