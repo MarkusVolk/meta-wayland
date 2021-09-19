@@ -26,10 +26,9 @@ PACKAGECONFIG ?= " \
 
 SRC_URI = " \
 	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https \
-	file://0001-nwg_tools.cc-fix-build-without-gdk-x11.patch \
 "
 SRCREV = "v${PV}"
-PV = "0.5.0"
+PV = "0.6.1"
 
 S = "${WORKDIR}/git"
 
