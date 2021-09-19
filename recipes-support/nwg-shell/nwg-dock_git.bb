@@ -19,7 +19,8 @@ inherit go go-mod
 GO_INSTALL = "${GO_IMPORT}"
 
 do_install:append() {
-	# remove precompiled x86 binary
+	# remove precompiled x86 binaries
 	rm -r ${D}${libdir}/go/src/${GO_IMPORT}/bin
+	rm -r ${D}${libdir}/go/pkg/mod/github.com/dlasky/gotk3-layershell*/example
 }
 
