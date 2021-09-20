@@ -45,7 +45,6 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "2.99.6"
 SRCREV = "GIMP_2_99_6"
 
 PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
