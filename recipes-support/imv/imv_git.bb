@@ -25,13 +25,14 @@ PACKAGECONFIG[x11] = "-Dwindows=all,-Dwindows=wayland,libx11 libglu xcb-util-ren
 PACKAGECONFIG[tiff] = ",,tiff"
 PACKAGECONFIG[png] = ",,libpng"
 PACKAGECONFIG[jpeg] = ",,libjpeg-turbo"
-#librsvg shipped in oe-core is too old ... requires v2.44
 PACKAGECONFIG[rsvg] = ",,librsvg"
+PACKAGECONFIG[doc] = ",,asciidoc-native"
 
 PACKAGECONFIG ?= " \
 	jpeg \
 	png \
 	tiff \
+	rsvg \
 "
 
 SRC_URI = "git://github.com/eXeC64/imv.git;protocol=https"
