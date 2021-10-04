@@ -25,7 +25,7 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.9.0"
+PV = "1.9.2"
 SRCREV = "${PV}"
 
 PACKAGECONFIG[grapheme-clustering] = "-Dgrapheme-clustering=enabled,-Dgrapheme-clustering=disabled,utf8proc"
@@ -37,9 +37,12 @@ PACKAGECONFIG ?= " \
 
 EXTRA_OEMESON += "--buildtype=release -Dterminfo=disabled"
 
+
 # Hack! tic from ncurses-native fails to generate the terminfo files. Use hosts tic instead. 
 # ncurses-bin needs to be installed.
 do_install:append() {
+	sed -i "s|@default_terminfo@|foot|" ${S}/foot.info
+	sed -i "s|@default_terminfo-direct@|foot-direct|" ${S}/foot.info
 	install -d ${D}${datadir}/terminfo
 	/usr/bin/tic -o ${D}${datadir}/terminfo -x -e foot,foot-direct ${S}/foot.info
 }
