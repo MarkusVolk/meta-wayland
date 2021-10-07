@@ -1,6 +1,4 @@
 SUMMARY = "A library to write GTK applications that use Layer Shell"
-DESCRIPTION = "A library to write GTK applications that use Layer Shell. Layer Shell is a Wayland protocol for desktop shell components, such as panels, notifications and wallpapers."
-AUTHOR = ""
 HOMEPAGE = "https://github.com/wmww/gtk-layer-shell"
 BUGTRACKER = "https://github.com/www/gtk-layer-shell/issues"
 SECTION = "graphics"
@@ -14,19 +12,18 @@ DEPENDS += " \
 	gtk+3 \
 	wayland \
 	wayland-native \
-	gobject-introspection \
-	gobject-introspection-native \
-	qemu-native \
-	prelink-native \
 "
 
 SRC_URI = "git://github.com/wmww/gtk-layer-shell.git;protocol=https"
 
 S = "${WORKDIR}/git"
-PV = "0.6.0"
-SRCREV = "v${PV}"
+PV = "0.6.0+${SRCREV}"
+SRCREV = "b5e0bbc7f2ac632a65db29193fa384baeb23a96c"
 
-inherit meson pkgconfig features_check
+inherit meson pkgconfig features_check gobject-introspection
+
+EXTRA_OEMESON += "--buildtype release"
+
 FILES:${PN} = "${datadir} ${libdir}"
 
 BBCLASSEXTEND = ""
