@@ -24,16 +24,17 @@ DEPENDS += " \
 "
 
 PACKAGECONFIG[gles2] = "-Drenderers=gles2"
-PACKAGECONFIG[x11-backend] = "-Dx11-backend=enabled,-Dx11-backend=disabled,xcb-util-renderutil"
+PACKAGECONFIG[x11] = "-Dbackends=x11,,xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xserver-xorg xcb-util-wm"
+PACKAGECONFIG[examples] = "-Dexamples=true,-Dexamples=false"
 
 PACKAGECONFIG ?= " \
 	gles2 \
 "
 
-SRC_URI = "git://github.com/swaywm/wlroots.git;branch=0.14;protocol=https"
-SRCREV = "${PV}"
-PV = "0.14.1"
+SRC_URI = "git://github.com/swaywm/wlroots.git;branch=master;protocol=https"
+SRCREV = "13cdb84ee8df248db3b303fd4d1c0e3e75db2794"
+PV = "0.14.1+${SRCREV}"
 
 S = "${WORKDIR}/git"
 
