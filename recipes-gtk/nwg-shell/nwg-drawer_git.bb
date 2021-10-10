@@ -16,7 +16,7 @@ GO_IMPORT = "github.com/nwg-piotr/nwg-drawer.git"
 
 SRC_URI = "git://${GO_IMPORT};nobranch=1"
 
-PV = "0.1.12"
+PV = "0.2.1"
 SRCREV = "v${PV}"
 
 inherit go go-mod pkgconfig
@@ -26,5 +26,6 @@ GO_INSTALL = "${GO_IMPORT}"
 do_install:append() {
 	# remove precompiled x86 binary
 	rm -r ${D}${libdir}/go/src/${GO_IMPORT}/bin
+	rm -r ${D}${libdir}/go/pkg/mod/github.com/dlasky/gotk3-layershell*/example
 }
 
