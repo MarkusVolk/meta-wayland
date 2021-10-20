@@ -17,23 +17,30 @@ DEPENDS += " \
 	libxkbcommon \
 	pixman \
 	seatd \
+	virtual/egl \
 	virtual/libgbm \
+	virtual/libgles2 \
 	wayland \
 	wayland-native \
 	wayland-protocols \
 "
 
-PACKAGECONFIG[gles2] = "-Drenderers=gles2"
-PACKAGECONFIG[x11] = "-Dbackends=x11,,xcb-util-renderutil"
+PACKAGECONFIG[systemd] = ",,systemd"
+PACKAGECONFIG[sysvinit] = ",,eudev"
+PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang glslang-native"
+PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xserver-xorg xcb-util-wm"
 PACKAGECONFIG[examples] = "-Dexamples=true,-Dexamples=false"
 
 PACKAGECONFIG ?= " \
-	gles2 \
+	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'x11', d)} \
 "
 
 SRC_URI = "git://github.com/swaywm/wlroots.git;branch=master;protocol=https"
-SRCREV = "13cdb84ee8df248db3b303fd4d1c0e3e75db2794"
+SRCREV = "36cf38742734b003b2abbcd1de910771a8454ef1"
 PV = "0.14.1+${SRCREV}"
 
 S = "${WORKDIR}/git"
@@ -42,12 +49,14 @@ inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES:${PN} = "${bindir} \
-               ${libdir} \
-              "
+FILES:${PN} = " \
+	${bindir} \
+	${libdir} \
+"
 
-FILES:${PN}-dev = "${includedir} \
-                   ${libdir}/libwlroots.so \
+FILES:${PN}-dev = " \
+	${includedir} \
+	${libdir}/libwlroots.so \
 "
 
 BBCLASSEXTEND = ""
