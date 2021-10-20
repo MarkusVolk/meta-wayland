@@ -40,7 +40,7 @@ SRC_URI = " \
 	git://github.com/swaywm/sway.git;protocol=https;branch=master \
 "
 
-SRCREV = "215787e8b28d4e52d97bdcadd4b64305c7a62ac5"
+SRCREV = "119f31edb4f0c61fd074229040dd93e047ff7cb4"
 PV = "1.6.1+${SRCREV}"
 S = "${WORKDIR}/git"
 
