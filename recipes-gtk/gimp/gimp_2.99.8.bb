@@ -62,6 +62,7 @@ PACKAGECONFIG[gudev] = "-Dgudev=enabled,-Dgudev=disabled,libgudev"
 PACKAGECONFIG[javascript] = "-Djavascript=true,-Djavascript=false,,openjre-8"
 PACKAGECONFIG[jpeg2000] = "-Djpeg2000=enabled,-Djpeg2000=disabled,jasper"
 PACKAGECONFIG[jpeg] = ",,jpeg"
+PACKAGECONFIG[jpeg-xl] = ",,libjxl"
 PACKAGECONFIG[libunwind] = ",,libunwind"
 PACKAGECONFIG[libbacktrace] = ",,libbacktrace"
 PACKAGECONFIG[lua] = "-Dlua=true,-Dlua=false,,luajit lgi"
@@ -89,6 +90,7 @@ PACKAGECONFIG ?= " \
     gudev \
     jpeg \
     jpeg2000 \
+    jpeg-xl \
     lua \
     lzma \
     mng \
