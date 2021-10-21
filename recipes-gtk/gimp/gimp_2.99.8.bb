@@ -45,14 +45,15 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-SRCREV = "GIMP_2_99_6"
+SRCREV = "GIMP_2_99_8"
 
 PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
 PACKAGECONFIG[alsa] = "-Dalsa=enabled,-Dalsa=disabled,alsa-lib"
 PACKAGECONFIG[appdata-test] = "-Dappdata-test=enabled,-Dappdata-test=disabled,appstream-glib-native"
 PACKAGECONFIG[bzip2] = ",,bzip2"
 PACKAGECONFIG[cairo-pdf] = "-Dcairo-pdf=enabled,-Dcairo-pdf=disabled"
-PACKAGECONFIG[check-update] = "-Dcheck-update=true,-Dcheck-update=false"
+PACKAGECONFIG[check-update] = "-Dcheck-update=yes,-Dcheck-update=no"
+PACKAGECONFIG[email] = ",,,xdg-utils"
 PACKAGECONFIG[enable-console-bin] = "-Denable-console-bin=true,-Denable-console-bin=false"
 PACKAGECONFIG[ghostscript] = "-Dghostscript=enabled,-Dghostscript=disabled,ghostscript"
 PACKAGECONFIG[gtk-doc] = "-Dgtk-doc=true,-Dgtk-doc=false,gtk-doc-native"
@@ -61,6 +62,8 @@ PACKAGECONFIG[gudev] = "-Dgudev=enabled,-Dgudev=disabled,libgudev"
 PACKAGECONFIG[javascript] = "-Djavascript=true,-Djavascript=false,,openjre-8"
 PACKAGECONFIG[jpeg2000] = "-Djpeg2000=enabled,-Djpeg2000=disabled,jasper"
 PACKAGECONFIG[jpeg] = ",,jpeg"
+PACKAGECONFIG[libunwind] = ",,libunwind"
+PACKAGECONFIG[libbacktrace] = ",,libbacktrace"
 PACKAGECONFIG[lua] = "-Dlua=true,-Dlua=false,,luajit lgi"
 PACKAGECONFIG[lzma] = ",,xz"
 PACKAGECONFIG[mng] = "-Dmng=enabled,-Dmng=disabled,libmng"
@@ -69,10 +72,11 @@ PACKAGECONFIG[python] = "-Dpython=true,-Dpython=false,,python3 python3-pygobject
 PACKAGECONFIG[rsvg] = ",,librsvg"
 PACKAGECONFIG[tiff] = ",,tiff"
 PACKAGECONFIG[vala-plugins] = "-Dvala-plugins=enabled,-Dvala-plugins=disabled"
+PACKAGECONFIG[vec-icons] = "-Dvec-icons=true,-Dvec-icons=false,librsvg shared-mime-info"
 PACKAGECONFIG[webkit] = "-Dwebkit=enabled,-Dwebkit=disabled,webkitgtk"
 PACKAGECONFIG[webp] = "-Dwebp=enabled,-Dwebp=disabled,libwebp"
 PACKAGECONFIG[xcursor] = "-Dxcursor=enabled,-Dxcursor=disabled,libxcursor"
-PACKAGECONFIG[x11] = "-Dxpm=enabled,-Dxpm=disabled,libxpm libxmu"
+PACKAGECONFIG[x11] = "-Dxpm=enabled,-Dxpm=disabled,libxpm libxmu libxext libxfixes"
 PACKAGECONFIG[zlib] = ",,zlib"
 
 PACKAGECONFIG ?= " \
@@ -92,6 +96,7 @@ PACKAGECONFIG ?= " \
     python \
     rsvg \
     tiff \
+    vec-icons \
     webp \
     zlib \
 "
@@ -105,6 +110,7 @@ FILES:${PN} += " \
 
 EXTRA_OEMESON += " \
     -Dshmem-type=posix \
+    -Dlinux-input=enabled \
     --buildtype release \
 "
 
