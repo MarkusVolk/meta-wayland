@@ -4,7 +4,7 @@ HOMEPAGE = "https://github.com/google/brotli/"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=941ee9cd1609382f946352712a319b4b" 
 
-inherit cmake pkgconfig
+inherit cmake
 
 SRC_URI = " \
     git://github.com/google/brotli.git;protocol=https \

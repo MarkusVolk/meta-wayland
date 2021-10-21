@@ -4,7 +4,7 @@ HOMEPAGE = "https://github.com/google/highway/"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2b42edef8fa55315f34f2370b4715ca9" 
 
-inherit cmake pkgconfig
+inherit cmake
 
 SRC_URI = " \
     git://github.com/google/highway.git;protocol=https \
