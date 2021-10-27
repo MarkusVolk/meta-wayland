@@ -13,18 +13,17 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
 	libdrm \
-	libinput \
 	libxkbcommon \
 	pixman \
 	seatd \
-	virtual/egl \
 	virtual/libgbm \
-	virtual/libgles2 \
 	wayland \
 	wayland-native \
 	wayland-protocols \
 "
 
+PACKAGECONFIG[libinput] = ",,libinput"
+PACKAGECONFIG[gles] = ",,virtual/egl virtual/libgles2"
 PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,eudev"
 PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang glslang-native"
@@ -37,10 +36,12 @@ PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
 	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan', d)} \
 	${@bb.utils.filter('DISTRO_FEATURES', 'x11', d)} \
+	gles \
+	libinput \
 "
 
 SRC_URI = "git://github.com/swaywm/wlroots.git;branch=master;protocol=https"
-SRCREV = "36cf38742734b003b2abbcd1de910771a8454ef1"
+SRCREV = "ebe3cfaceb77ca3b446fa52af6aedc89c98770e5"
 PV = "0.14.1+${SRCREV}"
 
 S = "${WORKDIR}/git"
