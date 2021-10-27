@@ -36,8 +36,6 @@ PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
 	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan', d)} \
 	${@bb.utils.filter('DISTRO_FEATURES', 'x11', d)} \
-	gles \
-	libinput \
 "
 
 SRC_URI = "git://github.com/swaywm/wlroots.git;branch=master;protocol=https"
