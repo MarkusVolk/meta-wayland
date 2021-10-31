@@ -25,7 +25,7 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.2.4"
+PV = "1.3.0"
 SRCREV = "${PV}"
 
 EXTRA_OEMESON += " \
