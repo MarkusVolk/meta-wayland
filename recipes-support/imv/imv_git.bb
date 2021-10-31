@@ -21,6 +21,8 @@ DEPENDS += " \
 	virtual/egl \
 "
 
+RDEPENDS:${PN} = "bash"
+
 PACKAGECONFIG[x11] = "-Dwindows=all,-Dwindows=wayland,libx11 libglu xcb-util-renderutil"
 PACKAGECONFIG[tiff] = ",,tiff"
 PACKAGECONFIG[png] = ",,libpng"
@@ -38,7 +40,7 @@ PACKAGECONFIG ?= " \
 SRC_URI = "git://github.com/eXeC64/imv.git;protocol=https"
 
 S = "${WORKDIR}/git"
-PV = "4.2.0"
+PV = "4.3.0"
 SRCREV = "v${PV}"
 
 inherit meson pkgconfig mime-xdg features_check
