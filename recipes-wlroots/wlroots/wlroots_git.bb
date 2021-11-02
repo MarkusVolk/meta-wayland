@@ -1,9 +1,9 @@
 SUMMARY = "A modular Wayland compositor library"
 DESCRIPTION = "Pluggable, composable, unopinionated modules for building a \
-               Wayland compositor; or about 50,000 lines of code you were \
-               going to write anyway"
-HOMEPAGE = "https://github.com/swaywm/wlroots"
-BUGTRACKER = "https://github.com/swaywm/wlroots/issues"
+Wayland compositor; or about 50,000 lines of code you were \
+going to write anyway."
+HOMEPAGE = "https://gitlab.freedesktop.org/wlroots"
+BUGTRACKER = "https://gitlab.freedesktop.org/wlroots/wlroots/-/issues"
 SECTION = "graphics"
 LICENSE = "MIT"
 
@@ -38,7 +38,7 @@ PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'x11', d)} \
 "
 
-SRC_URI = "git://github.com/swaywm/wlroots.git;branch=master;protocol=https"
+SRC_URI = "git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https"
 SRCREV = "ebe3cfaceb77ca3b446fa52af6aedc89c98770e5"
 PV = "0.14.1+${SRCREV}"
 
