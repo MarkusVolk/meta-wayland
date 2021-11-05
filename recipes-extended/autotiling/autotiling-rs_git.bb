@@ -1,6 +1,6 @@
 SUMMARY = "This automatically alternates the container layout between horizontal and vertical for successive new containers."
-LICENSE = "Unknown"
-LIC_FILES_CHKSUM = "file://README.md;md5=42f4d8dc47479bff7dd9aaccaf131429"
+LICENSE = "WTFPL"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/WTFPL;md5=7993e3336259bdb618ad5a1afc872165"
 
 SRC_URI = " \
 	git://github.com/ammgws/autotiling-rs.git;protocol=https \
