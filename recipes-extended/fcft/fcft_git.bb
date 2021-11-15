@@ -20,10 +20,18 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "2.4.6"
+PV = "2.5.0"
 SRCREV = "${PV}"
 
 inherit meson pkgconfig
+
+PACKAGECONFIG[grapheme-shaping] = "-Dgrapheme-shaping=enabled,-Dgrapheme-shaping=disabled,utf8proc"
+PACKAGECONFIG[run-shaping] = "-Drun-shaping=enabled,-Drun-shaping=disabled,utf8proc"
+
+PACKAGECONFIG ?= " \
+	grapheme-shaping \
+	run-shaping \
+"
 
 BBCLASSEXTEND = ""
 

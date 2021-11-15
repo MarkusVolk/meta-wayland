@@ -25,14 +25,16 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.9.2"
-SRCREV = "${PV}"
+PV = "1.10.0"
+SRCREV = "31966f5494ed82268c414b04b63b20e88d4fff16"
 
 PACKAGECONFIG[grapheme-clustering] = "-Dgrapheme-clustering=enabled,-Dgrapheme-clustering=disabled,utf8proc"
 PACKAGECONFIG[docs] = "-Ddocs=enabled,-Ddocs=disabled,scdoc-native"
+PACKAGECONFIG[themes] = "-Dthemes=true,-Dthemes=false"
 
 PACKAGECONFIG ?= " \
 	grapheme-clustering \
+	themes \
 "
 
 EXTRA_OEMESON += "--buildtype=release -Dterminfo=disabled"
