@@ -6,8 +6,6 @@ LICENSE = "MIT"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3a7351a597a91e763901f7c76f21e798"
 
-REQUIRED_DISTRO_FEATURES = "wayland"
-
 DEPENDS = " \
 	fcft \
 	fontconfig \
@@ -42,6 +40,7 @@ EXTRA_OEMESON += "--buildtype=release -Dterminfo=disabled"
 
 # Hack! tic from ncurses-native fails to generate the terminfo files. Use hosts tic instead. 
 # ncurses-bin needs to be installed.
+# TODO: ncurses 6.3 has included foot terminfo files. Remove Hack for builds newer than honister.
 do_install:append() {
 	sed -i "s|@default_terminfo@|foot|" ${S}/foot.info
 	sed -i "s|@default_terminfo-direct@|foot-direct|" ${S}/foot.info
@@ -49,7 +48,7 @@ do_install:append() {
 	/usr/bin/tic -o ${D}${datadir}/terminfo -x -e foot,foot-direct ${S}/foot.info
 }
 
-inherit meson pkgconfig features_check
+inherit meson pkgconfig
 
 FILES:${PN} = " \
 	${bindir} \
