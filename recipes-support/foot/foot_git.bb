@@ -16,7 +16,7 @@ DEPENDS = " \
 	wayland-native \
 "
 
-RRECOMMENDS:${PN} = "xdg-utils"
+RRECOMMENDS:${PN} = "ncurses-terminfo xdg-utils"
 
 SRC_URI = " \
 	git://codeberg.org/dnkl/foot.git;protocol=https;branch=master \
