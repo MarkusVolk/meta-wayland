@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 PV = "246.10"
 SRCREV = "${PV}"
 
-inherit meson
+inherit meson pkgconfig
 
 EXTRA_OEMESON += "--buildtype release"
 
