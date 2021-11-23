@@ -40,12 +40,12 @@ RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking"
 inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection
 
 SRC_URI = " \
-    git://github.com/GNOME/gimp.git;protocol=https \
+    git://github.com/GNOME/gimp.git;protocol=https;branch=master \
     file://0001-meson-make-gir-buildable.patch \
 "
 
 S = "${WORKDIR}/git"
-SRCREV = "GIMP_2_99_8"
+SRCREV = "44573c116aa891fb4810496794a37c5a1b0368ac"
 
 PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
 PACKAGECONFIG[alsa] = "-Dalsa=enabled,-Dalsa=disabled,alsa-lib"
@@ -59,6 +59,7 @@ PACKAGECONFIG[ghostscript] = "-Dghostscript=enabled,-Dghostscript=disabled,ghost
 PACKAGECONFIG[gtk-doc] = "-Dgtk-doc=true,-Dgtk-doc=false,gtk-doc-native"
 PACKAGECONFIG[gtk-doc-app] = "-Dgtk-doc-app=true,-Dgtk-doc-app=false,gtk-doc-native"
 PACKAGECONFIG[gudev] = "-Dgudev=enabled,-Dgudev=disabled,libgudev"
+PACKAGECONFIG[iso-codes] = ",,iso-codes"
 PACKAGECONFIG[javascript] = "-Djavascript=true,-Djavascript=false,,openjre-8"
 PACKAGECONFIG[jpeg2000] = "-Djpeg2000=enabled,-Djpeg2000=disabled,jasper"
 PACKAGECONFIG[jpeg] = ",,jpeg"
