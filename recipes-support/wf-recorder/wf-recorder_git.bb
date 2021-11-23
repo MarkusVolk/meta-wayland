@@ -16,7 +16,7 @@ DEPENDS = " \
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = " \
-	git://github.com/ammen99/wf-recorder.git;protocol=https \
+	git://github.com/ammen99/wf-recorder.git;protocol=https;branch=master \
 "
 SRCREV = "2a901365571de8b86a7eaf95fe9d0cd5a5645579"
 

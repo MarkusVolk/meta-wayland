@@ -17,7 +17,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-	git://github.com/swaywm/swaybg.git;protocol=https \
+	git://github.com/swaywm/swaybg.git;protocol=https;branch=master \
 "
 
 # Reproducibility issue. Fix me!

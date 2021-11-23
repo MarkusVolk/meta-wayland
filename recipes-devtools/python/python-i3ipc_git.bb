@@ -3,7 +3,7 @@ LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3961efb54421653518521529853444c4"
 
 SRC_URI = " \
-	git://github.com/altdesktop/i3ipc-python.git;protocol=https \
+	git://github.com/altdesktop/i3ipc-python.git;protocol=https;branch=master \
 "
 
 RDEPENDS:${PN} = " \

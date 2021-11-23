@@ -15,7 +15,7 @@ DEPENDS += " \
 	wayland-protocols \
 "
 
-SRC_URI = "git://github.com/bugaevc/wl-clipboard.git;protocol=https"
+SRC_URI = "git://github.com/bugaevc/wl-clipboard.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "2.0+${SRCREV}"

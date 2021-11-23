@@ -6,7 +6,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.md;md5=97fe1c51de5d175e7564531e7955381d"
 
 SRC_URI = " \
-	git://github.com/JuliaStrings/utf8proc.git;protocol=https \
+	git://github.com/JuliaStrings/utf8proc.git;protocol=https;branch=master \
 "
 
 S = "${WORKDIR}/git"

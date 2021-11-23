@@ -35,7 +35,7 @@ PACKAGECONFIG ?= " \
 	rsvg \
 "
 
-SRC_URI = "git://github.com/eXeC64/imv.git;protocol=https"
+SRC_URI = "git://github.com/eXeC64/imv.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "4.3.0"

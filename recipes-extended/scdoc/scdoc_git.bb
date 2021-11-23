@@ -6,7 +6,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING;md5=31752b4a8edd3fb9ddba1cb90fada74d"
 
 SRC_URI = " \
-	git://github.com/ddevault/scdoc.git;protocol=https \
+	git://github.com/ddevault/scdoc.git;protocol=https;branch=master \
 "
 
 DEPENDS = "scdoc-native"

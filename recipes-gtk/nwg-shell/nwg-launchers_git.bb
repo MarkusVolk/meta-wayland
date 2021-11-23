@@ -25,7 +25,7 @@ PACKAGECONFIG ?= " \
 "
 
 SRC_URI = " \
-	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https \
+	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https;branch=master \
 "
 SRCREV = "v${PV}"
 PV = "0.6.3"

@@ -14,7 +14,7 @@ DEPENDS += " \
 	wayland-native \
 "
 
-SRC_URI = "git://github.com/wmww/gtk-layer-shell.git;protocol=https"
+SRC_URI = "git://github.com/wmww/gtk-layer-shell.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "0.6.0+${SRCREV}"

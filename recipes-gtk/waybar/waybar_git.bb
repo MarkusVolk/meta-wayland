@@ -49,7 +49,7 @@ RRECOMMENDS:${PN} += " \
 	font-awesome-otf \
 "
 
-SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https"
+SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "0.9.8+${SRCREV}"

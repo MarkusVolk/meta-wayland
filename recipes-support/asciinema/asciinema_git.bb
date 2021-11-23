@@ -3,7 +3,7 @@ LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 
 SRC_URI = " \
-	git://github.com/asciinema/asciinema.git;protocol=https \
+	git://github.com/asciinema/asciinema.git;protocol=https;branch=master \
 "
 
 RDEPENDS:${PN} = " \

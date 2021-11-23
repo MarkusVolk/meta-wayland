@@ -7,7 +7,7 @@ LICENSE = "OFL-1.1"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=2e3494502db283e8891d4886fe445912"
 
 SRC_URI = " \
-	git://github.com/FortAwesome/Font-Awesome.git;protocol=https \
+	git://github.com/FortAwesome/Font-Awesome.git;protocol=https;branch=master \
 "
 
 S = "${WORKDIR}/git"

@@ -14,7 +14,7 @@ RRECOMMENDS:${PN} = " \
 
 GO_IMPORT = "github.com/nwg-piotr/nwg-drawer.git"
 
-SRC_URI = "git://${GO_IMPORT};nobranch=1"
+SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
 PV = "0.2.1"
 SRCREV = "v${PV}"

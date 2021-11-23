@@ -9,7 +9,7 @@ DEPENDS = " \
 
 GO_IMPORT = "github.com/nwg-piotr/nwg-dock.git"
 
-SRC_URI = "git://${GO_IMPORT};nobranch=1"
+SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
 PV = "0.2.0"
 SRCREV = "v${PV}"

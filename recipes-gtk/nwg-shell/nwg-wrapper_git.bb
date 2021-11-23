@@ -3,7 +3,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=fffa55ad1c828db5e334374fb1182530"
 
 SRC_URI = " \
-	git://github.com/nwg-piotr/nwg-wrapper.git;protocol=https \
+	git://github.com/nwg-piotr/nwg-wrapper.git;protocol=https;branch=master \
 "
 
 DEPENDS = "python3"

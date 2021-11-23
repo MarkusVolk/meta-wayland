@@ -7,7 +7,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3a7351a597a91e763901f7c76f21e798"
 
 SRC_URI = " \
-	git://codeberg.org/dnkl/tllist.git;protocol=https \
+	git://codeberg.org/dnkl/tllist.git;protocol=https;branch=master \
 "
 
 S = "${WORKDIR}/git"

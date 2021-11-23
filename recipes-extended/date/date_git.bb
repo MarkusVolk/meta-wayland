@@ -6,7 +6,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=b5d973344b3c7bbf7535f0e6e002d017"
 
 SRC_URI = " \
-	git://github.com/HowardHinnant/date.git;protocol=https \
+	git://github.com/HowardHinnant/date.git;protocol=https;branch=master \
 	file://date.pc \	
 "
 

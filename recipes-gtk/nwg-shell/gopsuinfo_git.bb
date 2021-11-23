@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = "file://src/${GO_IMPORT}/LICENSE;md5=22ed6cb3c33862e689e075b4
 
 GO_IMPORT = "github.com/nwg-piotr/gopsuinfo.git"
 
-SRC_URI = "git://${GO_IMPORT};branch=main"
+SRC_URI = "git://${GO_IMPORT};branch=main;protocol=https"
 
 SRCREV = "838b4893f48924bb03f5124701754836562d090a"
 

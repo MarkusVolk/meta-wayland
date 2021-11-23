@@ -3,7 +3,7 @@ LICENSE = "WTFPL"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/WTFPL;md5=7993e3336259bdb618ad5a1afc872165"
 
 SRC_URI = " \
-	git://github.com/ammgws/autotiling-rs.git;protocol=https \
+	git://github.com/ammgws/autotiling-rs.git;protocol=https;branch=master \
 	crate://crates.io/clap/2.33.3 \
 	crate://crates.io/swayipc/2.7.2 \
 	crate://crates.io/bitflags/1.2.1 \

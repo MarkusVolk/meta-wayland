@@ -18,7 +18,7 @@ DEPENDS += " \
 	wayland-protocols \
            "
 
-SRC_URI = "git://github.com/emersion/grim.git;protocol=https"
+SRC_URI = "git://github.com/emersion/grim.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "1.3.2"

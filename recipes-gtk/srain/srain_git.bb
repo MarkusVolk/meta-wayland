@@ -16,12 +16,12 @@ DEPENDS = " \
     libsecret \
 "
 
-UNKNOWN_CONFIGURE_WHITELIST:append = " introspection"
+GIR_MESON_OPTION = ""
 
 inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection
 
 SRC_URI = " \
-    git://github.com/SrainApp/srain.git;protocol=https \
+    git://github.com/SrainApp/srain.git;protocol=https;branch=master \
 "
 
 S = "${WORKDIR}/git"

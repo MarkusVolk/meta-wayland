@@ -6,7 +6,7 @@ SECTION = "libs"
 LICENSE = "BSD-0-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=715a99d2dd552e6188e74d4ed2914d5a"
 
-SRC_URI = "git://git.sr.ht/~kennylevinsen/seatd;protocol=https"
+SRC_URI = "git://git.sr.ht/~kennylevinsen/seatd;protocol=https;branch=master"
 
 PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,elogind"

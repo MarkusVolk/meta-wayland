@@ -14,7 +14,7 @@ DEPENDS += " \
 	wayland-protocols \
 "
 
-SRC_URI = "git://github.com/kennylevinsen/wlsunset.git;protocol=https"
+SRC_URI = "git://github.com/kennylevinsen/wlsunset.git;protocol=https;branch=master"
 
 PACKAGECONFIG[man-pages] = ",,scdoc-native"
 

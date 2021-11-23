@@ -4,7 +4,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=c1b51aaede0be292f946ef75b6759e6c"
 
 
-SRC_URI = "git://github.com/nyyManni/dmenu-wayland.git;protocol=https \
+SRC_URI = "git://github.com/nyyManni/dmenu-wayland.git;protocol=https;branch=master \
 "
 
 DEPENDS = " \

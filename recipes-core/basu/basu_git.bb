@@ -4,7 +4,7 @@ SECTION = "base"
 LICENSE = "LGPL-2.1"
 LIC_FILES_CHKSUM = "file://LICENSE.LGPL2.1;md5=4fbd65380cdd255951079008b364516c"
 
-SRC_URI = "git://github.com/emersion/basu.git;protocol=https"
+SRC_URI = "git://github.com/emersion/basu.git;protocol=https;branch=master"
 
 DEPENDS += "gperf-native libcap"
 

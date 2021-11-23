@@ -17,7 +17,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-	git://github.com/swaywm/swaylock.git;protocol=https \
+	git://github.com/swaywm/swaylock.git;protocol=https;branch=master \
 "
 
 S = "${WORKDIR}/git"

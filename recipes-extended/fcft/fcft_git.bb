@@ -16,7 +16,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-	git://codeberg.org/dnkl/fcft.git;protocol=https \
+	git://codeberg.org/dnkl/fcft.git;protocol=https;branch=master \
 "
 
 S = "${WORKDIR}/git"

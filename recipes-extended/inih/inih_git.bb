@@ -6,7 +6,7 @@ LICENSE = "BSD-3-Clause"
 
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=a7a95d2af90376e85a05318794e6f202"
 
-SRC_URI = "git://github.com/benhoyt/inih.git;protocol=https"
+SRC_URI = "git://github.com/benhoyt/inih.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "53"
