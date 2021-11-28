@@ -13,6 +13,6 @@ RDEPENDS:${PN} = "python-i3ipc"
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "1.5"
+PV = "1.6"
 SRCREV = "v${PV}"
 
