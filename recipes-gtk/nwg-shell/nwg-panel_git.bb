@@ -17,12 +17,8 @@ RDEPENDS:${PN} = "\
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "0.4.3"
+PV = "0.5.0"
 SRCREV = "v${PV}"
-
-do_install:append() {
-	rm  ${D}${libdir}/python3.9/site-packages/nwg_panel/executors/arch_updates.py
-}
 
 INSANE_SKIP:${PN} = "file-rdeps"
 
