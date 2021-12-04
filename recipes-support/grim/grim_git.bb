@@ -16,7 +16,7 @@ DEPENDS += " \
 	wayland \
 	wayland-native \
 	wayland-protocols \
-           "
+"
 
 SRC_URI = "git://github.com/emersion/grim.git;protocol=https;branch=master"
 
@@ -26,7 +26,7 @@ SRCREV = "v${PV}"
 
 inherit meson pkgconfig features_check
 
-EXTRA_OEMESON += "--buildtype release"
+EXTRA_OEMESON = "--buildtype release"
 
 BBCLASSEXTEND = ""
 
