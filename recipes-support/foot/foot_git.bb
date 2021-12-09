@@ -23,7 +23,7 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.10.2"
+PV = "1.10.3"
 SRCREV = "${PV}"
 
 PACKAGECONFIG[grapheme-clustering] = "-Dgrapheme-clustering=enabled,-Dgrapheme-clustering=disabled,utf8proc"
