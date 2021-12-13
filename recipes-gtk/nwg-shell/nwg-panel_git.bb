@@ -17,7 +17,7 @@ RDEPENDS:${PN} = "\
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "0.5.0"
+PV = "0.5.1"
 SRCREV = "v${PV}"
 
 do_install:append() {
