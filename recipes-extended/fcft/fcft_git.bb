@@ -12,7 +12,6 @@ DEPENDS = " \
 	harfbuzz \
 	pixman \
 	tllist \
-	scdoc-native \
 "
 
 SRC_URI = " \
@@ -20,11 +19,12 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "2.5.0"
+PV = "2.5.1"
 SRCREV = "${PV}"
 
 inherit meson pkgconfig
 
+PACKAGECONFIG[docs] = "-Ddocs=enabled,-Ddocs=disabled,scdoc-native"
 PACKAGECONFIG[grapheme-shaping] = "-Dgrapheme-shaping=enabled,-Dgrapheme-shaping=disabled,utf8proc"
 PACKAGECONFIG[run-shaping] = "-Drun-shaping=enabled,-Drun-shaping=disabled,utf8proc"
 
