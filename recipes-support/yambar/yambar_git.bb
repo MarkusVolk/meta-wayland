@@ -7,7 +7,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=00b01b6aa1e1a7130832b0178f8d7485"
 
 SRC_URI = " \
-	git://codeberg.org/dnkl/yambar.git;protocol=https;branch=releases/1.6 \
+	git://codeberg.org/dnkl/yambar.git;protocol=https;branch=master \
 "
 
 DEPENDS = " \
@@ -28,13 +28,15 @@ RRECOMMENDS:${PN} += " \
 inherit meson pkgconfig
 
 S = "${WORKDIR}/git"
-PV = "1.6.2"
-SRCREV = "${PV}"
+PV = "1.7.0"
+SRCREV = "f71e7c29053fdfac5c28d02b8ab673fa8938f006"
 
 PACKAGECONFIG[wayland] = "-Dbackend-wayland=enabled,-Dbackend-wayland=disabled,wayland wayland-native wayland-protocols"
 PACKAGECONFIG[x11] = "-Dbackend-x11=enabled,-Dbackend-x11=disabled,xcb-util xcb-util-cursor xcb-util-wm libxcb"
 PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,eudev"
+PACKAGECONFIG[mpd] = "-Dplugin-mpd=enabled,-Dplugin-mpd=disabled,libmpdclient"
+PACKAGECONFIG[shared-plugins] = "-Dcore-plugins-as-shared-libraries=true,-Dcore-plugins-as-shared-libraries=false"
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'wayland', d)} \
