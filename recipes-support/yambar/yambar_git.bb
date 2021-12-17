@@ -16,7 +16,6 @@ DEPENDS = " \
 	tllist \
 	pixman \
 	json-c \
-	libmpdclient \
 	alsa-lib \
 	scdoc-native \
 "
