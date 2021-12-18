@@ -28,6 +28,7 @@ DEPENDS += " \
 
 PACKAGECONFIG[bluetooth] = "-Drfkill=enabled,-Drfkill=disabled"
 PACKAGECONFIG[date] = ",,date"
+PACKAGECONFIG[experimental] = "-Dexperimental=true,-Dexperimental=false"
 PACKAGECONFIG[pulseaudio] = ",,pulseaudio"
 PACKAGECONFIG[gtk-layer-shell] = ",,gtk-layer-shell"
 PACKAGECONFIG[mpd] = ",,libmpdclient"
@@ -53,7 +54,7 @@ SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "0.9.8+${SRCREV}"
-SRCREV = "6eb9606f239418d225c7367f9e0f44adca764f3c"
+SRCREV = "b6e24bd527f365921905b8fee75131df7d993a26"
 
 inherit meson pkgconfig features_check
 
