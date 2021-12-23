@@ -46,11 +46,13 @@ S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
 
-PACKAGECONFIG[default-wallpaper] = "-Ddefault-wallpaper=true,-Ddefault-wallpaper=false"
-PACKAGECONFIG[gdk-pixbuf] = "-Dgdk-pixbuf=enabled,-Dgdk-pixbuf=disabled,gdk-pixbuf"
-PACKAGECONFIG[systemd] = "-Dsd-bus-provider=libsystemd,,systemd"
-PACKAGECONFIG[elogind] = "-Dsd-bus-provider=libelogind,,elogind"
 PACKAGECONFIG[basu] = "-Dsd-bus-provider=basu,,basu"
+PACKAGECONFIG[default-wallpaper] = "-Ddefault-wallpaper=true,-Ddefault-wallpaper=false"
+PACKAGECONFIG[elogind] = "-Dsd-bus-provider=libelogind,,elogind"
+PACKAGECONFIG[gdk-pixbuf] = "-Dgdk-pixbuf=enabled,-Dgdk-pixbuf=disabled,gdk-pixbuf"
+PACKAGECONFIG[swaybar] = "-Dswaybar=true,-Dswaybar=false"
+PACKAGECONFIG[swaynag] = "-Dswaynag=true,-Dswaynag=false"
+PACKAGECONFIG[systemd] = "-Dsd-bus-provider=libsystemd,,systemd"
 PACKAGECONFIG[tray] = "-Dtray=enabled,-Dtray=disabled"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,libxcb"
 

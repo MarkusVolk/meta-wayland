@@ -21,15 +21,15 @@ DEPENDS += " \
 	wayland-protocols \
 "
 
+PACKAGECONFIG[examples] = "-Dexamples=true,-Dexamples=false"
+PACKAGECONFIG[gles] = ",,virtual/egl virtual/libgles2"
 PACKAGECONFIG[libdrm] = ",,libdrm"
 PACKAGECONFIG[libinput] = ",,libinput"
-PACKAGECONFIG[gles] = ",,virtual/egl virtual/libgles2"
 PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,eudev"
 PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang glslang-native"
 PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xserver-xorg xcb-util-wm"
-PACKAGECONFIG[examples] = "-Dexamples=true,-Dexamples=false"
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
