@@ -37,11 +37,11 @@ RRECOMMENDS:${PN} ?= " \
 "
 
 SRC_URI = " \
-	git://github.com/swaywm/sway.git;protocol=https;branch=master \
+	git://github.com/swaywm/sway.git;protocol=https;branch=v1.7 \
 "
 
-SRCREV = "9ecbfe366596f627e843886d94e47097e19df5d5"
-PV = "1.6.1+${SRCREV}"
+SRCREV = "${PV}"
+PV = "1.7-rc1"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
