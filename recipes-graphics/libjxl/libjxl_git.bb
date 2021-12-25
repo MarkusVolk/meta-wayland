@@ -31,4 +31,7 @@ EXTRA_OECMAKE = " \
 	-DJPEGXL_ENABLE_JNI=OFF \
 	-DJPEGXL_ENABLE_TCMALLOC=OFF \
 	-DJPEGXL_ENABLE_TOOLS=OFF \
-"	
+"
+
+CXXFLAGS:append:arm = " -mfp16-format=ieee"
+ 
