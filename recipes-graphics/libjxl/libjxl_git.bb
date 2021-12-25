@@ -12,7 +12,7 @@ SRC_URI = " \
     gitsm://github.com/libjxl/libjxl.git;protocol=https;branch=v0.6.x \
 "
 
-PV = "0.6"
+PV = "0.6.1"
 SRCREV = "v${PV}"
 S = "${WORKDIR}/git"
 
