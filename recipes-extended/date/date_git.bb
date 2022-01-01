@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=b5d973344b3c7bbf7535f0e6e002d017"
 
 SRC_URI = " \
 	git://github.com/HowardHinnant/date.git;protocol=https;branch=master \
-	file://date.pc \	
+	file://pkgconfig.patch \
 "
 
 S = "${WORKDIR}/git"
@@ -23,10 +23,4 @@ EXTRA_OECMAKE += " \
 	-DBUILD_SHARED_LIBS=ON \
 	-DUSE_SYSTEM_TZ_DB=ON \
 "
-
-do_install:append() {
-	# source lacks pkgconfig support. Include a pc file, so 'date' can be found using pkgconfig
-	install -d ${D}${libdir}/pkgconfig
-	install -m 0644 ${WORKDIR}/date.pc ${D}${libdir}/pkgconfig
-}
 	
