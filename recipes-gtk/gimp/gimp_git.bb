@@ -27,6 +27,7 @@ DEPENDS = " \
     libarchive \
     libexif \
     libmypaint \
+    libpng \
     libxslt-native \
     mypaint-brushes-1.0 \
     pango \
@@ -38,14 +39,15 @@ DEPENDS:append:libc-musl = " libexecinfo"
 RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking"
 
 inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection
+GIR_MESON_OPTION = ''
 
 SRC_URI = " \
     git://github.com/GNOME/gimp.git;protocol=https;branch=master \
-    file://0001-meson-make-gir-buildable.patch \
 "
 
 S = "${WORKDIR}/git"
-SRCREV = "44573c116aa891fb4810496794a37c5a1b0368ac"
+SRCREV = "1858d72d032a0bd4ccb26b62f3e8c8310b9f61f6"
+PV = "2.99.9"
 
 PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
 PACKAGECONFIG[alsa] = "-Dalsa=enabled,-Dalsa=disabled,alsa-lib"
@@ -56,8 +58,7 @@ PACKAGECONFIG[check-update] = "-Dcheck-update=yes,-Dcheck-update=no"
 PACKAGECONFIG[email] = ",,,xdg-utils"
 PACKAGECONFIG[enable-console-bin] = "-Denable-console-bin=true,-Denable-console-bin=false"
 PACKAGECONFIG[ghostscript] = "-Dghostscript=enabled,-Dghostscript=disabled,ghostscript"
-PACKAGECONFIG[gtk-doc] = "-Dgtk-doc=true,-Dgtk-doc=false,gtk-doc-native"
-PACKAGECONFIG[gtk-doc-app] = "-Dgtk-doc-app=true,-Dgtk-doc-app=false,gtk-doc-native"
+PACKAGECONFIG[gi-docgen] = "-Dgi-docgen=enabled,-Dgi-docgen=disabled,gi-docgen-native"
 PACKAGECONFIG[gudev] = "-Dgudev=enabled,-Dgudev=disabled,libgudev"
 PACKAGECONFIG[iso-codes] = ",,iso-codes"
 PACKAGECONFIG[javascript] = "-Djavascript=true,-Djavascript=false,,openjre-8"
@@ -69,13 +70,11 @@ PACKAGECONFIG[libbacktrace] = ",,libbacktrace"
 PACKAGECONFIG[lua] = "-Dlua=true,-Dlua=false,,luajit lgi"
 PACKAGECONFIG[lzma] = ",,xz"
 PACKAGECONFIG[mng] = "-Dmng=enabled,-Dmng=disabled,libmng"
-PACKAGECONFIG[png] = "-Dpng=enabled,-Dpng=disabled,libpng"
 PACKAGECONFIG[python] = "-Dpython=true,-Dpython=false,,python3 python3-pygobject"
 PACKAGECONFIG[rsvg] = ",,librsvg"
 PACKAGECONFIG[tiff] = ",,tiff"
 PACKAGECONFIG[vala-plugins] = "-Dvala-plugins=enabled,-Dvala-plugins=disabled"
 PACKAGECONFIG[vec-icons] = "-Dvec-icons=true,-Dvec-icons=false,librsvg shared-mime-info"
-PACKAGECONFIG[webkit] = "-Dwebkit=enabled,-Dwebkit=disabled,webkitgtk"
 PACKAGECONFIG[webp] = "-Dwebp=enabled,-Dwebp=disabled,libwebp"
 PACKAGECONFIG[xcursor] = "-Dxcursor=enabled,-Dxcursor=disabled,libxcursor"
 PACKAGECONFIG[x11] = "-Dxpm=enabled,-Dxpm=disabled,libxpm libxmu libxext libxfixes"
@@ -87,7 +86,7 @@ PACKAGECONFIG ?= " \
     alsa \
     bzip2 \
     cairo-pdf \
-    gtk-doc-app \
+    gi-docgen \
     gudev \
     jpeg \
     jpeg2000 \
@@ -95,7 +94,6 @@ PACKAGECONFIG ?= " \
     lua \
     lzma \
     mng \
-    png \
     python \
     rsvg \
     tiff \
@@ -114,6 +112,7 @@ FILES:${PN} += " \
 EXTRA_OEMESON += " \
     -Dshmem-type=posix \
     -Dlinux-input=enabled \
+    -Dcan-crosscompile-gir=true \
     --buildtype release \
 "
 
