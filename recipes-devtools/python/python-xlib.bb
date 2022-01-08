@@ -22,3 +22,5 @@ S = "${WORKDIR}/git"
 PV = "0.31"
 SRCREV = "${PV}"
 
+do_compile[network] = "1"
+
