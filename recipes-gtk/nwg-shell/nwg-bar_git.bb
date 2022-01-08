@@ -24,3 +24,5 @@ do_install:append() {
 	rm -r ${D}${libdir}/go/src/${GO_IMPORT}/bin
 }
 
+do_compile[network] = "1"
+

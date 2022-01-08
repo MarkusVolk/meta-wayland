@@ -29,3 +29,5 @@ do_install:append() {
 	rm -r ${D}${libdir}/go/pkg/mod/github.com/dlasky/gotk3-layershell*/example
 }
 
+do_compile[network] = "1"
+
