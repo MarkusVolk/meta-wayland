@@ -26,7 +26,7 @@ DEPENDS += " \
 	wayland-protocols \
 "
 # sways default config makes use of it
-RDEPENDS:${PN} ?= "swaybg"
+RDEPENDS:${PN} ?= "swaybg python3 python-i3ipc"
 
 RRECOMMENDS:${PN} ?= " \
 	foot \
@@ -68,6 +68,8 @@ EXTRA_OEMESON += "--buildtype release"
 
 do_install:append() {
 	install -m 755 ${S}/contrib/grimshot ${D}${bindir}
+	install -m 755 ${S}/contrib/autoname-workspaces.py ${D}${bindir}
+	install -m 755 ${S}/contrib/inactive-windows-transparency.py ${D}${bindir}
 }
 
 FILES:${PN}:append = " \
