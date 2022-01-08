@@ -21,7 +21,7 @@ SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 PV = "0.1.1"
 SRCREV = "v${PV}"
 
-inherit go go-mod
+inherit go go-mod pkgconfig
 
 GO_INSTALL = "${GO_IMPORT}"
 
