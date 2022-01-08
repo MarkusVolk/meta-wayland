@@ -9,7 +9,7 @@ inherit cmake pkgconfig
 DEPENDS = "highway brotli"
 
 SRC_URI = " \
-    gitsm://github.com/libjxl/libjxl.git;protocol=https;branch=v0.6.x \
+    gitsm://github.com/libjxl/libjxl.git;protocol=https;nobranch=1 \
 "
 
 PV = "0.6.1"
@@ -34,4 +34,6 @@ EXTRA_OECMAKE = " \
 "
 
 CXXFLAGS:append:arm = " -mfp16-format=ieee"
+ 
+do_compile[network] = "1"
  
