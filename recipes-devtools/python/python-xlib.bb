@@ -8,7 +8,7 @@ SRC_URI = " \
 
 DEPENDS = " \
 	python3-wheel-native \
-	python3-pip-native \
+	python3-setuptools-scm-native \
 "
 
 RDEPENDS:${PN} = " \
@@ -21,6 +21,4 @@ inherit setuptools3
 S = "${WORKDIR}/git"
 PV = "0.31"
 SRCREV = "${PV}"
-
-do_compile[network] = "1"
 
