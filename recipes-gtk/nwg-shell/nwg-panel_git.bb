@@ -7,6 +7,7 @@ SRC_URI = " \
 "
 
 RDEPENDS:${PN} = "\
+	bash \
 	light \
 	python3 \
 	python3-pygobject \
@@ -19,10 +20,4 @@ inherit setuptools3
 S = "${WORKDIR}/git"
 PV = "0.5.5"
 SRCREV = "v${PV}"
-
-do_install:append() {
-	rm  ${D}${libdir}/python*/site-packages/nwg_panel/executors/arch_updates.py
-}
-
-INSANE_SKIP:${PN} = "file-rdeps"
 
