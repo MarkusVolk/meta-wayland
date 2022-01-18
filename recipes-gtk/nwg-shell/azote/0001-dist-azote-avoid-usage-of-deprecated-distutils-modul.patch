@@ -1,0 +1,27 @@
+From 9522acf9af582148ab85062f3647965ee5caa778 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Sat, 15 Jan 2022 18:05:08 +0100
+Subject: [PATCH] dist/azote: avoid usage of deprecated distutils module
+
+The distutils module has been depecated in python 3.10.
+Make use of sysconfig instead
+
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+---
+ dist/azote | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dist/azote b/dist/azote
+index b0bf0f0..6674ec9 100755
+--- a/dist/azote
++++ b/dist/azote
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+ 
+-LIB=$( python3 -Ic "from distutils.sysconfig import get_python_lib; print(get_python_lib())" )
++LIB=$(python3 -Ic "from sysconfig import get_path; print(get_path('platlib'))")
+ cd $LIB/azote
+ exec /usr/bin/python3 main.py "$@"
+-- 
+2.25.1
+
