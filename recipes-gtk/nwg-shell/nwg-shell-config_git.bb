@@ -8,6 +8,8 @@ SRC_URI = " \
 
 RDEPENDS:${PN} = "\
 	python3 \
+	python3-geopy \
+	python-i3ipc \
 	python3-pygobject \
 "
 
