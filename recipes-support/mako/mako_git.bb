@@ -9,7 +9,6 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = " \
 	git://github.com/emersion/mako.git;protocol=https;branch=master \
-	file://0001-meson.build-fix-scdoc-not-to-be-found.patch \
 "
 
 DEPENDS = " \
@@ -41,7 +40,7 @@ PACKAGECONFIG ?= " \
 
 S = "${WORKDIR}/git"
 PV = "1.6"
-SRCREV = "v${PV}"
+SRCREV = "ddc1849804c8703ec749140e3a55febb5250e934"
 
 EXTRA_OEMESON += "--buildtype release"
 
