@@ -4,7 +4,6 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
 SRC_URI = " \
 	git://github.com/nwg-piotr/azote.git;protocol=https;branch=master \
-	file://0001-dist-azote-avoid-usage-of-deprecated-distutils-modul.patch \
 "
 
 RDEPENDS:${PN} = " \
@@ -25,7 +24,7 @@ inherit setuptools3
 
 S = "${WORKDIR}/git"
 PV = "1.9.1"
-SRCREV = "v${PV}"
+SRCREV = "c4ccd502c27fa6eb801a7b2b0636aed09e8c4a12"
 
 do_install:append() {
 	install -d ${D}${bindir} ${D}${datadir}/azote ${D}${datadir}/pixmaps ${D}${datadir}/applications
