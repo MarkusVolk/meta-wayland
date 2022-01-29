@@ -11,11 +11,12 @@ RDEPENDS:${PN} = "\
 	python3-geopy \
 	python-i3ipc \
 	python3-pygobject \
+	swaync \
 "
 
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "0.1.5"
-SRCREV = "v${PV}"
+PV = "0.2.0"
+SRCREV = "45921a1021350af1f80c59e6f497494f97da5ab7"
 
