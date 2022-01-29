@@ -13,11 +13,12 @@ RDEPENDS:${PN} = "\
 	python3-pygobject \
 	python3-psutil \
 	python-i3ipc \
+	swaync \
 "
 
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "0.5.5"
-SRCREV = "v${PV}"
+PV = "0.6.0"
+SRCREV = "b1072ef51bc11dda16f67d61d8bf0eaf3e90e991"
 
