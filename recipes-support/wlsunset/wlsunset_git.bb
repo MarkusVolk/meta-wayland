@@ -1,6 +1,6 @@
 SUMMARY = "Day/night gamma adjustments for Wayland compositors supporting wlr-gamma-control-unstable-v1."
-HOMEPAGE = "https://github.com/kennylevinsen/wlsunset"
-BUGTRACKER = "https://github.com/kennylevinsen/wlsunset/issues"
+HOMEPAGE = "https://git.sr.ht/~kennylevinsen/wlsunset"
+BUGTRACKER = "https://git.sr.ht/~kennylevinsen/wlsunset/issues"
 SECTION = "base/shell"
 LICENSE = "MIT"
 
@@ -14,14 +14,14 @@ DEPENDS += " \
 	wayland-protocols \
 "
 
-SRC_URI = "git://github.com/kennylevinsen/wlsunset.git;protocol=https;branch=master"
+SRC_URI = "git://git.sr.ht/~kennylevinsen/wlsunset;protocol=https;nobranch=1"
 
 PACKAGECONFIG[man-pages] = ",,scdoc-native"
 
 
 S = "${WORKDIR}/git"
 PV = "0.2.0"
-SRCREV = "${PV}"
+SRCREV = "2e7d793bb6b0e21319940d476ca27242f60e3cd6"
 
 inherit meson pkgconfig features_check
 

@@ -12,7 +12,7 @@ inherit meson
 
 S = "${WORKDIR}/git"
 PV = "23"
-SRCREV = "${PV}"
+SRCREV = "d377218338b706ce3ff517a80fc0f1b1cfd8fe80"
 
 EXTRA_OEMESON += "--buildtype release"
 

@@ -23,7 +23,7 @@ SRC_URI = "git://github.com/emersion/slurp.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "1.3.2"
-SRCREV = "v${PV}"
+SRCREV = "f4e75594c3234519fe8b795a1163dfa31d2e7f3a"
 
 inherit meson pkgconfig features_check
 

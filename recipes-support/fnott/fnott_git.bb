@@ -34,7 +34,7 @@ inherit meson pkgconfig features_check
 
 S = "${WORKDIR}/git"
 PV = "1.1.0"
-SRCREV = "${PV}"
+SRCREV = "5009c7c733386211022c0d9e1c00232ec8fb3921"
 
 EXTRA_OEMESON += "--buildtype release"
 

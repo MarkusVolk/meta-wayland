@@ -10,7 +10,7 @@ SRC_URI = "git://github.com/benhoyt/inih.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "53"
-SRCREV = "r${PV}"
+SRCREV = "cb55f57d87ae840bd0f65dbe6bd22fa021a873a7"
 
 inherit meson pkgconfig
 

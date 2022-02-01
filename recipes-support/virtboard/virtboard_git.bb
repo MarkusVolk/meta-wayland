@@ -25,7 +25,7 @@ inherit meson pkgconfig gtk-icon-cache features_check
 
 S = "${WORKDIR}/git"
 PV = "0.0.6"
-SRCREV = "v${PV}"
+SRCREV = "2d30762e546b7f2a165fed094c58b3d0fda30ff6"
 
 FILES:${PN} += "${datadir}"
 

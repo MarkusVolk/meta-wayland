@@ -11,7 +11,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=e316e9609dd7672b87ff25b46b2cf3e1"
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
-	cairo \
+	pixman \
+	libpng \
 	jpeg \	
 	wayland \
 	wayland-native \
@@ -22,7 +23,7 @@ SRC_URI = "git://github.com/emersion/grim.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "1.3.2"
-SRCREV = "v${PV}"
+SRCREV = "20c7c47a0aac09371c570c060f5f52f7e165e67a"
 
 inherit meson pkgconfig features_check
 

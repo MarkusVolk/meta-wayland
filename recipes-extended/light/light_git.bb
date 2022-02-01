@@ -10,7 +10,7 @@ SRC_URI = " \
 
 S = "${WORKDIR}/git"
 PV = "1.2.2"
-SRCREV = "v${PV}"
+SRCREV = "9faa9ae075f9e857aecb3eee8a028fc93108f1c2"
 
 CFLAGS += " -fcommon"
 

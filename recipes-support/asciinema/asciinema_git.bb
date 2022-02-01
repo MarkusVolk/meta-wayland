@@ -14,5 +14,5 @@ inherit setuptools3
 
 S = "${WORKDIR}/git"
 PV = "2.1.0"
-SRCREV = "v${PV}"
+SRCREV = "e08109f99a589d7d6e7ecf68fd93f731976ed61f"
 

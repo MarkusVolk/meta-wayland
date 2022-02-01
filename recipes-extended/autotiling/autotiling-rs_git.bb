@@ -35,5 +35,5 @@ inherit rust cargo
 
 S = "${WORKDIR}/git"
 PV = "0.1.3"
-SRCREV = "v${PV}"
+SRCREV = "d5b66b6cc23014aeda8da4c4fe561d366d9892b7"
 

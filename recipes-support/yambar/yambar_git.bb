@@ -28,7 +28,7 @@ inherit meson pkgconfig
 
 S = "${WORKDIR}/git"
 PV = "1.7.0"
-SRCREV = "f71e7c29053fdfac5c28d02b8ab673fa8938f006"
+SRCREV = "1d9297593e0d78d87a88e74aaed83c8cff285e5b"
 
 PACKAGECONFIG[wayland] = "-Dbackend-wayland=enabled,-Dbackend-wayland=disabled,wayland wayland-native wayland-protocols"
 PACKAGECONFIG[x11] = "-Dbackend-x11=enabled,-Dbackend-x11=disabled,xcb-util xcb-util-cursor xcb-util-wm libxcb"

@@ -13,7 +13,7 @@ GO_IMPORT = "github.com/nwg-piotr/nwg-bar.git"
 SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
 PV = "0.0.1"
-SRCREV = "v${PV}"
+SRCREV = "7dd7df3cd9a9e78fe477e88e0f3cb97309d50ff5"
 
 inherit go go-mod pkgconfig
 

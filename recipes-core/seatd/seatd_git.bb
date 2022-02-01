@@ -24,7 +24,7 @@ PACKAGECONFIG ?= " \
 
 S = "${WORKDIR}/git"
 PV = "0.6.3"
-SRCREV = "${PV}"
+SRCREV = "96a5de88595cb8ddc41a4beb72d213d1f8bfdc61"
 
 inherit meson pkgconfig
 

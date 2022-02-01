@@ -25,7 +25,7 @@ CFLAGS:append = " -Wno-error=date-time"
 
 S = "${WORKDIR}/git"
 PV = "1.1"
-SRCREV = "v${PV}"
+SRCREV = "e10d02c77e54cb035c625e255f0df208cb3c86a0"
 
 inherit meson pkgconfig features_check
 

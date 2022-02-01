@@ -13,7 +13,7 @@ SRC_URI = " \
 "
 
 PV = "0.6.1"
-SRCREV = "v${PV}"
+SRCREV = "a205468bc5d3a353fb15dae2398a101dff52f2d3"
 S = "${WORKDIR}/git"
 
 EXTRA_OECMAKE = " \
@@ -34,6 +34,4 @@ EXTRA_OECMAKE = " \
 "
 
 CXXFLAGS:append:arm = " -mfp16-format=ieee"
- 
-do_compile[network] = "1"
  

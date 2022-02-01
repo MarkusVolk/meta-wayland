@@ -26,7 +26,7 @@ PACKAGECONFIG ??= ""
 
 S = "${WORKDIR}/git"
 PV = "0.12"
-SRCREV = "${PV}"
+SRCREV = "16327f3c9902bd7ab7e74ffa757ce5847895bafc"
 
 EXTRA_OEMESON += "--buildtype release"
 

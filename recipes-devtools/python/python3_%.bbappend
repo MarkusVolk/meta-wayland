@@ -4,3 +4,7 @@ do_install:append:class-target() {
 
 FILES:${PN}:class-target += "${bindir}/python"
 
+RDEPENDS:${PN}-misc += "\
+  ${PN}-terminal \
+"
+

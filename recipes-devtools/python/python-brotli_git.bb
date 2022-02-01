@@ -11,7 +11,7 @@ SRC_URI = " \
 "
 
 PV = "1.0.9"
-SRCREV = "v${PV}"
+SRCREV = "e61745a6b7add50d380cfd7d3883dd6c62fc2c71"
 S = "${WORKDIR}/git"
 
 EXTRA_OECMAKE = "-DCMAKE_BUILD_TYPE=Release"
