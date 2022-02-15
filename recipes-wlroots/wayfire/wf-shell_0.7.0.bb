@@ -12,14 +12,13 @@ DEPENDS = " \
 	wayland-protocols \
 	wayfire \
 	gtkmm3 \
+	gtk-layer-shell \
 	wf-config \
 	pulseaudio \
 	libnotify3 \
 "
 
-DEPENDS:append:class-target = " gobject-introspection-native qemu-native prelink-native"
-
-REQUIRED_DISTRO_FEATURES = "wayland gobject-introspection-data"
+REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = " \
 	https://github.com/WayfireWM/wf-shell/releases/download/v${PV}/wf-shell-${PV}.tar.xz \
@@ -33,7 +32,7 @@ inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES:${PN} += "${prefix}"
+FILES:${PN} += "${datadir}"
 
 BBCLASSEXTEND = ""
 

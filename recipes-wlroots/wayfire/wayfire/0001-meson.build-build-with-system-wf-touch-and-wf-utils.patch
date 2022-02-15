@@ -1,0 +1,35 @@
+From b8ba62e91d30ede97478f66587300525c5d7bd7e Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Tue, 15 Feb 2022 01:40:30 +0100
+Subject: [PATCH] meson.build: build with system wf-touch and wf-utils
+
+---
+ meson.build | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index ab3652a8..a9f287e2 100644
+--- a/meson.build
++++ b/meson.build
+@@ -32,6 +32,8 @@ threads        = dependency('threads')
+ xkbcommon      = dependency('xkbcommon')
+ wlroots        = dependency('wlroots', version: ['>=0.15.0', '<0.16.0'], required: get_option('use_system_wlroots'))
+ wfconfig       = dependency('wf-config', version: ['>=0.7.0', '<0.8.0'], required: get_option('use_system_wfconfig'))
++wfutils        = dependency('wf-utils', version: '>=0.4.0')
++wftouch        = dependency('wf-touch')
+ 
+ use_system_wlroots = not get_option('use_system_wlroots').disabled() and wlroots.found()
+ if not use_system_wlroots
+@@ -43,9 +45,6 @@ if not use_system_wfconfig
+   wfconfig = subproject('wf-config').get_variable('wfconfig')
+ endif
+ 
+-wfutils = subproject('wf-utils').get_variable('wfutils')
+-wftouch = subproject('wf-touch').get_variable('wftouch')
+-
+ needs_libinotify = ['freebsd', 'dragonfly'].contains(host_machine.system())
+ libinotify       = dependency('libinotify', required: needs_libinotify)
+ 
+-- 
+2.25.1
+

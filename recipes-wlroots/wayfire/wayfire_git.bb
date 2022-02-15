@@ -20,17 +20,22 @@ DEPENDS += " \
 	libxkbcommon \
 	libxml2 \
 	mesa \
+	pango \
 	pixman \
 	seatd \
 	wayland \
 	wayland-native \
 	wayland-protocols \
+	wf-config \
+	wf-utils \
+	wf-touch \
 "
 
 RRECOMMENDS:${PN} += " \
-	wlroots \
 	wcm \
 	wf-config \
+	wf-touch \
+	wf-utils \
 	wf-recorder \
 	wf-shell \
 "
@@ -41,18 +46,25 @@ PACKAGECONFIG[use_system_wlroots] = "-Duse_system_wlroots=enabled,-Duse_system_w
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled"
 
 PACKAGECONFIG ?= " \
+	gles32 \
 	use_system_wfconfig \
 	use_system_wlroots \
 "
 
-SRC_URI = "git://github.com/WayfireWM/wayfire.git;protocol=https;branch=0.7.x"
-SRCREV = "9458f58959512222f3f154b40b0a48584033ca24"
+SRC_URI = " \
+	git://github.com/WayfireWM/wayfire.git;protocol=https;branch=0.7.x \
+	file://0001-meson.build-build-with-system-wf-touch-and-wf-utils.patch \
+"
+
+SRCREV = "835a7bf9bde4e78796f9fd9f14021476084a9728"
 PV = "0.7.2"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
+
+FILES:${PN} += "${datadir}"
 
 BBCLASSEXTEND = ""
 

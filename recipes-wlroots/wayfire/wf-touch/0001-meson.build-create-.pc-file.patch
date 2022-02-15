@@ -1,0 +1,28 @@
+From 78024c2654dab996d43f27aa3f3276360c357baa Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Tue, 15 Feb 2022 01:29:13 +0100
+Subject: [PATCH] meson.build: create .pc file
+
+---
+ meson.build | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/meson.build b/meson.build
+index 33dbb59..bd4172d 100644
+--- a/meson.build
++++ b/meson.build
+@@ -21,3 +21,11 @@ doctest = dependency('doctest', required: get_option('tests'))
+ if doctest.found()
+     subdir('test')
+ endif
++
++pkgconfig = import('pkgconfig')
++pkgconfig.generate(
++    libraries:    wftouch_lib,
++    version:      meson.project_version(),
++    filebase:     meson.project_name(),
++    name:         meson.project_name(),
++    description: 'Touch library for Wayfire')
+-- 
+2.25.1
+
