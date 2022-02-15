@@ -36,9 +36,9 @@ DEPENDS = " \
 "
 
 DEPENDS:append:libc-musl = " libexecinfo"
-RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking"
+RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking luajit lgi python3-pygobject"
 
-inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection
+inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection vala
 GIR_MESON_OPTION = ''
 
 SRC_URI = " \
@@ -97,6 +97,7 @@ PACKAGECONFIG ?= " \
     python \
     rsvg \
     tiff \
+    vala-plugins \
     vec-icons \
     webp \
     zlib \
