@@ -36,7 +36,7 @@ DEPENDS = " \
 "
 
 DEPENDS:append:libc-musl = " libexecinfo"
-RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking luajit lgi python3-pygobject"
+RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking"
 
 inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection vala
 GIR_MESON_OPTION = ''
@@ -46,7 +46,7 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-SRCREV = "1858d72d032a0bd4ccb26b62f3e8c8310b9f61f6"
+SRCREV = "b881ad04826eeeb0f4251c056e52949d553380b1"
 PV = "2.99.9"
 
 PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
@@ -74,7 +74,7 @@ PACKAGECONFIG[python] = "-Dpython=true,-Dpython=false,,python3 python3-pygobject
 PACKAGECONFIG[rsvg] = ",,librsvg"
 PACKAGECONFIG[tiff] = ",,tiff"
 PACKAGECONFIG[vala-plugins] = "-Dvala-plugins=enabled,-Dvala-plugins=disabled"
-PACKAGECONFIG[vec-icons] = "-Dvec-icons=true,-Dvec-icons=false,librsvg shared-mime-info"
+PACKAGECONFIG[vector-icons] = "-Dvector-icons=true,-Dvector-icons=false,librsvg shared-mime-info"
 PACKAGECONFIG[webp] = "-Dwebp=enabled,-Dwebp=disabled,libwebp"
 PACKAGECONFIG[xcursor] = "-Dxcursor=enabled,-Dxcursor=disabled,libxcursor"
 PACKAGECONFIG[x11] = "-Dxpm=enabled,-Dxpm=disabled,libxpm libxmu libxext libxfixes"
@@ -98,7 +98,7 @@ PACKAGECONFIG ?= " \
     rsvg \
     tiff \
     vala-plugins \
-    vec-icons \
+    vector-icons \
     webp \
     zlib \
 "
