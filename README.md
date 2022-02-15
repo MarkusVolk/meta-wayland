@@ -5,17 +5,17 @@ Main layer maintainer: Markus Volk <f_l_k@t-online.de>
 Description
 
 This layer adds recipes to build wlroots based compositors under wayland.
-It contains wlroots, sway, wayfire, nwg-shell and some additional recipes that might come useful.
+It contains wlroots, sway, wayfire, cage, nwg-shell and some additional recipes that might come useful.
 
 Dependencies
 
 This layer depends on:
 
     URI: git://github.com/openembedded/openembedded-core
-        branch: honister
+        branch: master
         revision: HEAD
     URI: git://github.com/openembedded/meta-openembedded
-        branch: honister
+        branch: master
         revision: HEAD
 
 Building
