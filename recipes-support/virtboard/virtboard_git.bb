@@ -18,7 +18,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-	git://source.puri.sm/Librem5/virtboard.git;protocol=https;branch=master \
+	git://source.puri.sm/Librem5/virtboard.git;protocol=https;branch=pureos/byzantium \
 "
 
 inherit meson pkgconfig gtk-icon-cache features_check
