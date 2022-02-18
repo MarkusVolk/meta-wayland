@@ -16,4 +16,4 @@ SRC_URI = "git://github.com/freeswitch/sofia-sip.git;protocol=https;branch=maste
 inherit autotools pkgconfig
 
 EXTRA_OECONF += "--with-glib"
-#EXTRA_OEMAKE += "HAVE_GLIB=1"
+

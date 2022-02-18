@@ -15,7 +15,6 @@ DEPENDS += " \
 	libxkbcommon \
 	pixman \
 	seatd \
-	systemd \
 	wayland \
 	wayland-native \
 	wayland-protocols \
