@@ -28,7 +28,6 @@ DEPENDS += " \
 	virtual/libgbm \
 	virtual/libgles2 \
 	libpng \
-	systemd \
 "
 
 RDEPENDS:${PN} = "mutter"
@@ -43,7 +42,16 @@ S = "${WORKDIR}/git"
 
 inherit features_check gsettings meson pkgconfig
 
-EXTRA_OEMESON += "-Dembed-wlroots=enabled"
+PACKAGECONFIG[systemd] = ",,systemd"
+PACKAGECONFIG[sysvinit] = ",,eudev elogind"
+
+PACKAGECONFIG ?= " \
+	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
+"
+
+
+EXTRA_OEMESON += "-Dembed-wlroots=enabled --buildtype=release"
 
 PACKAGECONFIG[x11] = ",,libxcb xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm"
