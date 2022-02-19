@@ -19,7 +19,6 @@ DEPENDS = " \
     libpam \
     libsecret \
     networkmanager \
-    phoc \
     polkit \
     pulseaudio \
     upower \
@@ -37,8 +36,8 @@ RDEPENDS:${PN} = " \
     virtboard \
 "
 
+PACKAGECONFIG[tests] = "-Dtests=true,-Dtests=false"
 PACKAGECONFIG[tools] = "-Dtools=true,-Dtools=false"
-PACKAGECONFIG[gtk-doc] = "-Dgtk_doc=true,-Dgtk_doc=false,gtk-doc-native"
 # install systemd service files ?
 PACKAGECONFIG[systemd] = "-Dsystemd=true,-Dsystemd=false"
 
@@ -58,7 +57,7 @@ S = "${WORKDIR}/git"
 PV = "0.15.0"
 SRCREV = "a964be122953d4cbcf63b75793c60f231ec35d71"
 
-EXTRA_OEMESON += "-Dtests=false --buildtype=release"
+EXTRA_OEMESON += "--buildtype=release"
 
 do_install:append() {
     install -Dm 644 ${WORKDIR}/phosh.pam ${D}${sysconfdir}/pam.d/phosh
