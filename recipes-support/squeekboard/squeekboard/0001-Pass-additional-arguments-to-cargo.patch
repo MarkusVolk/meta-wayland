@@ -1,0 +1,65 @@
+From f4de5125daeaffe237f2e2b42f3a0a8f960e3816 Mon Sep 17 00:00:00 2001
+From: Joshua Watt <JPEWhacker@gmail.com>
+Date: Fri, 19 Nov 2021 08:36:28 -0600
+Subject: [PATCH] Pass additional arguments to cargo
+
+Adds an option to pass additional arguments to cargo. This is necessary
+for cross compiling
+
+Signed-off-by: Joshua Watt <JPEWhacker@gmail.com>
+---
+ cargo_build.py    | 6 ++++++
+ meson.build       | 6 +++---
+ meson_options.txt | 4 ++++
+ 3 files changed, 13 insertions(+), 3 deletions(-)
+
+diff --git a/cargo_build.py b/cargo_build.py
+index 0c7c5c6..cfd34e8 100644
+--- a/cargo_build.py
++++ b/cargo_build.py
+@@ -27,6 +27,12 @@ else:
+     args.pop(i)
+     filename = args.pop(i)
+ 
++try:
++    i = args.index('--target')
++    binary_dir = "{}/{}".format(args[i + 1], binary_dir)
++except ValueError:
++    pass
++
+ # The target destination of the produced file is a positional argument
+ out_path = [arg for arg in args if not arg.startswith('--')]
+ if out_path:
+diff --git a/meson.build b/meson.build
+index 342ecca..a2a6f2f 100644
+--- a/meson.build
++++ b/meson.build
+@@ -54,10 +54,10 @@ endif
+ if get_option('buildtype') != 'plain'
+     add_project_arguments('-fstack-protector-strong', language: 'c')
+ endif
++
++cargo_build_flags = get_option('cargo-flags')
+ if get_option('buildtype') == 'release'
+-    cargo_build_flags = ['--release'] # for artifacts
+-else
+-    cargo_build_flags = []
++    cargo_build_flags += ['--release'] # for artifacts
+ endif
+ 
+ prefix = get_option('prefix')
+diff --git a/meson_options.txt b/meson_options.txt
+index bb68374..459807a 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -14,3 +14,7 @@ option('legacy',
+ option('strict',
+        type: 'boolean', value: true,
+        description: 'Turn more warnings into errors')
++
++option('cargo-flags',
++       type: 'array', value: [],
++       description: 'Extra flags to pass to cargo')
+-- 
+2.33.0
+
