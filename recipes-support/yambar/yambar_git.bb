@@ -27,8 +27,8 @@ RRECOMMENDS:${PN} += " \
 inherit meson pkgconfig
 
 S = "${WORKDIR}/git"
-PV = "1.7.0"
-SRCREV = "1d9297593e0d78d87a88e74aaed83c8cff285e5b"
+PV = "1.8.0"
+SRCREV = "3cc142a27302adbb4a314ea95c901a5216b06d98"
 
 PACKAGECONFIG[wayland] = "-Dbackend-wayland=enabled,-Dbackend-wayland=disabled,wayland wayland-native wayland-protocols"
 PACKAGECONFIG[x11] = "-Dbackend-x11=enabled,-Dbackend-x11=disabled,xcb-util xcb-util-cursor xcb-util-wm libxcb"
