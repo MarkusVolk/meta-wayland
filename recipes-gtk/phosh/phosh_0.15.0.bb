@@ -33,7 +33,7 @@ RDEPENDS:${PN} = " \
     gnome-settings-daemon \
     gsettings-desktop-schemas \
     phoc \
-    virtboard \
+    squeekboard \
 "
 
 PACKAGECONFIG[tests] = "-Dtests=true,-Dtests=false"
