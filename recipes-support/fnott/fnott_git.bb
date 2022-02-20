@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=3a7351a597a91e763901f7c76f21e798"
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = " \
-	git://codeberg.org/dnkl/fnott.git;protocol=https;branch=releases/1.1 \
+	git://codeberg.org/dnkl/fnott.git;protocol=https;branch=releases/1.2 \
 "
 
 DEPENDS = " \
@@ -33,8 +33,8 @@ RDEPENDS:${PN} = " \
 inherit meson pkgconfig features_check
 
 S = "${WORKDIR}/git"
-PV = "1.1.0"
-SRCREV = "5009c7c733386211022c0d9e1c00232ec8fb3921"
+PV = "1.2.1"
+SRCREV = "e5aa6850d4ffbf0b61b2464a0dcbf131aad5a941"
 
 EXTRA_OEMESON += "--buildtype release"
 
