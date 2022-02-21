@@ -7,12 +7,12 @@ LICENSE = "OFL-1.1"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=2e3494502db283e8891d4886fe445912"
 
 SRC_URI = " \
-	git://github.com/FortAwesome/Font-Awesome.git;protocol=https;branch=master \
+	git://github.com/FortAwesome/Font-Awesome.git;protocol=https;branch=6.x \
 "
 
 S = "${WORKDIR}/git"
-PV = "5.15.4"
-SRCREV = "7d3d774145ac38663f6d1effc6def0334b68ab7e"
+PV = "6.0.0"
+SRCREV = "65f4bdb5025759ba25cd3432568de288b6a67527"
 
 
 do_install () {
