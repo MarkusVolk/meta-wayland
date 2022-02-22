@@ -86,7 +86,6 @@ PACKAGECONFIG ?= " \
     alsa \
     bzip2 \
     cairo-pdf \
-    gi-docgen \
     gudev \
     jpeg \
     jpeg2000 \
