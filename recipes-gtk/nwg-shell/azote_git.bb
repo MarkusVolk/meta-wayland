@@ -22,6 +22,8 @@ RDEPENDS:${PN} = " \
 
 inherit setuptools3
 
+PYPA_WHEEL = "${S}/dist/azote-*-*.whl"
+
 S = "${WORKDIR}/git"
 PV = "1.9.1"
 SRCREV = "c4ccd502c27fa6eb801a7b2b0636aed09e8c4a12"
