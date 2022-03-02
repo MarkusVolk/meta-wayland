@@ -10,6 +10,8 @@ RDEPENDS:${PN} = " \
 	python3 \
 "
 
+PYPA_WHEEL = "${S}/dist/geopy*.whl"
+
 inherit setuptools3
 
 S = "${WORKDIR}/git"

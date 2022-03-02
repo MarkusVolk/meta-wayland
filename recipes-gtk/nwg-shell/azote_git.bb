@@ -22,7 +22,7 @@ RDEPENDS:${PN} = " \
 
 inherit setuptools3
 
-PYPA_WHEEL = "${S}/dist/azote-*-*.whl"
+PYPA_WHEEL = "${S}/dist/azote*.whl"
 
 S = "${WORKDIR}/git"
 PV = "1.9.1"

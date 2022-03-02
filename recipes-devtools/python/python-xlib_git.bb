@@ -11,6 +11,7 @@ DEPENDS = " \
 	python3-setuptools-scm-native \
 "
 
+
 RDEPENDS:${PN} = " \
 	python3 \	
 	python3-six \
