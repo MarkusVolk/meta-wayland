@@ -10,8 +10,6 @@ SRC_URI = " \
     git://github.com/google/brotli.git;protocol=https;branch=master \
 "
 
-PYPA_WHEEL = "${S}/dist/Brotli*.whl"
-
 PV = "1.0.9"
 SRCREV = "e61745a6b7add50d380cfd7d3883dd6c62fc2c71"
 S = "${WORKDIR}/git"

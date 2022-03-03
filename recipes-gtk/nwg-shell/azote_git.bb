@@ -22,19 +22,21 @@ RDEPENDS:${PN} = " \
 
 inherit setuptools3
 
-PYPA_WHEEL = "${S}/dist/azote*.whl"
-
 S = "${WORKDIR}/git"
-PV = "1.9.1"
+PV = "1.9.3"
 SRCREV = "c4ccd502c27fa6eb801a7b2b0636aed09e8c4a12"
+
+do_configure:prepend() {
+	mv ${S}/dist ${S}/distrib
+}
 
 do_install:append() {
 	install -d ${D}${bindir} ${D}${datadir}/azote ${D}${datadir}/pixmaps ${D}${datadir}/applications
-	install -m 755 ${S}/dist/azote ${D}${bindir}
-	install -m 644 ${S}/dist/azote.desktop ${D}${datadir}/applications
-	install -m 644 ${S}/dist/azote.svg ${D}${datadir}/pixmaps
-	install -m 644 ${S}/dist/indicator_active.png ${D}${datadir}/azote
-	install -m 644 ${S}/dist/indicator_attention.png ${D}${datadir}/azote
+	install -m 755 ${S}/distrib/azote ${D}${bindir}
+	install -m 644 ${S}/distrib/azote.desktop ${D}${datadir}/applications
+	install -m 644 ${S}/distrib/azote.svg ${D}${datadir}/pixmaps
+	install -m 644 ${S}/distrib/indicator_active.png ${D}${datadir}/azote
+	install -m 644 ${S}/distrib/indicator_attention.png ${D}${datadir}/azote
 }
 
 FILES:${PN}:append = " \
