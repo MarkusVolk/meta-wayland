@@ -3,7 +3,7 @@ DESCRIPTION = "This project implements two command-line Wayland clipboard utilit
 HOMEPAGE = "https://github.com/bugaevc/wl-clipboard"
 BUGTRACKER = "https://github.com/bugaevc/wl-clipboard/issues"
 SECTION = "base/shell"
-LICENSE = "GPL-3.0"
+LICENSE = "GPL-3.0-only"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=8f0e2cd40e05189ec81232da84bd6e1a"
 

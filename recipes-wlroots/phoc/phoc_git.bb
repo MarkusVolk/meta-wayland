@@ -2,7 +2,7 @@
 SUMMARY = "wlroots based Phone compositor as used on the Librem5."
 HOMEPAGE = "https://gitlab.gnome.org/World/Phosh/phoc"
 SECTION = "graphics"
-LICENSE = "GPL-3.0"
+LICENSE = "GPL-3.0-only"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 
