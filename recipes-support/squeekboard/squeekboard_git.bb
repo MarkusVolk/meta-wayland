@@ -74,8 +74,8 @@ SRC_URI = "\
     "
 
 # Modify these as desired
-PV = "1.16.0"
-SRCREV = "d49ce45de0956432cef9b957f806d9377fee4bc0"
+PV = "1.17.0"
+SRCREV = "c912b73c4b229b61ce30d2923988e3277f3fe5a8"
 BRANCH = "master"
 
 S = "${WORKDIR}/git"
