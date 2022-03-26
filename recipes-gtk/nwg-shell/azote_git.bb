@@ -27,7 +27,7 @@ PV = "1.9.3"
 SRCREV = "c4ccd502c27fa6eb801a7b2b0636aed09e8c4a12"
 
 do_configure:prepend() {
-	mv ${S}/dist ${S}/distrib
+	[ -d ${S}/dist ] && mv ${S}/dist ${S}/distrib
 }
 
 do_install:append() {
