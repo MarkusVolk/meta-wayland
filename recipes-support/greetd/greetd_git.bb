@@ -68,7 +68,7 @@ do_configure:prepend() {
 }
 
 do_install:append() {
-    install -d ${D}${systemd_system_unitdir} ${D}${sysconfdir}/greetd ${D}${sysconfdir}/pam.d/greetd
+    install -d ${D}${systemd_system_unitdir} ${D}${sysconfdir}/greetd ${D}${sysconfdir}/pam.d
     install -m0644 ${S}/greetd.service ${D}${systemd_system_unitdir}
     install -m0644 ${S}/config.toml ${D}${sysconfdir}/greetd
     install -m0644 ${WORKDIR}/greetd.pam ${D}${sysconfdir}/pam.d/greetd
