@@ -80,7 +80,3 @@ SRC_URI += " \
     crate://crates.io/xml-rs/0.8.4 \
 "
 
-PACKAGECONFIG[layershell] = "-Dlayershell=enabled,-Dlayershell=disabled,gtk-layer-shell"
-
-PACKAGECONFIG ?= "layershell"
-
