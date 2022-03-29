@@ -4,8 +4,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=3aae28cc66d61975114c2b14df215407"
 
 SRC_URI = "git://github.com/NilsBrause/waylandpp.git;protocol=https;branch=master"
 
-DEPENDS:class-native = " pugixml-native"
-DEPENDS:class-target = " waylandpp-native wayland virtual/egl virtual/libgles2"
+DEPENDS = "pugixml"
+DEPENDS:append:class-target = " waylandpp-native wayland virtual/egl virtual/libgles2"
 
 S = "${WORKDIR}/git"
 SRCREV = "e5bc48c12651872711ce08ec8da4871e7c522571"
@@ -22,7 +22,7 @@ EXTRA_OECMAKE:class-native = " \
 "
 
 EXTRA_OECMAKE:class-target = " \
-	-DBUILD_SCANNER=OFF \
+	-DBUILD_SCANNER=ON \
 	-DBUILD_LIBRARIES=ON \
 	-DBUILD_DOCUMENTATION=OFF \
 	-DBUILD_EXAMPLES=OFF \
