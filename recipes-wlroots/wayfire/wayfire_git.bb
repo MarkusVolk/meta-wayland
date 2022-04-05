@@ -48,11 +48,10 @@ PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled"
 PACKAGECONFIG ?= " \
 	gles32 \
 	use_system_wfconfig \
-	use_system_wlroots \
 "
 
 SRC_URI = " \
-	git://github.com/WayfireWM/wayfire.git;protocol=https;branch=0.7.x \
+	gitsm://github.com/WayfireWM/wayfire.git;protocol=https;branch=0.7.x \
 	file://0001-meson.build-build-with-system-wf-touch-and-wf-utils.patch \
 "
 
