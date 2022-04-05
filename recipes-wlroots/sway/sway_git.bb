@@ -18,7 +18,7 @@ DEPENDS += " \
 	libinput \
 	libxkbcommon \
 	pango \
-	pcre \
+	pcre2 \
 	pixman \
 	virtual/libgles2 \
 	wayland \
@@ -37,10 +37,10 @@ RRECOMMENDS:${PN} ?= " \
 "
 
 SRC_URI = " \
-	git://github.com/swaywm/sway.git;protocol=https;branch=v1.7 \
+	git://github.com/swaywm/sway.git;protocol=https;branch=master \
 "
 
-SRCREV = "5543acff06981639086bc9a0fc9b608796a23e84"
+SRCREV = "8f036b6f788e45a36d3126a661913dd38008cc41"
 PV = "1.7"
 S = "${WORKDIR}/git"
 
