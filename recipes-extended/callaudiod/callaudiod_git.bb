@@ -13,8 +13,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.1.3"
-SRCREV = "4cb8bd9d228d13ea67e79f4c37c674f412b32d20"
+PV = "0.1.4"
+SRCREV = "a7ca6ce9d4c947f19c3f99ff2cab986c64434e57"
 
 FILES:${PN} += "${datadir}"
 

@@ -26,7 +26,7 @@ DEPENDS = " \
 
 inherit gnomebase vala pkgconfig mime-xdg
 
-SRC_URI[archive.sha256sum] = "0ddbe9aa6fce409988cafd0d2fcb6d96dd0034eabbaf8400bc9fc8a6bf33bb07"
+SRC_URI[archive.sha256sum] = "784bbc4a1347965d4bdbd0d552bd4a4a88aa0f9370c10e6c2f1297e889611f9a"
 
 FILES:${PN} += "${datadir}"
 
