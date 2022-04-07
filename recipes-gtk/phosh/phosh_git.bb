@@ -18,6 +18,7 @@ DEPENDS = " \
     libhandy \
     libpam \
     libsecret \
+    libxml2 \
     networkmanager \
     polkit \
     pulseaudio \
