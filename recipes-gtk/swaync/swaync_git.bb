@@ -17,13 +17,15 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.3"
-SRCREV = "6f850ebadb31a3fac42a664bbc1094823d4cdf32"
+PV = "0.5"
+SRCREV = "77b8a85ce1a230ea9b5433062f46f15a2e5a7235"
 
 PACKAGECONFIG[bash] = "-Dbash-completions=true,-Dbash-completions=false"
 PACKAGECONFIG[fish] = "-Dfish-completions=true,-Dfish-completions=false"
-PACKAGECONFIG[zsh] = "-Dzsh-completions=true,-Dzsh-completions=false"
+PACKAGECONFIG[man-pages] = "-Dman-pages=true,-Dman-pages=false,scdoc-native"
+PACKAGECONFIG[scripting] = "-Dscripting=true,-Dscripting=false"
 PACKAGECONFIG[systemd] = "-Dsystemd-service=true,-Dsystemd-service=false"
+PACKAGECONFIG[zsh] = "-Dzsh-completions=true,-Dzsh-completions=false"
 
 PACKAGECONFIG ?= " \
 	bash \
