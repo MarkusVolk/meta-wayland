@@ -7,15 +7,31 @@ LIC_FILES_CHKSUM = "file://LICENSE.LGPL2.1;md5=4fbd65380cdd255951079008b364516c"
 
 SRC_URI = "git://github.com/elogind/elogind.git;protocol=https;nobranch=1"
 
-DEPENDS += "gperf-native libcap eudev util-linux acl dbus python3-native polkit"
+DEPENDS += " \
+	acl dbus \
+	eudev \
+	gperf-native \
+	libcap \
+	libpam \
+	polkit \
+	python3-jinja2-native \
+	python3-native \
+	util-linux \
+"
+
 
 S = "${WORKDIR}/git"
-PV = "248-pre"
-SRCREV = "eed62107e2165b6863ee95a730b8f93aa397b92d"
+PV = "249-pre"
+SRCREV = "06e702c9dafa3ea1dd6df8ee8cb4dcf417a0d442"
 
 inherit meson pkgconfig
 
 EXTRA_OEMESON += "--buildtype release -Dtranslations=false"
+
+do_install:prepend() {
+	install -d ${D}${libdir}/elogind/system-shutdown
+	install -d ${D}${libdir}/elogind/system-sleep
+}
 
 FILES:${PN} += "/usr"
 
