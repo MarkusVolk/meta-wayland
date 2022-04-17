@@ -74,9 +74,9 @@ SRC_URI = "\
     "
 
 # Modify these as desired
-PV = "1.17.0"
-SRCREV = "c912b73c4b229b61ce30d2923988e3277f3fe5a8"
-BRANCH = "master"
+PV = "1.17.1"
+SRCREV = "2faa98d85f1142383ec8ad1487616c1a7ad1882f"
+BRANCH = "1.17"
 
 S = "${WORKDIR}/git"
 
@@ -86,7 +86,8 @@ EXTRA_OEMESON = "\
     -Dcargo-flags=[\'--target\',\'${HOST_SYS}\',\'-v\'] \
     -Dtests=false \
     -Ddepdatadir=${datadir} \
-    "
+    -Donline=false \
+"
 
 export CARGO_FEATURE_STD = "1"
 
