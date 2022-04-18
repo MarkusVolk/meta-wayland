@@ -12,17 +12,12 @@ GO_IMPORT = "github.com/nwg-piotr/nwg-bar.git"
 
 SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
-PV = "0.0.1"
-SRCREV = "7dd7df3cd9a9e78fe477e88e0f3cb97309d50ff5"
+PV = "0.1.0"
+SRCREV = "eee48b9575936495b5b7d6bc88e14d736245259a"
 
 inherit go go-mod pkgconfig
 
 GO_INSTALL = "${GO_IMPORT}"
-
-do_install:append() {
-	# remove precompiled x86 binary
-	rm -r ${D}${libdir}/go/src/${GO_IMPORT}/bin
-}
 
 do_compile[network] = "1"
 
