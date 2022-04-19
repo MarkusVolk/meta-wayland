@@ -1,0 +1,47 @@
+From c0c7a5df0b520960d7af662d112704901a235548 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Tue, 19 Apr 2022 13:50:54 +0200
+Subject: [PATCH] generate-version.sh: dont try to fetch version from git
+
+workaround for:
+
+| FAILED: version.h
+| /home/flk/build/poky/build-intel/tmp/hosttools/env LC_ALL=C ../git/generate-version.sh 3.0.1 ../git/ version.h
+| fatal: unsafe repository ('/home/flk/build/poky/build-intel/tmp/work/corei7-64-poky-linux/fcft/3.0.1-r0/git' is owned by someone else)
+---
+ generate-version.sh | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+
+diff --git a/generate-version.sh b/generate-version.sh
+index 3337d5c..76a6df9 100755
+--- a/generate-version.sh
++++ b/generate-version.sh
+@@ -10,24 +10,7 @@ out_file=${3}
+ # echo "source directory: ${src_dir}"
+ # echo "output file:      ${out_file}"
+ 
+-if [ -d "${src_dir}/.git" ] && command -v git > /dev/null; then
+-    workdir=$(pwd)
+-    cd "${src_dir}"
+-
+-    if git describe --tags  > /dev/null 2>&1; then
+-        git_version=$(git describe --always --tags)
+-    else
+-        # No tags available, happens in e.g. CI builds
+-        git_version="${default_version}"
+-    fi
+-
+-    git_branch=$(git rev-parse --abbrev-ref HEAD)
+-    cd "${workdir}"
+-
+-    new_version="${git_version} ($(env LC_TIME=C date "+%b %d %Y"), branch '${git_branch}')"
+-else
+-    new_version="${default_version}"
+-fi
++new_version="${default_version}"
+ 
+ new_version="#define FCFT_VERSION \"${new_version}\""
+ 
+-- 
+2.25.1
+
