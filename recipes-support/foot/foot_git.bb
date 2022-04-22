@@ -19,13 +19,13 @@ DEPENDS = " \
 RRECOMMENDS:${PN} = "ncurses-terminfo xdg-utils"
 
 SRC_URI = " \
-	git://codeberg.org/dnkl/foot.git;protocol=https;branch=releases/1.11 \
+	git://codeberg.org/dnkl/foot.git;protocol=https;branch=releases/1.12 \
 	file://0001-generate-version.sh-dont-try-to-fetch-version-from-g.patch \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.11.0"
-SRCREV = "8c66dbbd788972db8b7338ca6b7aea8991fce963"
+PV = "1.12.0"
+SRCREV = "ea1171a5a22054c453a493e626f6b9e46cec674d"
 
 PACKAGECONFIG[grapheme-clustering] = "-Dgrapheme-clustering=enabled,-Dgrapheme-clustering=disabled,utf8proc"
 PACKAGECONFIG[docs] = "-Ddocs=enabled,-Ddocs=disabled,scdoc-native"
