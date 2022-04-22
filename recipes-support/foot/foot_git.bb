@@ -43,6 +43,8 @@ inherit meson pkgconfig
 FILES:${PN} = " \
 	${bindir} \
 	${datadir} \
+	${libdir} \
+	${sysconfdir} \
 "
 
 BBCLASSEXTEND = ""
