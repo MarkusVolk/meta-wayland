@@ -12,6 +12,6 @@ RDEPENDS:${PN} = "python3-pygobject"
 inherit setuptools3 gobject-introspection
 
 S = "${WORKDIR}/git"
-PV = "0.1.1"
+PV = "0.1.2"
 SRCREV = "9c1b0669dd894b6209a3130169956c755154b055"
 
