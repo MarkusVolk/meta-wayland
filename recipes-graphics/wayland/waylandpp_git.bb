@@ -8,8 +8,8 @@ DEPENDS = "pugixml"
 DEPENDS:append:class-target = " waylandpp-native wayland virtual/egl virtual/libgles2"
 
 S = "${WORKDIR}/git"
-SRCREV = "e5bc48c12651872711ce08ec8da4871e7c522571"
-PV = "0.2.9"
+SRCREV = "4321ed5c7b4bffa41b8a2a13dc7f3ece1191f4f3"
+PV = "1.0.0"
 
 inherit cmake pkgconfig
 
