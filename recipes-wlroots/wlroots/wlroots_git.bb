@@ -29,7 +29,7 @@ PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,eudev elogind"
 PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang glslang-native"
 PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
-PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xserver-xorg xcb-util-wm"
+PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm"
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
