@@ -32,10 +32,7 @@ PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm"
 
 PACKAGECONFIG ?= " \
-	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
-	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
-	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan', d)} \
-	${@bb.utils.filter('DISTRO_FEATURES', 'x11', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'systemd sysvinit vulkan x11 xwayland', d)} \
 	libinput \
 "
 
