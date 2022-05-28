@@ -28,6 +28,7 @@ DEPENDS = " \
     libexif \
     libmypaint \
     libpng \
+    libxmu \
     libxslt-native \
     mypaint-brushes-1.0 \
     pango \
@@ -77,7 +78,7 @@ PACKAGECONFIG[vala-plugins] = "-Dvala-plugins=enabled,-Dvala-plugins=disabled"
 PACKAGECONFIG[vector-icons] = "-Dvector-icons=true,-Dvector-icons=false,librsvg shared-mime-info"
 PACKAGECONFIG[webp] = "-Dwebp=enabled,-Dwebp=disabled,libwebp"
 PACKAGECONFIG[xcursor] = "-Dxcursor=enabled,-Dxcursor=disabled,libxcursor"
-PACKAGECONFIG[x11] = "-Dxpm=enabled,-Dxpm=disabled,libxpm libxmu libxext libxfixes"
+PACKAGECONFIG[x11] = "-Dxpm=enabled,-Dxpm=disabled,libxpm libxext libxfixes"
 PACKAGECONFIG[zlib] = ",,zlib"
 
 PACKAGECONFIG ?= " \
