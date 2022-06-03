@@ -36,9 +36,9 @@ SRC_URI = " \
 	gitsm://gitlab.gnome.org/World/Phosh/phoc.git;protocol=https;branch=master \
 "
 
-SRCREV = "4f72cf1e67a3f0f224326b2662b7dedab3f5a8cf"
-PV = "0.13.1"
 S = "${WORKDIR}/git"
+PV = "0.20.0"
+SRCREV = "b686cc5010a8d0f9a654a8171e90415e0717e10c"
 
 inherit features_check gsettings meson pkgconfig
 
