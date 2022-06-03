@@ -12,6 +12,7 @@ SRC_URI = " \
 "
 
 DEPENDS = " \
+	inih \
 	wayland \
 	wayland-native \
 	wayland-protocols \
@@ -26,7 +27,7 @@ PACKAGECONFIG ??= ""
 
 S = "${WORKDIR}/git"
 PV = "0.13"
-SRCREV = "79724fa53f536e8aa23cfb72611983e87351b6e9"
+SRCREV = "bce60fd9e3acca37adc46a6b4ee25139f7a4a4d1"
 
 EXTRA_OEMESON += "--buildtype release"
 
