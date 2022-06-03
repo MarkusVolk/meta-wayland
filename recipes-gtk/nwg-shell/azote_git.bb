@@ -7,6 +7,7 @@ SRC_URI = " \
 "
 
 RDEPENDS:${PN} = " \
+	azote-palettes \
 	python3 \
 	gtk+3 \
 	python3-pygobject \
@@ -23,8 +24,8 @@ RDEPENDS:${PN} = " \
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "1.9.3"
-SRCREV = "c4ccd502c27fa6eb801a7b2b0636aed09e8c4a12"
+PV = "1.9.5"
+SRCREV = "a8845b9df985d51570b83d40f40e0b0e7579b9e3"
 
 do_configure:prepend() {
 	[ -d ${S}/dist ] && mv ${S}/dist ${S}/distrib
