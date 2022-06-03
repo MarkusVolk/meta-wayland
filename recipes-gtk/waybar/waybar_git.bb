@@ -53,8 +53,8 @@ RRECOMMENDS:${PN} += " \
 SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
-PV = "0.9.12"
-SRCREV = "3c1ba0a24063550aa6ea9c3cb199f08ecf75dbcc"
+PV = "0.9.13"
+SRCREV = "aa5f55bbe3fab0be39fe48cb5824dfcbc331706c"
 
 inherit meson pkgconfig features_check
 
