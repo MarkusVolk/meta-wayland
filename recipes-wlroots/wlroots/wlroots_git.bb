@@ -15,14 +15,13 @@ DEPENDS += " \
 	libxkbcommon \
 	pixman \
 	seatd \
-	virtual/libgbm \
 	wayland \
 	wayland-native \
 	wayland-protocols \
 "
 
-PACKAGECONFIG[examples] = "-Dexamples=true,-Dexamples=false"
-PACKAGECONFIG[gles] = ",,virtual/egl virtual/libgles2"
+PACKAGECONFIG[examples] = "-Dexamples=true,-Dexamples=false,libpng ffmpeg"
+PACKAGECONFIG[gles] = ",,virtual/egl virtual/libgles2 virtual/libgbm"
 PACKAGECONFIG[libdrm] = ",,libdrm"
 PACKAGECONFIG[libinput] = ",,libinput"
 PACKAGECONFIG[systemd] = ",,systemd"
@@ -33,11 +32,12 @@ PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-u
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd sysvinit vulkan x11 xwayland', d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles', 'libdrm', d)} \
 	libinput \
 "
 
 SRC_URI = "git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https"
-SRCREV = "19896e7fb63db73c4a66b68a79d7cbd039198a1d"
+SRCREV = "0173275f7ed709dc9c3c6115bc8112bf1185d6ec"
 PV = "0.15.1"
 
 S = "${WORKDIR}/git"
