@@ -21,12 +21,12 @@ GIR_MESON_OPTION = ""
 inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection
 
 SRC_URI = " \
-    git://github.com/SrainApp/srain.git;protocol=https;branch=stable/1.3 \
+    git://github.com/SrainApp/srain.git;protocol=https;branch=master \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.3.2"
-SRCREV = "2faa79510cb124aae975de65a437b52b0e9e92d8"
+PV = "1.4.0"
+SRCREV = "0a16d5dc040f7939c1462d13f0d251a9e26e0c81"
 
 EXTRA_OEMESON += " \
     --buildtype release \
