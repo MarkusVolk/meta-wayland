@@ -37,8 +37,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.20.0"
-SRCREV = "b686cc5010a8d0f9a654a8171e90415e0717e10c"
+PV = "0.21.0-beta1"
+SRCREV = "ebc6d1d5a2acdc243af3c9237ac09bcdd8f727f2"
 
 inherit features_check gsettings meson pkgconfig
 
