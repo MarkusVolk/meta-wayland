@@ -22,6 +22,7 @@ DEPENDS = " \
     networkmanager \
     polkit \
     pulseaudio \
+    squeekboard \
     upower \
     wayland \
     wayland-native \
@@ -55,8 +56,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.20.0-beta1"
-SRCREV = "e5f338789332c6ac0afef48d36d93c8410e2dbcb"
+PV = "0.20.0-beta2"
+SRCREV = "4787787c0005595793849db7119a8a8ed3c35c95"
 
 EXTRA_OEMESON += "--buildtype=release"
 
