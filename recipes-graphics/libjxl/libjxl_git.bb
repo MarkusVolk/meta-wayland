@@ -13,7 +13,7 @@ SRC_URI = " \
 "
 
 PV = "0.6.1"
-SRCREV = "a205468bc5d3a353fb15dae2398a101dff52f2d3"
+SRCREV = "ae95f451e0d23a209fa22efac4771969a23dac99"
 S = "${WORKDIR}/git"
 
 EXTRA_OECMAKE = " \
