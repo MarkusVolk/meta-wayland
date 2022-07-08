@@ -12,9 +12,13 @@ DEPENDS += " \
 	gtk+3 \
 	wayland \
 	wayland-native \
+	wayland-protocols \
 "
 
-SRC_URI = "git://github.com/wmww/gtk-layer-shell.git;protocol=https;branch=master"
+SRC_URI = " \
+	git://github.com/wmww/gtk-layer-shell.git;protocol=https;branch=master \
+	file://0001-protocol-meson.build-dont-use-pkgconfig-for-wayland-.patch \	
+"
 
 S = "${WORKDIR}/git"
 PV = "0.7.0"
@@ -22,7 +26,7 @@ SRCREV = "ca37ef1baa623302dda5fcea200d04e0d9a10578"
 
 inherit meson pkgconfig features_check gobject-introspection vala
 
-EXTRA_OEMESON += "--buildtype release -Dvapi=true"
+EXTRA_OEMESON += "--buildtype release"
 
 FILES:${PN} = "${datadir} ${libdir}"
 

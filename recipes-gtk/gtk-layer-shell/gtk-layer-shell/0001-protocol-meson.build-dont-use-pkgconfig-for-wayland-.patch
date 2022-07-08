@@ -1,0 +1,23 @@
+From 25e9ac8ce8aba85f0c4e3c643d517fecc6e2fd96 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Sat, 9 Jul 2022 01:08:21 +0200
+Subject: [PATCH] protocol/meson.build: dont use pkgconfig for wayland-scanner
+
+wayland-scanner path gets read from target waylands .pc file. Avoid it
+---
+ protocol/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/protocol/meson.build b/protocol/meson.build
+index 2ce0e0c..12f389f 100644
+--- a/protocol/meson.build
++++ b/protocol/meson.build
+@@ -1,4 +1,4 @@
+-if wayland_scanner.found()
++if false
+     prog_wayland_scanner = find_program(wayland_scanner.get_pkgconfig_variable('wayland_scanner'))
+ else
+     prog_wayland_scanner = find_program('wayland-scanner')
+-- 
+2.25.1
+
