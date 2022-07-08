@@ -10,9 +10,8 @@ RDEPENDS:${PN} = " \
 	python3 \
 "
 
-inherit setuptools3
+inherit python_setuptools_build_meta
 
 S = "${WORKDIR}/git"
-PV = "2.1.0"
-SRCREV = "e08109f99a589d7d6e7ecf68fd93f731976ed61f"
-
+PV = "2.2.0"
+SRCREV = "f3af768f569e0b363bcced11d266d4ed857e21e7"
