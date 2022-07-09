@@ -12,6 +12,8 @@ inherit cargo
 
 CARGO_SRC_DIR = "agreety"
 
+RDEPENDS:${PN} = "greetd"
+
 SRC_URI += " \
     crate://crates.io/arc-swap/0.4.6 \
     crate://crates.io/async-trait/0.1.31 \

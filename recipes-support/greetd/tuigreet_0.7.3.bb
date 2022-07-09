@@ -3,6 +3,8 @@ HOMEPAGE = "https://github.com/apognu/tuigreet.git"
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
+RDEPENDS:${PN} = "greetd"
+
 SRC_URI = " \
     git://github.com/apognu/tuigreet.git;protocol=https;nobranch=1 \
     crate://crates.io/ahash/0.7.6 \
