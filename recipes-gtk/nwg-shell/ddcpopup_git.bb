@@ -25,4 +25,6 @@ do_compile[network] = "1"
 
 do_install:append() {
 	mv ${D}${bindir}/main ${D}${bindir}/ddcpopup
+	# remove precompiled x86 binaries
+	rm -r ${D}${libdir}/go/pkg/mod/github.com/dlasky/gotk3-layershell@*/example
 }
