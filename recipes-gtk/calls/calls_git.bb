@@ -2,8 +2,6 @@ SUMMARY = "A phone dialer and call handler."
 LICENSE = "GPL-3.0-or-later"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8f0e2cd40e05189ec81232da84bd6e1a"
 
-GNOMEBASEBUILDCLASS = "meson"
-
 DEPENDS = " \
     callaudiod \
     evolution-data-server \
@@ -21,12 +19,17 @@ DEPENDS = " \
     libxml2 \
     modemmanager \
     openldap \
+    python3-docutils-native \
     sofia-sip \
 "
 
-inherit gnomebase vala pkgconfig mime-xdg
+SRC_URI = "gitsm://gitlab.gnome.org/GNOME/calls.git;protocol=https;nobranch=1"
 
-SRC_URI[archive.sha256sum] = "784bbc4a1347965d4bdbd0d552bd4a4a88aa0f9370c10e6c2f1297e889611f9a"
+S = "${WORKDIR}/git"
+SRCREV = "3d7c671034e01756b685d7b3048b1da01d4307bf"
+PV = "43_alpha.2"
+
+inherit meson vala pkgconfig mime-xdg
 
 FILES:${PN} += "${datadir}"
 
