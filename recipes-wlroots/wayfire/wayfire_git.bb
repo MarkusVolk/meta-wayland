@@ -10,11 +10,13 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
 	cairo \
+	ffmpeg \
 	freetype \
 	glm \
 	jpeg \
 	libdrm \
 	libevdev \
+	libnotify \
 	libinput \
 	libpng \
 	libxkbcommon \
@@ -55,8 +57,8 @@ SRC_URI = " \
 	file://0001-meson.build-build-with-system-wf-touch-and-wf-utils.patch \
 "
 
-SRCREV = "835a7bf9bde4e78796f9fd9f14021476084a9728"
-PV = "0.7.2"
+SRCREV = "0f0b1642183007b0e58ad4d4e5f9e86d16355ea7"
+PV = "0.7.4"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
