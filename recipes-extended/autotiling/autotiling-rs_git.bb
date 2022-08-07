@@ -1,6 +1,6 @@
 SUMMARY = "This automatically alternates the container layout between horizontal and vertical for successive new containers."
-LICENSE = "WTFPL"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/WTFPL;md5=7993e3336259bdb618ad5a1afc872165"
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=8c9e7f297308461c48038d7c1e05cfb8"
 
 SRC_URI = " \
 	git://github.com/ammgws/autotiling-rs.git;protocol=https;branch=master \
@@ -37,5 +37,5 @@ inherit rust cargo
 
 S = "${WORKDIR}/git"
 PV = "0.1.3"
-SRCREV = "695cfaf32aa68d52629b27297f848aab572a29be"
+SRCREV = "1f7a08c6a87b06f13744962f757e6bdcc6e3fc89"
 
