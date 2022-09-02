@@ -54,7 +54,7 @@ SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "0.9.13"
-SRCREV = "aa5f55bbe3fab0be39fe48cb5824dfcbc331706c"
+SRCREV = "4deb6d812d6a34c84b3d4b053c1d9673bc2864d7"
 
 inherit meson pkgconfig features_check
 
