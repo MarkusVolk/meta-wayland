@@ -7,6 +7,7 @@ REQUIRED_DISTRO_FEATURES = "wayland polkit pam pulseaudio"
 
 DEPENDS = " \
     callaudiod \
+    evolution-data-server \
     feedbackd \
     fribidi \
     gcr \
@@ -22,7 +23,6 @@ DEPENDS = " \
     networkmanager \
     polkit \
     pulseaudio \
-    squeekboard \
     upower \
     wayland \
     wayland-native \
@@ -56,8 +56,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.20.0"
-SRCREV = "5fe9aea775b9198eed25fb3b3bcd9827ae40a785"
+PV = "0.21.0"
+SRCREV = "4122630266abfd6623e169330da6e7d6bc01be7f"
 
 EXTRA_OEMESON += "--buildtype=release"
 
