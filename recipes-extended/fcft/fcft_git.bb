@@ -15,13 +15,13 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-	git://codeberg.org/dnkl/fcft.git;protocol=https;branch=releases/3.0 \
+	git://codeberg.org/dnkl/fcft.git;protocol=https;branch=releases/3.1 \
 	file://0001-generate-version.sh-dont-try-to-fetch-version-from-g.patch \
 "
 
 S = "${WORKDIR}/git"
-PV = "3.0.1"
-SRCREV = "e964c3677e35ce44a4bd8bf6f0b85d8f9119e8a6"
+PV = "3.1.3"
+SRCREV = "fbc8df3875dbb26a665d02b710690e13a5f4eb45"
 
 inherit meson pkgconfig
 
