@@ -47,8 +47,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-SRCREV = "618e11e602418e8c9639991b73a2a7f2b302ac38"
-PV = "2.99.10"
+SRCREV = "b1e13b5a15096d65d94571e69cf08d45904b5719"
+PV = "2.99.12"
 
 PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
 PACKAGECONFIG[alsa] = "-Dalsa=enabled,-Dalsa=disabled,alsa-lib"
