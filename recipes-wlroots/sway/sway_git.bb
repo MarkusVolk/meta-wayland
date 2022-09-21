@@ -40,7 +40,7 @@ SRC_URI = " \
 	git://github.com/swaywm/sway.git;protocol=https;branch=master \
 "
 
-SRCREV = "07bfeb2abcb46b5f1472d53963478fa0714fb5b1"
+SRCREV = "cffb006feba52c318e66f73c3463032fa76782dc"
 PV = "1.7"
 S = "${WORKDIR}/git"
 
@@ -77,4 +77,3 @@ FILES:${PN}:append = " \
 "
 
 BBCLASSEXTEND = ""
-
