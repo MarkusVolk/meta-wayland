@@ -17,8 +17,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.6.3"
-SRCREV = "3b317c45129f8051d6c3be9d2894d8ae15449dcd"
+PV = "0.7.2"
+SRCREV = "2663f6342c63fd3eaa32763224693ef590545c57"
 
 PACKAGECONFIG[bash] = "-Dbash-completions=true,-Dbash-completions=false"
 PACKAGECONFIG[fish] = "-Dfish-completions=true,-Dfish-completions=false"
