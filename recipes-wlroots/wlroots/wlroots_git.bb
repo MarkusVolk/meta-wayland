@@ -12,6 +12,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=7578fad101710ea2d289ff5411f1b818"
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
+	libdrm \
 	libxkbcommon \
 	pixman \
 	seatd \
@@ -21,18 +22,17 @@ DEPENDS += " \
 "
 
 PACKAGECONFIG[examples] = "-Dexamples=true,-Dexamples=false,libpng ffmpeg"
-PACKAGECONFIG[gles] = ",,virtual/egl virtual/libgles2 virtual/libgbm"
-PACKAGECONFIG[libdrm] = ",,libdrm"
+PACKAGECONFIG[opengl] = ",,virtual/egl virtual/libgles2"
+PACKAGECONFIG[gbm] = ",,virtual/libgbm"
 PACKAGECONFIG[libinput] = ",,libinput"
 PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,eudev elogind"
-PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang glslang-native"
+PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm,xwayland"
 
 PACKAGECONFIG ?= " \
-	${@bb.utils.filter('DISTRO_FEATURES', 'systemd sysvinit vulkan x11 xwayland', d)} \
-	${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles', 'libdrm', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'systemd sysvinit vulkan x11 xwayland opengl', d)} \
 	libinput \
 "
 
