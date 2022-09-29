@@ -40,6 +40,8 @@ EXTRA_OEMESON += "--buildtype=release -Dterminfo=disabled"
 
 inherit meson pkgconfig
 
+CFLAGS += "-Wno-unused-but-set-variable"
+
 FILES:${PN} = " \
 	${bindir} \
 	${datadir} \
