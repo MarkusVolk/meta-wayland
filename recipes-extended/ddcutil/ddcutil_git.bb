@@ -14,6 +14,8 @@ SRCREV = "5080161b456cc6a1fd3e6db3dc537e1dcd1c809b"
 
 inherit autotools pkgconfig gobject-introspection
 
+CFLAGS += "-Wno-unused-but-set-variable"
+
 PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'drm x11 systemd', d)}"
 
 PACKAGECONFIG[drm] = "--enable-drm=yes,--enable-drm=no,libdrm"
