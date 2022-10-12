@@ -27,7 +27,7 @@ PACKAGECONFIG ?= " \
 SRC_URI = " \
 	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https;branch=master \
 "
-SRCREV = "8d152bb725c8bd79b71c0c458bce65a51ab80b79"
+SRCREV = "eb007dd3e583a007e0055973453c8ec149ec0b01"
 PV = "0.6.3"
 
 S = "${WORKDIR}/git"
@@ -35,6 +35,10 @@ S = "${WORKDIR}/git"
 inherit meson pkgconfig
 
 EXTRA_OEMESON += "--buildtype release"
+
+do_install:append() {
+	sed -i '/-gtk-icon-style/d' ${D}${datadir}/nwg-launchers/nwgbar/style.css
+}
 
 BBCLASSEXTEND = ""
 
