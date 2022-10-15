@@ -10,34 +10,27 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
 	cairo \
-	ffmpeg \
 	freetype \
 	glm \
 	jpeg \
 	libdrm \
 	libevdev \
-	libnotify \
 	libinput \
 	libpng \
 	libxkbcommon \
 	libxml2 \
 	mesa \
+	nlohmann-json \
 	pango \
 	pixman \
 	seatd \
 	wayland \
 	wayland-native \
 	wayland-protocols \
-	wf-config \
-	wf-utils \
-	wf-touch \
 "
 
 RRECOMMENDS:${PN} += " \
 	wcm \
-	wf-config \
-	wf-touch \
-	wf-utils \
 	wf-recorder \
 	wf-shell \
 "
@@ -45,20 +38,19 @@ RRECOMMENDS:${PN} += " \
 PACKAGECONFIG[gles32] = "-Denable_gles32=true,-Denable_gles32=false"
 PACKAGECONFIG[use_system_wfconfig] = "-Duse_system_wfconfig=enabled,-Duse_system_wfconfig=disabled,wf-config"
 PACKAGECONFIG[use_system_wlroots] = "-Duse_system_wlroots=enabled,-Duse_system_wlroots=disabled,wlroots"
-PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled"
+PACKAGECONFIG[x11] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-renderutil xcb-util-wm"
+PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 
 PACKAGECONFIG ?= " \
+	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan x11', d)} \
 	gles32 \
 	use_system_wfconfig \
 "
 
-SRC_URI = " \
-	gitsm://github.com/WayfireWM/wayfire.git;protocol=https;branch=0.7.x \
-	file://0001-meson.build-build-with-system-wf-touch-and-wf-utils.patch \
-"
+SRC_URI = "gitsm://github.com/WayfireWM/wayfire.git;protocol=https;branch=master"
 
-SRCREV = "0f0b1642183007b0e58ad4d4e5f9e86d16355ea7"
-PV = "0.7.4"
+SRCREV = "9450147d118e0636e4c6dfc1b066ef1c4b91acdd"
+PV = "0.8.0"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check

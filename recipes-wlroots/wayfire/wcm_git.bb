@@ -11,15 +11,15 @@ DEPENDS = " \
 	wayland-native \
 	wayland-protocols \
 	gtkmm3 \
-	wf-config \
+	wf-shell \
 "
 
 REQUIRED_DISTRO_FEATURES = "wayland"
 
-SRC_URI = "https://github.com/WayfireWM/wcm/releases/download/v${PV}/wcm-${PV}.tar.xz"
-SRC_URI[sha256sum] = "924a9682dc2f632bad8b6914a8927ad5dcee4b6698f75e89251f1647ad0beaa7"
-
-S = "${WORKDIR}/${PN}-${PV}"
+SRC_URI = "gitsm://github.com/WayfireWM/wcm.git;protocol=https;branch=master"
+SRCREV = "4c80340e7a207adb203037094ab378d933839485"
+S = "${WORKDIR}/git"
+PV = "0.8.0"
 
 inherit meson pkgconfig features_check
 

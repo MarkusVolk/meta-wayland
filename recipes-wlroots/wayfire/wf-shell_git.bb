@@ -20,13 +20,10 @@ DEPENDS = " \
 
 REQUIRED_DISTRO_FEATURES = "wayland"
 
-SRC_URI = " \
-	https://github.com/WayfireWM/wf-shell/releases/download/v${PV}/wf-shell-${PV}.tar.xz \
-"
-
-SRC_URI[sha256sum] = "7495c690a1c021e0c82ba304513b3e7870cb329f7f0bf88df3bc5f46535d5ec7"
-
-S = "${WORKDIR}/${PN}-${PV}"
+SRC_URI = "gitsm://github.com/WayfireWM/wf-shell.git;protocol=https;branch=master"
+SRCREV = "bad121a4d7b8a7bca8513e8cb62e6be951aacfc4"
+S = "${WORKDIR}/git"
+PV = "0.8.0"
 
 inherit meson pkgconfig features_check
 
