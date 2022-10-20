@@ -8,6 +8,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
 DEPENDS += " \
 	gtkmm3 \
+	librsvg \
 	nlohmann-json \
 "
 
@@ -26,9 +27,10 @@ PACKAGECONFIG ?= " \
 
 SRC_URI = " \
 	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https;branch=master \
+	file://0001-meson.build.patch \
 "
-SRCREV = "eb007dd3e583a007e0055973453c8ec149ec0b01"
-PV = "0.6.3"
+SRCREV = "7cc3ad0bcd142f25efb5251941aec9d25366cb3a"
+PV = "0.7.0"
 
 S = "${WORKDIR}/git"
 

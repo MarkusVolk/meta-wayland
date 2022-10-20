@@ -1,0 +1,27 @@
+From e8e259b76082189d5ed504f8e7a4aabb26f199a7 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Wed, 19 Oct 2022 13:54:52 +0200
+Subject: [PATCH] meson.build:
+
+README.md generation has recently been reworked and is currently broken
+for crosscompilation.
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 33fb839..d8d46c9 100644
+--- a/meson.build
++++ b/meson.build
+@@ -74,7 +74,7 @@ endif
+ 
+ # generate README.md from template
+ # make sure to copy it to the source directory!
+-if python.found()
++if python.found() and not meson.is_cross_build() 
+ 	readme = custom_target('readme',
+ 		output: [ 'README.md' ],
+ 		input: [ 'README.md.in' ],
+-- 
+2.34.1
+
