@@ -9,7 +9,6 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = " \
 	git://github.com/emersion/mako.git;protocol=https;branch=master \
-	file://0001-meson.build-make-epoll-shim-dependency-optional.patch \
 "
 
 DEPENDS = " \
@@ -40,8 +39,8 @@ PACKAGECONFIG ?= " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.6"
-SRCREV = "ddc1849804c8703ec749140e3a55febb5250e934"
+PV = "1.7.1"
+SRCREV = "51ad133d3e9ebca27e7af25f86dcbf67b7f25f11"
 
 EXTRA_OEMESON += "--buildtype release"
 
