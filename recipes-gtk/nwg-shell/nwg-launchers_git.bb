@@ -29,18 +29,12 @@ SRC_URI = " \
 	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https;branch=master \
 	file://0001-meson.build.patch \
 "
-SRCREV = "7cc3ad0bcd142f25efb5251941aec9d25366cb3a"
-PV = "0.7.0"
-
+SRCREV = "29ee3b0501ebc7524eb43ba8a28375f811925d3c"
+PV = "0.7.1.1"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig
 
 EXTRA_OEMESON += "--buildtype release"
 
-do_install:append() {
-	sed -i '/-gtk-icon-style/d' ${D}${datadir}/nwg-launchers/nwgbar/style.css
-}
-
 BBCLASSEXTEND = ""
-
