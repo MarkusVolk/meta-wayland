@@ -25,7 +25,7 @@ DEPENDS += " \
 	wayland-native \
 	wayland-protocols \
 "
-# sways default config makes use of it
+
 RDEPENDS:${PN} ?= "swaybg python3 python-i3ipc"
 
 RRECOMMENDS:${PN} ?= " \
@@ -40,7 +40,7 @@ SRC_URI = " \
 	git://github.com/swaywm/sway.git;protocol=https;branch=master \
 "
 
-SRCREV = "7a6afc51995aebea4c78d87d3297806e31a66563"
+SRCREV = "9d99bb956fea8922f8e0196d67eabbd510c53f1f"
 PV = "1.7"
 S = "${WORKDIR}/git"
 
