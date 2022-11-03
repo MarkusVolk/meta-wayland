@@ -9,10 +9,12 @@ SRC_URI = "git://github.com/rockowitz/ddcutil.git;protocol=https;branch=master"
 DEPENDS = "i2c-tools glib-2.0 kmod"
 
 S = "${WORKDIR}/git"
-PV = "1.2.2"
-SRCREV = "5080161b456cc6a1fd3e6db3dc537e1dcd1c809b"
+PV = "1.3.0"
+SRCREV = "207f6c75b01924bf5aa7faa4a6688eb2c14dfebf"
 
 inherit autotools pkgconfig gobject-introspection
+
+EXTRA_OECONF:remove = '--enable-introspection'
 
 CFLAGS += "-Wno-unused-but-set-variable"
 
