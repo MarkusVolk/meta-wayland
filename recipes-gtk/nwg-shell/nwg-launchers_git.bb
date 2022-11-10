@@ -29,7 +29,7 @@ SRC_URI = " \
 	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https;branch=master \
 	file://0001-meson.build.patch \
 "
-SRCREV = "29ee3b0501ebc7524eb43ba8a28375f811925d3c"
+SRCREV = "230a5373b696ef3211acb8564efc3813afdad935"
 PV = "0.7.1.1"
 S = "${WORKDIR}/git"
 
