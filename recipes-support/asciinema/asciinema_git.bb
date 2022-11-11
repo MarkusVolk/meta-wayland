@@ -8,6 +8,7 @@ SRC_URI = " \
 
 RDEPENDS:${PN} = " \
 	python3 \
+	python3-fcntl \
 "
 
 inherit python_setuptools_build_meta
