@@ -1,0 +1,27 @@
+From 1a7c0aeadd27eaa5454d40fd6415ab4d0afecb94 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Fri, 11 Nov 2022 03:25:19 +0100
+Subject: [PATCH] backend/drm/meson.build: dont use native hwdata
+
+hwdata is allarch, there's no need to build a native package.
+
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+
+Upstream-Status: inappropriate (oe specific) [https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3844]
+---
+ backend/drm/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/backend/drm/meson.build b/backend/drm/meson.build
+index 7bde50c25..8aa404c4b 100644
+--- a/backend/drm/meson.build
++++ b/backend/drm/meson.build
+@@ -1,4 +1,4 @@
+-hwdata = dependency('hwdata', required: false, native: true)
++hwdata = dependency('hwdata', required: false)
+ if hwdata.found()
+ 	hwdata_dir = hwdata.get_variable(pkgconfig: 'pkgdatadir')
+ 	pnp_ids = files(hwdata_dir / 'pnp.ids')
+-- 
+2.34.1
+
