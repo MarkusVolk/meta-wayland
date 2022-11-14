@@ -41,7 +41,7 @@ SRC_URI = " \
 	git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https \
 	file://0001-backend-drm-meson.build-dont-use-native-hwdata.patch \
 "
-SRCREV = "ea40ba4f6abd6623ff40eef7e443ca2e389ca3b1"
+SRCREV = "4026da53f8a8e39d84dd695fc5afc5badfd4c649"
 PV = "0.15.1"
 
 S = "${WORKDIR}/git"
