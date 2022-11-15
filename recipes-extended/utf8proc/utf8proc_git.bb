@@ -10,8 +10,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "2.7.0"
-SRCREV = "8ca6144c85c165987cb1c5d8395c7314e13d4cd7"
+PV = "2.8.0"
+SRCREV = "1cb28a66ca79a0845e99433fd1056257456cef8b"
 
 EXTRA_OEMAKE = "prefix=${prefix}"
 
