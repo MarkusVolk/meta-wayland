@@ -12,7 +12,7 @@ SRC_URI = " \
 
 S = "${WORKDIR}/git"
 PV = "3.0.1"
-SRCREV = "6e921e1b1d21e84a5c82416ba7ecd98e33a436d0"
+SRCREV = "22ceabf205d8d678710a43154da5a06b701c5830"
 
 inherit cmake
 
