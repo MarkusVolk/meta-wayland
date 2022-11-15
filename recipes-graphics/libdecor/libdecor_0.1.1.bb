@@ -7,7 +7,6 @@ SRC_URI = "git://gitlab.gnome.org/jadahl/libdecor.git;protocol=https;branch=mast
 DEPENDS = " \
 	cairo \
 	pango \
-	virtual/libgl \
 	wayland \
 	wayland-native \
 	wayland-protocols \
@@ -16,11 +15,12 @@ DEPENDS = " \
 S = "${WORKDIR}/git"
 SRCREV = "e87dcfdaf83f332fa83b43c804fcf93c151ff0f5"
 
-PACKAGECONFIG ?= "dbus ${@bb.utils.filter('DISTRO_FEATURES', 'gtk3', d)}"
+PACKAGECONFIG ?= "dbus ${@bb.utils.filter('DISTRO_FEATURES', 'gtk3 opengl', d)}"
 
 PACKAGECONFIG[dbus] = "-Ddbus=enabled,-Ddbus=disabled,dbus"
 PACKAGECONFIG[demo] = "-Ddemo=true,-Ddemo=false,virtual/libegl libxkbcommon"
 PACKAGECONFIG[gtk3] = "-Dgtk=enabled,-Dgtk=disabled,gtk+3"
+PACKAGECONFIG[opengl] = ",,virtual/libgl"
 
 inherit meson pkgconfig
 
