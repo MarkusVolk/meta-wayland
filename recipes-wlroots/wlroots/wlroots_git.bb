@@ -42,7 +42,7 @@ SRC_URI = " \
 	file://0001-backend-drm-meson.build-dont-use-native-hwdata.patch \
 "
 SRCREV = "77d9fc08483fd516e1540fdbfaf9ee789772a778"
-PV = "0.15.1"
+PV = "0.16.0"
 
 S = "${WORKDIR}/git"
 
