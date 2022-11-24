@@ -24,8 +24,8 @@ DEPENDS = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.8.0"
-SRCREV = "d012346fc36802ba01161a2b31d13209f27077d4"
+PV = "1.8.2"
+SRCREV = "6158b55807027d04d4cab575aa5a44945c88ba79"
 
 inherit meson pkgconfig features_check
 
@@ -41,7 +41,6 @@ PACKAGECONFIG ?= " \
 
 EXTRA_OEMESON += "--buildtype release"
 
-PACKAGES += "${PN}-zsh-completion"
-FILES:${PN}-zsh-completion = "${datadir}/zsh"
+FILES:${PN} += "${datadir}"
 
 BBCLASSEXTEND = ""
