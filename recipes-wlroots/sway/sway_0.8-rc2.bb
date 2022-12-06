@@ -36,12 +36,9 @@ RRECOMMENDS:${PN} ?= " \
 	wl-clipboard \
 "
 
-SRC_URI = " \
-	git://github.com/swaywm/sway.git;protocol=https;branch=master \
-"
+SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=v1.8"
 
-SRCREV = "e1b268af98edeb09e570e8855ef64f0719cbafe2"
-PV = "1.9-dev"
+SRCREV = "fb1cb0aa3ac20e62de9cc49cf4196f5d2715a309"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
