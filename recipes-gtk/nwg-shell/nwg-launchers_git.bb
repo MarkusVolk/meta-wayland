@@ -25,11 +25,8 @@ PACKAGECONFIG ?= " \
 	layer-shell \
 "
 
-SRC_URI = " \
-	git://github.com/nwg-piotr/nwg-launchers.git;protocol=https;branch=master \
-	file://0001-meson.build.patch \
-"
-SRCREV = "230a5373b696ef3211acb8564efc3813afdad935"
+SRC_URI = "git://github.com/nwg-piotr/nwg-launchers.git;protocol=https;branch=master"
+SRCREV = "c4d8d369782d32becfe8a8105abec9b61119a629"
 PV = "0.7.1.1"
 S = "${WORKDIR}/git"
 
