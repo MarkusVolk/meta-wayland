@@ -39,10 +39,9 @@ PACKAGECONFIG ?= " \
 
 SRC_URI = " \
 	git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https \
-	file://0001-backend-drm-meson.build-dont-use-native-hwdata.patch \
+	file://0001-backend-drm-meson.build-dont-use-native-hwdata-0.16.patch \
 "
-SRCREV = "1bd0ba3949605c1fe382bbdb62b8a9aa2e462573"
-PV = "0.17.0-dev"
+SRCREV = "1712a7d27444d62f8da8eeedf0840b386a810e96"
 
 S = "${WORKDIR}/git"
 
