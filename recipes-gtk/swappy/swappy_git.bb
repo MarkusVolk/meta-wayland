@@ -18,8 +18,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.4.0"
-SRCREV = "60da5491e243c9edd85f6225326a68ae5e3edfd5"
+PV = "1.5.1"
+SRCREV = "a996b2cec65aadd04ded780f141b02c5bdfbeb32"
 
 PACKAGECONFIG[man-pages] = "-Dman-pages=enabled,-Dman-pages=disabled,scdoc-native"
 
