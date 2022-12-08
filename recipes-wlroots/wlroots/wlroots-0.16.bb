@@ -39,11 +39,12 @@ PACKAGECONFIG ?= " \
 
 SRC_URI = " \
 	git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https \
-	file://0001-backend-drm-meson.build-dont-use-native-hwdata-0.16.patch \
+	file://0001-backend-drm-meson.build-dont-use-native-hwdata.patch \
 "
 SRCREV = "1712a7d27444d62f8da8eeedf0840b386a810e96"
 
 S = "${WORKDIR}/git"
+PV = "0.16"
 
 inherit meson pkgconfig features_check
 
