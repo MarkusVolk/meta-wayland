@@ -37,7 +37,7 @@ RRECOMMENDS:${PN} += " \
 
 PACKAGECONFIG[gles32] = "-Denable_gles32=true,-Denable_gles32=false"
 PACKAGECONFIG[use_system_wfconfig] = "-Duse_system_wfconfig=enabled,-Duse_system_wfconfig=disabled,wf-config"
-PACKAGECONFIG[use_system_wlroots] = "-Duse_system_wlroots=enabled,-Duse_system_wlroots=disabled,wlroots"
+PACKAGECONFIG[use_system_wlroots] = "-Duse_system_wlroots=enabled,-Duse_system_wlroots=disabled,wlroots-0.16"
 PACKAGECONFIG[x11] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-renderutil xcb-util-wm"
 PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 
@@ -45,12 +45,13 @@ PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan x11', d)} \
 	gles32 \
 	use_system_wfconfig \
+	use_system_wlroots \
 "
 
-SRC_URI = "gitsm://github.com/WayfireWM/wayfire.git;protocol=https;branch=master"
+SRC_URI = "gitsm://github.com/WayfireWM/wayfire.git;protocol=https;nobranch=1"
 
-SRCREV = "1bb46e52841f592e06890e054db64e796aaa0094"
-PV = "0.8.0"
+SRCREV = "1e9092b5ffe878d1cdecefa1997de4a665cf6212"
+PV = "0.7.5"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
