@@ -17,12 +17,12 @@ GIR_MESON_OPTION = ""
 inherit meson pkgconfig features_check gobject-introspection vala
 
 SRC_URI = " \
-    git://source.puri.sm/Librem5/feedbackd.git;protocol=https;branch=master \
+    git://source.puri.sm/Librem5/feedbackd.git;protocol=https;nobranch=1 \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.0.0+git20220208"
-SRCREV = "74b178a363f1e0e4b84309f2a1b1c1c41bf97248"
+PV = "0.0.1"
+SRCREV = "99c12e77d830ac8b0316c032bddd3ef082c66c72"
 
 EXTRA_OEMESON += "-Dtests=false"
 
