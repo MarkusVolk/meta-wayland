@@ -18,8 +18,8 @@ DEPENDS += " \
 SRC_URI = "git://github.com/bugaevc/wl-clipboard.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
-PV = "2.0+${SRCREV}"
-SRCREV = "d2c32f2b4d469f53070e8c4052dea6f412de3916"
+PV = "2.1.0"
+SRCREV = "89cd9f9e430a6cd8b82fa65a9c05e530e2430ffd"
 
 inherit meson pkgconfig features_check
 
