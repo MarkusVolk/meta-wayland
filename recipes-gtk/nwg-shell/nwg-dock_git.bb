@@ -11,8 +11,8 @@ GO_IMPORT = "github.com/nwg-piotr/nwg-dock.git"
 
 SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
-PV = "0.3.2"
-SRCREV = "fa1d3424b88490470c99d70d1ae3ae334f8ff4b3"
+PV = "0.3.3"
+SRCREV = "a8c40de275ea0c49a9b9527f4d3d440644c14a53"
 
 inherit go go-mod pkgconfig
 
