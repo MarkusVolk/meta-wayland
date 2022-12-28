@@ -30,7 +30,7 @@ PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,eudev elogind"
 PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
-PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm"
+PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm,xwayland"
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd sysvinit vulkan x11 xwayland opengl', d)} \

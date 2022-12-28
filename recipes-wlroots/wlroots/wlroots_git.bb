@@ -30,7 +30,7 @@ PACKAGECONFIG[systemd] = ",,systemd"
 PACKAGECONFIG[sysvinit] = ",,eudev elogind"
 PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
-PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm"
+PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm,xwayland"
 
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'systemd sysvinit vulkan x11 xwayland opengl', d)} \
@@ -41,7 +41,7 @@ SRC_URI = " \
 	git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https \
 	file://0001-backend-drm-meson.build-dont-use-native-hwdata.patch \
 "
-SRCREV = "1bd0ba3949605c1fe382bbdb62b8a9aa2e462573"
+SRCREV = "869af1cfbb3944d32d59a4c08ca439e7b5eaf6d2"
 PV = "0.17.0-dev"
 
 S = "${WORKDIR}/git"
