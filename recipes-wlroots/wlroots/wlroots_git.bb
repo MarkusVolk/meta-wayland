@@ -12,7 +12,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=7578fad101710ea2d289ff5411f1b818"
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
-	hwdata \
+	hwdata-native \
 	libdrm \
 	libxkbcommon \
 	pixman \
@@ -37,10 +37,7 @@ PACKAGECONFIG ?= " \
 	libinput \
 "
 
-SRC_URI = " \
-	git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https \
-	file://0001-backend-drm-meson.build-dont-use-native-hwdata.patch \
-"
+SRC_URI = "git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https"
 SRCREV = "869af1cfbb3944d32d59a4c08ca439e7b5eaf6d2"
 PV = "0.17.0-dev"
 
