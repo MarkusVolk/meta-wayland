@@ -7,17 +7,14 @@ DEPENDS = " \
 	gtk-layer-shell \
 "
 
-RRECOMMENDS:${PN} = " \
-	thunar \
-	foot \
-"
+RDEPENDS:${PN} = "go-runtime"
 
 GO_IMPORT = "github.com/nwg-piotr/nwg-drawer.git"
 
 SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
-PV = "0.3.6"
-SRCREV = "c4629e0c28dc9baadc59d4c66f520b5c0774bfb0"
+PV = "0.3.8"
+SRCREV = "820848d9845592da785fae466742091d8e42767b"
 
 inherit go go-mod pkgconfig
 
@@ -31,3 +28,4 @@ do_install:append() {
 
 do_compile[network] = "1"
 
+PRIVATE_LIBS_${PN}:append = "libstd.so"
