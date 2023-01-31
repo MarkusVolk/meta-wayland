@@ -26,3 +26,4 @@ FILES:${PN} += "${datadir}"
 
 do_compile[network] = "1"
 
+PRIVATE_LIBS:${PN}:append = " libstd.so"

@@ -28,4 +28,4 @@ do_install:append() {
 
 do_compile[network] = "1"
 
-PRIVATE_LIBS_${PN}:append = "libstd.so"
+PRIVATE_LIBS:${PN}:append = " libstd.so"
