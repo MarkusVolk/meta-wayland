@@ -12,6 +12,7 @@ DEPENDS += " \
 	cairo \
 	freetype \
 	glm \
+	hwdata-native \
 	jpeg \
 	libdrm \
 	libevdev \
@@ -44,8 +45,6 @@ PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan x11', d)} \
 	gles32 \
-	use_system_wfconfig \
-	use_system_wlroots \
 "
 
 SRC_URI = "gitsm://github.com/WayfireWM/wayfire.git;protocol=https;nobranch=1"

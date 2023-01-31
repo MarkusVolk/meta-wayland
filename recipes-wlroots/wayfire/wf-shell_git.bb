@@ -13,7 +13,6 @@ DEPENDS = " \
 	wayfire \
 	gtkmm3 \
 	gtk-layer-shell \
-	wf-config \
 	pulseaudio \
 	libnotify3 \
 "
