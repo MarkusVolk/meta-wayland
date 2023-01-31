@@ -11,6 +11,7 @@ DEPENDS += "\
     libxkbcommon \
     wayland \
     wayland-native \
+    wayland-protocols \
     wlroots-0.16 \
 "
 
