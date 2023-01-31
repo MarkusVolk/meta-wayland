@@ -5,13 +5,13 @@ SRC_URI = "\
     https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/${PV}/wlroots-${PV}.tar.gz \
     file://Makefile \
 "
-SRC_URI[md5sum] = "d847f52dd4be602918fdfa25e00aef27"
+SRC_URI[sha256sum] = "cb867d0285cdc797ec6d127decd54a68b7166445632313b685f08ea016931044"
 
 DEPENDS += "\
     libxkbcommon \
     wayland \
     wayland-native \
-    wlroots \
+    wlroots-0.16 \
 "
 
 S = "${WORKDIR}/wlroots-${PV}"
@@ -22,6 +22,8 @@ EXTRA_OEMAKE = "\
     'CC=${CC}' \
     'CFLAGS=${CFLAGS}' \
     'LDFLAGS=${LDFLAGS}' \
+    'WAYLAND_SCANNER=${STAGING_BINDIR_NATIVE}/wayland-scanner' \
+    'WAYLAND_PROTOCOLS=${STAGING_DATADIR}/wayland-protocols' \
 "
 
 do_compile() {
