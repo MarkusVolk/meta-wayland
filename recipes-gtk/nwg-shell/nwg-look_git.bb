@@ -3,7 +3,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://src/${GO_IMPORT}/LICENSE;md5=2e53cad864b84be468b2fc0b511942ce"
 
 DEPENDS = "xcur2png gtk+3"
-RDEPENDS:${PN} = "xcur2png"
+RDEPENDS:${PN} = "xcur2png go-runtime"
 
 GO_IMPORT = "github.com/nwg-piotr/nwg-look.git"
 
