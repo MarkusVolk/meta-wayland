@@ -14,13 +14,8 @@ inherit meson gtk-icon-cache pkgconfig
 SRC_URI = "git://github.com/J-Lentz/iwgtk.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
-PV = "0.8"
-SRCREV = "5d3d3f17b80b5724250f63b0f5acbbd656a281d0"
-
-do_install:append() {
-	# fix weird /usr/share/lib install
-	mv ${D}${datadir}/lib ${D}${libdir}
-}
+PV = "0.9"
+SRCREV = "008a2a26b6e7d266d190ab85d6c25cf4b8a7bd06"
 
 FILES:${PN} += "${systemd_user_unitdir}/iwgtk.service"
 
