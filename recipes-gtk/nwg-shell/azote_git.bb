@@ -19,6 +19,7 @@ RDEPENDS:${PN} = " \
 	grim \
 	slurp \
 	swaybg \
+	wlr-randr \
 "
 
 inherit setuptools3
