@@ -21,8 +21,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.6"
-SRCREV = "92de4d2e310c7bd7dca9c9ced602219dc8245a55"
+PV = "1.7.2"
+SRCREV = "bd2dfec9ae0111b1858d5fab44f0f4fac4117d07"
 
 PACKAGECONFIG[pam] = ",,libpam"
 PACKAGECONFIG[gdk-pixbuf] = ",,gdk-pixbuf"
