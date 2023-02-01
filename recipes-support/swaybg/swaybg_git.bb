@@ -24,8 +24,8 @@ SRC_URI = " \
 CFLAGS:append = " -Wno-error=date-time"
 
 S = "${WORKDIR}/git"
-PV = "1.1.1"
-SRCREV = "06f93ddc01ccdecf1a1c9c2c658ea030658f44f2"
+PV = "1.2.0"
+SRCREV = "0e645c4583436692c7ac3983e36b87a3ea325454"
 
 inherit meson pkgconfig features_check
 
