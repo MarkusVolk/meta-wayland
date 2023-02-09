@@ -22,7 +22,7 @@ RDEPENDS:${PN} = " \
 	wlr-randr \
 "
 
-inherit setuptools3 main-user
+inherit setuptools3
 
 S = "${WORKDIR}/git"
 PV = "1.9.7"
@@ -33,18 +33,15 @@ do_configure:prepend() {
 }
 
 do_install:append() {
-	install -d ${D}${bindir} ${D}${datadir}/azote ${D}${datadir}/pixmaps ${D}${datadir}/applications ${D}${MAIN_USER_HOMEDIR}
+	install -d ${D}${bindir} ${D}${datadir}/azote ${D}${datadir}/pixmaps ${D}${datadir}/applications
 	install -m 755 ${S}/distrib/azote ${D}${bindir}
 	install -m 644 ${S}/distrib/azote.desktop ${D}${datadir}/applications
 	install -m 644 ${S}/distrib/azote.svg ${D}${datadir}/pixmaps
 	install -m 644 ${S}/distrib/indicator_active.png ${D}${datadir}/azote
 	install -m 644 ${S}/distrib/indicator_attention.png ${D}${datadir}/azote
-	touch ${D}${MAIN_USER_HOMEDIR}/.azotebg
-	chown ${MAIN_USER_NAME}:${MAIN_USER_NAME} -R ${D}${MAIN_USER_HOMEDIR}
 }
 
 FILES:${PN}:append = " \
 	${datadir} \
 	${bindir} \
-	${MAIN_USER_HOMEDIR} \
 "
