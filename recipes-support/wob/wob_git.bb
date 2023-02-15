@@ -31,3 +31,13 @@ SRCREV = "19318a308033ee5ea626ba61068af408392a6251"
 
 EXTRA_OEMESON += "--buildtype release"
 
+do_install:append() {
+    if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
+        install -d ${D}${systemd_user_unitdir}/sockets.target.wants ${D}${systemd_user_unitdir}/graphical-session.target.wants
+        install -m 0644 ${S}/contrib/systemd/* ${D}${systemd_user_unitdir}
+        ln -fs ${systemd_user_unitdir}/wob.socket ${D}${systemd_user_unitdir}/sockets.target.wants
+        ln -fs ${systemd_user_unitdir}/wob.service ${D}${systemd_user_unitdir}/graphical-session.target.wants
+    fi
+}
+
+FILES:${PN} += "${systemd_user_unitdir}"
