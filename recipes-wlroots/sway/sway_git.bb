@@ -14,6 +14,7 @@ DEPENDS += " \
 	cairo \
 	libevdev \
 	json-c \
+	libdisplay-info \
 	libdrm \
 	libinput \
 	libxkbcommon \
@@ -40,7 +41,7 @@ SRC_URI = " \
 	git://github.com/swaywm/sway.git;protocol=https;branch=master \
 "
 
-SRCREV = "9498e4d2614fce6b29b64fd8a3861c1fb5be4b87"
+SRCREV = "51c9376c07639f7876fadc8522d8491d728c7c70"
 PV = "1.9-dev"
 S = "${WORKDIR}/git"
 
