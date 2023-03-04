@@ -13,6 +13,7 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
 	hwdata-native \
+	libdisplay-info \
 	libdrm \
 	libxkbcommon \
 	pixman \
@@ -32,12 +33,12 @@ PACKAGECONFIG[x11] = ",,xcb-util-renderutil"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,xwayland xcb-util-wm,xwayland"
 
 PACKAGECONFIG ?= " \
-	${@bb.utils.filter('DISTRO_FEATURES', 'systemd sysvinit vulkan x11 xwayland opengl', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'systemd vulkan x11 xwayland opengl', d)} \
 	libinput \
 "
 
 SRC_URI = "git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https"
-SRCREV = "8619ffab2142d8c0022bfa86e1ff7a3539c01f46"
+SRCREV = "5ae17de23f5fd9bb252a698f3771c840280e2c05"
 PV = "0.17.0-dev"
 
 S = "${WORKDIR}/git"
