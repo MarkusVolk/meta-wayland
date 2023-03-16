@@ -4,7 +4,7 @@ HOMEPAGE = "https://hyprland.org/"
 SECTION = "graphics"
 LICENSE = "BSD-3-Clause"
 
-LIC_FILES_CHKSUM = "file://LICENSE;md5=1ab256c90ee222b54a77ff64a58006db"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=a08367f3a4cd5301ba8b88eded36b8fd"
 
 REQUIRED_DISTRO_FEATURES = "wayland opengl"
 
@@ -17,6 +17,7 @@ DEPENDS += " \
 	wayland-native \
 	wayland-protocols \
 	jq-native \
+	libdisplay-info \
 	pixman \
 	libdrm \
 	libxkbcommon \
@@ -37,8 +38,8 @@ RRECOMMENDS:${PN} ?= " \
 
 SRC_URI = "gitsm://github.com/hyprwm/Hyprland.git;protocol=https;branch=main"
 
-SRCREV = "431c74f111285eab41c17d724f335a324b5c833a"
-PV = "v0.22-beta"
+SRCREV = "8531d1d7a67f6213de73466f0351a1ae709f8f4f"
+PV = "v0.23-beta"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
