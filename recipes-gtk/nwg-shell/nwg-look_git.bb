@@ -5,21 +5,22 @@ LIC_FILES_CHKSUM = "file://src/${GO_IMPORT}/LICENSE;md5=2e53cad864b84be468b2fc0b
 DEPENDS = "xcur2png gtk+3"
 RDEPENDS:${PN} = "xcur2png go-runtime"
 
-GO_IMPORT = "github.com/nwg-piotr/nwg-look.git"
+GO_IMPORT = "github.com/nwg-piotr/nwg-look"
 
 SRC_URI = "git://${GO_IMPORT};branch=main;protocol=https"
-SRCREV = "928160f56340edda5578974b4684f9a0dbfa5e76"
-PV = "0.1.5"
+SRCREV = "c72a383cf0f3b4130629a649058b680caf619f53"
+PV = "0.2.1"
 
 inherit go go-mod pkgconfig gtk-icon-cache
 
 GO_INSTALL = "${GO_IMPORT}"
 
 do_install:append() {
-	install -d ${D}${datadir}/nwg-look ${D}${datadir}/applications ${D}${datadir}/pixmaps
+	install -d ${D}${datadir}/nwg-look/langs ${D}${datadir}/applications ${D}${datadir}/pixmaps
 	install -m 0644 ${S}/src/${GO_IMPORT}/stuff/main.glade ${D}${datadir}/nwg-look
 	install -m 0644 ${S}/src/${GO_IMPORT}/stuff/nwg-look.desktop ${D}${datadir}/applications
 	install -m 0644 ${S}/src/${GO_IMPORT}/stuff/nwg-look.svg ${D}${datadir}/pixmaps
+	install -m 0644 ${S}/src/${GO_IMPORT}/langs/en_US.json ${D}${datadir}/nwg-look/langs
 }
 
 FILES:${PN} += "${datadir}"
