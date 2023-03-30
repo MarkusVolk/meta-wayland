@@ -15,6 +15,7 @@ DEPENDS += " \
 	hwdata-native \
 	libdrm \
 	libxkbcommon \
+	libliftoff \
 	pixman \
 	seatd \
 	wayland \
