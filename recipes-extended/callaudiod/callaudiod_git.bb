@@ -8,13 +8,11 @@ RDEPENDS:${PN} += "pulseaudio-server"
 
 inherit meson pkgconfig
 
-SRC_URI = " \
-    git://gitlab.com/mobian1/callaudiod.git;protocol=https;branch=master \
-"
+SRC_URI = "git://gitlab.com/mobian1/callaudiod.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
-PV = "0.1.4"
-SRCREV = "a7ca6ce9d4c947f19c3f99ff2cab986c64434e57"
+PV = "0.1.7"
+SRCREV = "92cf20a93903fe3d7969f4002643b011011243f7"
 
 FILES:${PN} += "${datadir}"
 
