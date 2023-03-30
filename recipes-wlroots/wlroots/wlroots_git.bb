@@ -15,6 +15,7 @@ DEPENDS += " \
 	hwdata-native \
 	libdisplay-info \
 	libdrm \
+	libliftoff \
 	libxkbcommon \
 	pixman \
 	seatd \
@@ -38,7 +39,7 @@ PACKAGECONFIG ?= " \
 "
 
 SRC_URI = "git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https"
-SRCREV = "a3489f2c64d391240bfd190e1f4829cad618bac0"
+SRCREV = "89dcecba39d4f49b673f2fa976354c91413a4c3f"
 PV = "0.17.0-dev"
 
 S = "${WORKDIR}/git"
