@@ -37,11 +37,9 @@ RRECOMMENDS:${PN} ?= " \
 	wl-clipboard \
 "
 
-SRC_URI = " \
-	git://github.com/swaywm/sway.git;protocol=https;branch=master \
-"
+SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=master"
 
-SRCREV = "ebeed7e303110403cc0134a1927008998caa8d96"
+SRCREV = "dee032d0a0ecd958c902b88302dc59703d703c7f"
 PV = "1.9-dev"
 S = "${WORKDIR}/git"
 
@@ -64,7 +62,7 @@ PACKAGECONFIG ?= " \
 "
 
 # Reproducibility issue. Fix me!
-CFLAGS:append = " -Wno-error=date-time"
+# CFLAGS:append = " -Wno-error=date-time"
 EXTRA_OEMESON += "--buildtype release"
 
 do_install:append() {
