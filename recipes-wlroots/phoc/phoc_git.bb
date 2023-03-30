@@ -32,13 +32,11 @@ DEPENDS += " \
 
 RDEPENDS:${PN} = "mutter"
 
-SRC_URI = " \
-	gitsm://gitlab.gnome.org/World/Phosh/phoc.git;protocol=https;branch=master \
-"
+SRC_URI = "gitsm://gitlab.gnome.org/World/Phosh/phoc.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
-PV = "0.21.1"
-SRCREV = "0bcb87984fc08f7417baf9aa25a1707126620a6e"
+PV = "0.25.2"
+SRCREV = "3aee71bf5197694ee6125d6f4d06c2afc4c2a4e2"
 
 inherit features_check gsettings meson pkgconfig
 
