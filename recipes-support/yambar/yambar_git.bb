@@ -11,6 +11,7 @@ SRC_URI = " \
 "
 
 DEPENDS = " \
+	bison-native \
 	libyaml \
 	fcft \
 	tllist \
@@ -27,8 +28,8 @@ RRECOMMENDS:${PN} += " \
 inherit meson pkgconfig
 
 S = "${WORKDIR}/git"
-PV = "1.8.0"
-SRCREV = "3cc142a27302adbb4a314ea95c901a5216b06d98"
+PV = "1.9.0"
+SRCREV = "1353d635c211bf563c006a35c70c3e4d5db461a4"
 
 PACKAGECONFIG[wayland] = "-Dbackend-wayland=enabled,-Dbackend-wayland=disabled,wayland wayland-native wayland-protocols"
 PACKAGECONFIG[x11] = "-Dbackend-x11=enabled,-Dbackend-x11=disabled,xcb-util xcb-util-cursor xcb-util-wm libxcb"
