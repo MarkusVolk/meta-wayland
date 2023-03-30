@@ -25,8 +25,8 @@ RDEPENDS:${PN} = " \
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "1.9.7"
-SRCREV = "dcb248c97046764d3d01420dc320f4119e2c2dac"
+PV = "1.11.0"
+SRCREV = "95372d8eac96c322d2c8e6a186c8481fc504dca4"
 
 do_configure:prepend() {
 	[ -d ${S}/dist ] && mv ${S}/dist ${S}/distrib
