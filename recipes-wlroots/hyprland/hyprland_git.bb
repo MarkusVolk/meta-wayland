@@ -18,6 +18,7 @@ DEPENDS += " \
 	wayland-protocols \
 	jq-native \
 	libdisplay-info \
+	pango \
 	pixman \
 	libdrm \
 	libxkbcommon \
@@ -38,8 +39,8 @@ RRECOMMENDS:${PN} ?= " \
 
 SRC_URI = "gitsm://github.com/hyprwm/Hyprland.git;protocol=https;branch=main"
 
-SRCREV = "8531d1d7a67f6213de73466f0351a1ae709f8f4f"
-PV = "v0.23-beta"
+SRCREV = "3ce19e67fe60321c1af845dd30925e193cd96440"
+PV = "v0.24"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
