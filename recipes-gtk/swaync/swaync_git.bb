@@ -10,6 +10,8 @@ DEPENDS = " \
             gtk-layer-shell \
             json-glib \
             libhandy \
+            libgee \
+            pulseaudio \
 "
 
 SRC_URI = " \
@@ -17,8 +19,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.7.3"
-SRCREV = "8371ace245c7403d563eb816975eab57829bd1a7"
+PV = "0.8.0"
+SRCREV = "2fc7d780130fa08b48dcffd23d4a39f6b4e48501"
 
 PACKAGECONFIG[bash] = "-Dbash-completions=true,-Dbash-completions=false"
 PACKAGECONFIG[fish] = "-Dfish-completions=true,-Dfish-completions=false"
