@@ -12,7 +12,7 @@ SRC_URI = " \
 "
 
 DEPENDS = " \
-	inih \
+	libinih \
 	wayland \
 	wayland-native \
 	wayland-protocols \
