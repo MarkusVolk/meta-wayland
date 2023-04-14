@@ -10,12 +10,21 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=98f7e9dc79966298d76caf1b0a6d35c1"
 
 REQUIRED_DISTRO_FEATURES = "wayland gobject-introspection-data"
 
+SRC_URI = " \
+	git://github.com/Alexays/Waybar.git;protocol=https;branch=master \
+	file://waybar.service \
+"
+
+S = "${WORKDIR}/git"
+PV = "0.9.17"
+SRCREV = "f0bead34d4f3a36cb9c94d60152d22dc6a773d60"
+
 DEPENDS += " \
+	date \
 	fmt \
 	glib-2.0-native \
 	gtkmm3 \
 	jsoncpp \
-	libevdev \
 	libsigc++-3 \
 	libxkbcommon \
 	gtk+3 \
@@ -26,41 +35,44 @@ DEPENDS += " \
 	wayland-protocols \
 "
 
-PACKAGECONFIG[bluetooth] = "-Drfkill=enabled,-Drfkill=disabled"
-PACKAGECONFIG[date] = ",,date"
-PACKAGECONFIG[experimental] = "-Dexperimental=true,-Dexperimental=false"
-PACKAGECONFIG[pulseaudio] = ",,pulseaudio"
-PACKAGECONFIG[gtk-layer-shell] = ",,gtk-layer-shell"
-PACKAGECONFIG[mpd] = ",,libmpdclient"
-PACKAGECONFIG[network] = ",,libnl"
-PACKAGECONFIG[sysvinit] = ",,eudev"
-PACKAGECONFIG[systemd] = ",,systemd"
-
-PACKAGECONFIG ?= " \
-    ${@bb.utils.filter('DISTRO_FEATURES', 'bluetooth', d)} \
-    ${@bb.utils.filter('DISTRO_FEATURES', 'pulseaudio', d)} \
-    ${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
-    ${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
-    network \
-    gtk-layer-shell \
-    date \
-"
-
-RRECOMMENDS:${PN} += " \
-	font-awesome-otf \
-"
-
-SRC_URI = "git://github.com/Alexays/Waybar.git;protocol=https;branch=master"
-
-S = "${WORKDIR}/git"
-PV = "0.9.17"
-SRCREV = "f0bead34d4f3a36cb9c94d60152d22dc6a773d60"
-
 inherit meson pkgconfig features_check
 
-PACKAGES += "${PN}-systemd"
+PACKAGECONFIG[libcxx] = "-Dlibcxx=true,-Dlibcxx=false,libcxx clang-tidy"
+PACKAGECONFIG[evdev] = "-Dlibevdev=enabled,-Dlibevdev=disabled,libevdev"
+PACKAGECONFIG[experimental] = "-Dexperimental=true,-Dexperimental=false"
+PACKAGECONFIG[gtk-layer-shell] = "-Dgtk-layer-shell=enabled,-Dgtk-layer-shell=disabled,gtk-layer-shell"
+PACKAGECONFIG[jack] = "-Djack=enabled,-Djack=disabled,pipewire"
+PACKAGECONFIG[libinput] = "-Dlibinput=enabled,-Dlibinput=disabled,libinput"
+PACKAGECONFIG[logind] = "-Dlogind=enabled,-Dlogind=disabled,systemd"
+PACKAGECONFIG[mpd] = "-Dman_pages=enabled,-Dman_pages=disabled,scdoc-native"
+PACKAGECONFIG[mpd] = "-Dmpd=enabled,-Dmpd=disabled,libmpdclient"
+PACKAGECONFIG[mpris] = "-Dmpris=enabled,-Dmpris=disabled,playerctl"
+PACKAGECONFIG[network] = "-Dlibnl=enabled,-Dlibnl=disabled,libnl"
+PACKAGECONFIG[pulseaudio] = "-Dpulseaudio=enabled,-Dpulseaudio=disabled,pulseaudio"
+PACKAGECONFIG[rfkill] = "-Drfkill=enabled,-Drfkill=disabled"
+PACKAGECONFIG[systemd] = "-Dsystemd=enabled,-Dsystemd=disabled,systemd"
+PACKAGECONFIG[tests] = "-Dtests=enabled,-Dtests=disabled,catch2"
+PACKAGECONFIG[udev] = "-Dlibudev=enabled,-Dlibudev=disabled"
+PACKAGECONFIG[upower_glib] = "-Dupower_glib=enabled,-Dupower_glib=disabled,upower"
+PACKAGECONFIG[wireplumber] = "-Dwireplumber=enabled,-Dwireplumber=disabled,wireplumber"
 
-FILES:${PN}-systemd += "${libdir}/systemd"
+PACKAGECONFIG ?= " \
+    ${@bb.utils.filter('DISTRO_FEATURES', 'pulseaudio', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd logind udev', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'pipewire', 'wireplumber', '', d)} \
+    evdev \
+    gtk-layer-shell \
+    libinput  \
+    mpris \
+    network \
+    rfkill \
+    upower_glib \
+"
 
-BBCLASSEXTEND = ""
+do_install:append() {
+	install -m 0644 ${WORKDIR}/waybar.service ${D}${systemd_user_unitdir}
+}
 
+FILES:${PN} += "${systemd_user_unitdir}"
+
+RRECOMMENDS:${PN} += "font-awesome-otf"
