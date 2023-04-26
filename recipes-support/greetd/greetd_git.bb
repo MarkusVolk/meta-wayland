@@ -9,12 +9,12 @@ SRC_URI += " \
 "
 SRCREV = "d70030962341a3ae7a88ecf2f7af748a5a6296d1"
 S = "${WORKDIR}/git"
-PV = "0.8.0"
+PV = "0.9.0"
 
 DEPENDS = "libpam"
 RRECOMMENDS:${PN} ?= "agreety"
 
-inherit cargo
+inherit cargo useradd
 
 CARGO_SRC_DIR = "greetd"
 
@@ -116,6 +116,9 @@ do_install:append() {
     install -m0644 ${S}/config.toml ${D}${sysconfdir}/greetd
     install -m0644 ${WORKDIR}/greetd.pam ${D}${sysconfdir}/pam.d/greetd
 }
+
+USERADD_PACKAGES = "${PN}"
+USERADD_PARAM:${PN} = "--system --user-group --groups video --no-create-home --shell /bin/bash greeter"
 
 FILES:${PN} += "${sysconfdir} ${systemd_system_unitdir}"
 
