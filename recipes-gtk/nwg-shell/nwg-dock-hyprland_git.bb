@@ -1,4 +1,4 @@
-SUMMARY = "GTK3-based dock for wlroots based compositors."
+SUMMARY = "GTK3-based dock for hyprland."
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://src/${GO_IMPORT}/LICENSE;md5=fffa55ad1c828db5e334374fb1182530"
 
@@ -8,12 +8,12 @@ DEPENDS = " \
 "
 RDEPENDS:${PN} = "go-runtime"
 
-GO_IMPORT = "github.com/nwg-piotr/nwg-dock.git"
+GO_IMPORT = "github.com/nwg-piotr/nwg-dock-hyprland.git"
 
 SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
-PV = "0.3.3"
-SRCREV = "a8c40de275ea0c49a9b9527f4d3d440644c14a53"
+PV = "0.0.2"
+SRCREV = "57d30bea88062b54de539a9d36c4061e7b1bd88b"
 
 inherit go go-mod pkgconfig
 
