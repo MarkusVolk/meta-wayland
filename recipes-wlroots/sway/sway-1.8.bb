@@ -36,11 +36,14 @@ RRECOMMENDS:${PN} ?= " \
 	wl-clipboard \
 "
 
-SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=v1.8"
+SRC_URI = " \
+	git://github.com/swaywm/sway.git;protocol=https;branch=v1.8 \
+	file://sway-999.01-fix-build-with-updated-libinput.patch \
+"
 
-SRCREV = "b88b1b6302cf68cc50ee7f3279b2f2ff29e292c8"
+SRCREV = "68d620a8fd70d70eb91c58dcfafc4af16c58379d"
 S = "${WORKDIR}/git"
-PV = "0.8"
+PV = "0.8.1"
 
 inherit meson pkgconfig features_check
 
