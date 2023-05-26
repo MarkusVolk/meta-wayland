@@ -12,6 +12,7 @@ REQUIRED_DISTRO_FEATURES = "wayland gobject-introspection-data"
 
 SRC_URI = " \
 	git://github.com/Alexays/Waybar.git;protocol=https;branch=master \
+	file://0001-include-headers-to-fix-build-after-gcc-13-update.patch \
 	file://waybar.service \
 "
 

@@ -1,0 +1,40 @@
+From a8a39f7bdfda7960efe0f5560c34e1518a598169 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Sat, 27 May 2023 00:58:45 +0200
+Subject: [PATCH] include headers to fix build after gcc 13 update
+
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+---
+ include/modules/sway/ipc/client.hpp | 1 +
+ src/modules/sway/ipc/client.cpp     | 3 ++-
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/include/modules/sway/ipc/client.hpp b/include/modules/sway/ipc/client.hpp
+index 77dab083..d87b00c4 100644
+--- a/include/modules/sway/ipc/client.hpp
++++ b/include/modules/sway/ipc/client.hpp
+@@ -5,6 +5,7 @@
+ #include <sys/un.h>
+ #include <unistd.h>
+ 
++#include <string>
+ #include <cstring>
+ #include <memory>
+ #include <mutex>
+diff --git a/src/modules/sway/ipc/client.cpp b/src/modules/sway/ipc/client.cpp
+index 4d6495cb..256ed3eb 100644
+--- a/src/modules/sway/ipc/client.cpp
++++ b/src/modules/sway/ipc/client.cpp
+@@ -1,7 +1,8 @@
+ #include "modules/sway/ipc/client.hpp"
+-
++#include <stdexcept>
+ #include <fcntl.h>
+ 
++
+ namespace waybar::modules::sway {
+ 
+ Ipc::Ipc() {
+-- 
+2.34.1
+
