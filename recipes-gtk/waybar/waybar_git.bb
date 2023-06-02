@@ -12,13 +12,12 @@ REQUIRED_DISTRO_FEATURES = "wayland gobject-introspection-data"
 
 SRC_URI = " \
 	git://github.com/Alexays/Waybar.git;protocol=https;branch=master \
-	file://0001-include-headers-to-fix-build-after-gcc-13-update.patch \
 	file://waybar.service \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.9.17"
-SRCREV = "f0bead34d4f3a36cb9c94d60152d22dc6a773d60"
+PV = "0.9.18"
+SRCREV = "47193a3d2f81a8ce7177449f92e927db74d873b0"
 
 DEPENDS += " \
 	date \
@@ -45,7 +44,7 @@ PACKAGECONFIG[gtk-layer-shell] = "-Dgtk-layer-shell=enabled,-Dgtk-layer-shell=di
 PACKAGECONFIG[jack] = "-Djack=enabled,-Djack=disabled,pipewire"
 PACKAGECONFIG[libinput] = "-Dlibinput=enabled,-Dlibinput=disabled,libinput"
 PACKAGECONFIG[logind] = "-Dlogind=enabled,-Dlogind=disabled,systemd"
-PACKAGECONFIG[mpd] = "-Dman_pages=enabled,-Dman_pages=disabled,scdoc-native"
+PACKAGECONFIG[man_pages] = "-Dman-pages=enabled,-Dman-pages=disabled,scdoc-native"
 PACKAGECONFIG[mpd] = "-Dmpd=enabled,-Dmpd=disabled,libmpdclient"
 PACKAGECONFIG[mpris] = "-Dmpris=enabled,-Dmpris=disabled,playerctl"
 PACKAGECONFIG[network] = "-Dlibnl=enabled,-Dlibnl=disabled,libnl"
