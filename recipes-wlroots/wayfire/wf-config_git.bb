@@ -15,7 +15,7 @@ DEPENDS = " \
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = "git://github.com/WayfireWM/wf-config.git;protocol=https;branch=master"
-SRCREV = "62e3897f207f49b1a3bbb85ba4b11d9fea239ec1"
+SRCREV = "999653b2fedb7a969b2ebfd748747e4806afe1cb"
 PV = "0.7.1"
 
 S = "${WORKDIR}/git"
