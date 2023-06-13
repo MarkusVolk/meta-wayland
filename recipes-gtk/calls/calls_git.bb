@@ -28,8 +28,8 @@ DEPENDS = " \
 SRC_URI = "gitsm://gitlab.gnome.org/GNOME/calls.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
-SRCREV = "4d07205edfbca86866a9e48a914bab280f3eedfd"
-PV = "44.1"
+SRCREV = "91e5cad939f6753bc232c8990be295b068473949"
+PV = "44.2"
 
 inherit meson vala pkgconfig mime-xdg gtk-icon-cache
 
