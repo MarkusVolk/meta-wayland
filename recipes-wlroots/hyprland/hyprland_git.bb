@@ -35,11 +35,14 @@ RRECOMMENDS:${PN} ?= " \
 	grim \
 	slurp \
 	wl-clipboard \
+	hyprland-borders-plus-plus \
+	hyprland-csgo-vulkan \
+	hyprland-hyprbars \
 "
 
 SRC_URI = "gitsm://github.com/hyprwm/Hyprland.git;protocol=https;branch=main"
 
-SRCREV = "51a930f802c71a0e67f05e7b176ded74e8e95f87"
+SRCREV = "5ac625d7bdff6b6318058f396f0fa1641bb6e807"
 PV = "0.26.0"
 S = "${WORKDIR}/git"
 
