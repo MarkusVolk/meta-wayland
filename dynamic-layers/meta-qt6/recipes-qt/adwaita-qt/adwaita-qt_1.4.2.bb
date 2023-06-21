@@ -15,3 +15,5 @@ S = "${WORKDIR}/git"
 SRCREV = "07859143fd733cfefae687f6967795c7f50d4ca8"
 
 FILES:${PN} += "${libdir}/plugins/styles/adwaita.so"
+
+BBCLASSEXTEND = "native"
