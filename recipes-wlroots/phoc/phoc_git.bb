@@ -10,6 +10,7 @@ REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
 	glib-2.0 \
+	gmobile \
 	gnome-desktop \
 	libinput \
 	libxkbcommon \
@@ -35,8 +36,8 @@ RDEPENDS:${PN} = "mutter"
 SRC_URI = "gitsm://gitlab.gnome.org/World/Phosh/phoc.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
-PV = "0.25.2"
-SRCREV = "3aee71bf5197694ee6125d6f4d06c2afc4c2a4e2"
+PV = "0.28.0"
+SRCREV = "ec5e24da547e60ee76df8166e27ea77db5865da5"
 
 inherit features_check gsettings meson pkgconfig
 
