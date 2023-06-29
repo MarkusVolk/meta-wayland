@@ -9,7 +9,7 @@ SRC_URI = "git://github.com/elogind/elogind.git;protocol=https;nobranch=1"
 
 DEPENDS += " \
 	acl dbus \
-	eudev \
+	${@bb.utils.contains('DISTRO_FEATURES', 'systemd', '', 'eudev', d)} \
 	gperf-native \
 	libcap \
 	libpam \
@@ -21,8 +21,8 @@ DEPENDS += " \
 
 
 S = "${WORKDIR}/git"
-PV = "249-pre"
-SRCREV = "06e702c9dafa3ea1dd6df8ee8cb4dcf417a0d442"
+PV = "252.9"
+SRCREV = "17963fe8309e4782896335c3f8dc4a6c4b57d0b2"
 
 inherit meson pkgconfig
 
@@ -33,5 +33,13 @@ do_install:prepend() {
 	install -d ${D}${libdir}/elogind/system-sleep
 }
 
-FILES:${PN} += "/usr"
+FILES:${PN} += "${prefix}"
 
+EXTRA_OEMESON:class-target += "--cross-file=${WORKDIR}/meson-${PN}.cross"
+
+do_write_config:append:class-target() {
+    cat >${WORKDIR}/meson-${PN}.cross <<EOF
+[binaries]
+nologin = '${sbindir}/nologin'
+EOF
+}
