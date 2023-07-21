@@ -10,8 +10,8 @@ SRC_URI = " \
     git://github.com/google/highway.git;protocol=https;branch=master \
 "
 
-PV = "1.0.2"
-SRCREV = "293693e8894bcca7d41dc336565309e0a15b205a"
+PV = "1.0.5"
+SRCREV = "f61a223a42460204205425604c6521c3eae03058"
 S = "${WORKDIR}/git"
 
 EXTRA_OECMAKE = "-DBUILD_TESTING=0 -DCMAKE_BUILD_TYPE=Release"
