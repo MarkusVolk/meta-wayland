@@ -1,0 +1,71 @@
+From 6218794fafe27f74770d616626d9af570dabfbf6 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Sat, 22 Jul 2023 00:55:42 +0200
+Subject: [PATCH] meson-build
+
+---
+ meson.build | 15 +++------------
+ 1 file changed, 3 insertions(+), 12 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index 6a94dee6..3049e1ce 100644
+--- a/meson.build
++++ b/meson.build
+@@ -21,9 +21,9 @@ else
+ endif
+ 
+ GIT_BRANCH = run_command('git', 'rev-parse', '--abbrev-ref', 'HEAD', check: false).stdout().strip()
+-GIT_COMMIT_HASH = run_command('git', 'rev-parse', 'HEAD', check: false).stdout().strip()
++GIT_COMMIT_HASH = '@GIT_COMMIT_HASH@'
+ GIT_COMMIT_MESSAGE = run_command('sh', '-c', 'git show | head -n 5 | tail -n 1', check: false).stdout().strip()
+-GIT_DIRTY = run_command('sh', '-c', 'git diff-index --quiet HEAD -- || echo "dirty"', check: false).stdout().strip()
++GIT_DIRTY = '@GIT_DIRTY@'
+ 
+ add_project_arguments(
+   [
+@@ -39,20 +39,11 @@ add_project_arguments(
+   ],
+   language: 'cpp')
+ 
+-wlroots = subproject('wlroots', default_options: ['examples=false'])
+-have_xwlr = wlroots.get_variable('features').get('xwayland')
+-xcb_dep = dependency('xcb', required: get_option('xwayland'))
+-
+ cmake = import('cmake')
+ udis = cmake.subproject('udis86')
+ udis86 = udis.dependency('libudis86')
+ 
+-if get_option('xwayland').enabled() and not have_xwlr
+-	error('Cannot enable Xwayland in Hyprland: wlroots has been built without Xwayland support')
+-endif
+-have_xwayland = xcb_dep.found() and have_xwlr
+-
+-if not have_xwayland
++if get_option('xwayland').disabled()
+   add_project_arguments('-DNO_XWAYLAND', language: 'cpp')
+ endif
+ 
+ 
+-- diff --git a/src/meson.build b/src/meson.build
+index 8430f597..da041dd9 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -8,13 +8,13 @@ executable('Hyprland', src,
+     server_protos,
+     dependency('wayland-server'),
+     dependency('wayland-client'),
+-    wlroots.get_variable('wlroots'),
++    dependency('wlroots'),
+     dependency('cairo'),
+     dependency('libdrm'),
+     dependency('egl'),
+     dependency('xkbcommon'),
+     dependency('libinput'),
+-    xcb_dep,
++    dependency('xcb', required: get_option('xwayland')),
+     backtrace_dep,
+     systemd_dep,
+     udis86,
+
+2.39.3
+

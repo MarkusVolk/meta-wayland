@@ -10,21 +10,16 @@ REQUIRED_DISTRO_FEATURES = "wayland opengl"
 
 DEPENDS += " \
 	virtual/egl \
-	virtual/libgles2 \
-	virtual/libgbm \
 	cairo \
 	wayland \
 	wayland-native \
-	wayland-protocols \
 	jq-native \
-	libdisplay-info \
 	pango \
 	pixman \
 	libdrm \
 	libxkbcommon \
-	seatd \
-	hwdata-native \
 	libinput \
+	wlroots \
 "
 
 RDEPENDS:${PN} ?= ""
@@ -40,10 +35,13 @@ RRECOMMENDS:${PN} ?= " \
 	hyprland-hyprbars \
 "
 
-SRC_URI = "gitsm://github.com/hyprwm/Hyprland.git;protocol=https;branch=main"
+SRC_URI = " \
+	gitsm://github.com/hyprwm/Hyprland.git;protocol=https;branch=main \
+	file://meson-build.patch \
+"
 
-SRCREV = "5e577acf516b80173f695a458c2cc188a4d64560"
-PV = "0.27.0"
+SRCREV = "b08b72358ad549fd066e5be0fc3aa4c9df367607"
+PV = "0.27.2"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
