@@ -6,7 +6,7 @@ HOMEPAGE = "https://gitlab.freedesktop.org/wlroots"
 BUGTRACKER = "https://gitlab.freedesktop.org/wlroots/wlroots/-/issues"
 SECTION = "graphics"
 LICENSE = "MIT & CC0-1.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=7578fad101710ea2d289ff5411f1b818"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=89e064f90bcb87796ca335cbd2ce4179"
 LIC_FILES_CHKSUM += "file://tinywl/LICENSE;md5=d957da0415f5b0b974bfc6063afab2b5"
 
 REQUIRED_DISTRO_FEATURES = "wayland"
