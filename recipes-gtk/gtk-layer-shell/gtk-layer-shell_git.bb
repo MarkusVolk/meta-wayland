@@ -17,7 +17,6 @@ DEPENDS += " \
 
 SRC_URI = " \
 	git://github.com/wmww/gtk-layer-shell.git;protocol=https;branch=master \
-	file://0001-protocol-meson.build-dont-use-pkgconfig-for-wayland-.patch \	
 "
 
 S = "${WORKDIR}/git"
