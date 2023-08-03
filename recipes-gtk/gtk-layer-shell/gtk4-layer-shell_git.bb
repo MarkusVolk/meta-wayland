@@ -17,12 +17,11 @@ DEPENDS += " \
 
 SRC_URI = " \
 	git://github.com/wmww/gtk4-layer-shell.git;protocol=https;branch=main \
-	file://0001-protocol-meson.build-dont-use-pkgconfig-for-wayland-.patch \
 "
 
 S = "${WORKDIR}/git"
-PV = "1.0.0"
-SRCREV = "a9c679e23fe27dd35bd4084938d407d0baf5c91c"
+PV = "1.0.1"
+SRCREV = "98c693d0a7ea74620e3cec1115bbc66d33d8b843"
 
 inherit meson pkgconfig features_check gobject-introspection vala
 
