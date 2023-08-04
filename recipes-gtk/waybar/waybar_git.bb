@@ -1,6 +1,5 @@
 SUMMARY = "Wayland bar for Wlroots based compositors"
 DESCRIPTION = "Highly customizable Wayland bar for Sway and Wlroots based compositors."
-AUTHOR = ""
 HOMEPAGE = "https://github.com/Alexays/Waybar"
 BUGTRACKER = "https://github.com/Alexays/Waybar/issues"
 SECTION = "graphics"

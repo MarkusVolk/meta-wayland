@@ -1,6 +1,5 @@
 SUMMARY = "Image Grabber For Wayland"
 DESCRIPTION = "Grab images from a Wayland compositor. Works great with slurp and with sway"
-AUTHOR = ""
 HOMEPAGE = "https://github.com/emersion/grim"
 BUGTRACKER = "https://github.com/emersion/grim/issues"
 SECTION = "graphics"

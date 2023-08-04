@@ -1,6 +1,5 @@
 SUMMARY = "Region Selector For Wayland"
 DESCRIPTION = "Select a region in a Wayland compositor and print it to the standard output. Works well with grim."
-AUTHOR = ""
 HOMEPAGE = "https://github.com/emersion/slurp"
 BUGTRACKER = "https://github.com/emersion/slurp/issues"
 SECTION = "graphics"
