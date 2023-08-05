@@ -39,7 +39,7 @@ RRECOMMENDS:${PN} ?= " \
 
 SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=master"
 
-SRCREV = "c3e6390073167bae8245d7fac9b455f9f06a5333"
+SRCREV = "eebbecc7801ea520dd5644b08e884fbe27c2eeda"
 PV = "1.9-dev"
 S = "${WORKDIR}/git"
 
@@ -61,8 +61,6 @@ PACKAGECONFIG ?= " \
 	gdk-pixbuf \
 "
 
-# Reproducibility issue. Fix me!
-# CFLAGS:append = " -Wno-error=date-time"
 EXTRA_OEMESON += "--buildtype release"
 
 do_install:append() {
