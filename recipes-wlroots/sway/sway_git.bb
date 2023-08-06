@@ -14,7 +14,6 @@ DEPENDS += " \
 	cairo \
 	libevdev \
 	json-c \
-	libdisplay-info \
 	libdrm \
 	libinput \
 	libxkbcommon \
@@ -27,7 +26,7 @@ DEPENDS += " \
 	wayland-protocols \
 "
 
-RDEPENDS:${PN} ?= "swaybg python3 python-i3ipc"
+RDEPENDS:${PN} = "swaybg python3 python-i3ipc"
 
 RRECOMMENDS:${PN} ?= " \
 	foot \
@@ -35,11 +34,12 @@ RRECOMMENDS:${PN} ?= " \
 	grim \
 	slurp \
 	wl-clipboard \
+	sway-contrib \
 "
 
 SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=master"
 
-SRCREV = "eebbecc7801ea520dd5644b08e884fbe27c2eeda"
+SRCREV = "bb91b7f5fa7fddb582b8dddf208cc335d39da9e7"
 PV = "1.9-dev"
 S = "${WORKDIR}/git"
 
@@ -62,12 +62,6 @@ PACKAGECONFIG ?= " \
 "
 
 EXTRA_OEMESON += "--buildtype release"
-
-do_install:append() {
-	install -m 755 ${S}/contrib/grimshot ${D}${bindir}
-	install -m 755 ${S}/contrib/autoname-workspaces.py ${D}${bindir}
-	install -m 755 ${S}/contrib/inactive-windows-transparency.py ${D}${bindir}
-}
 
 FILES:${PN}:append = " \
 	${datadir} \
