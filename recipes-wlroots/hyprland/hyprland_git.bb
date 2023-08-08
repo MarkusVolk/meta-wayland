@@ -22,8 +22,6 @@ DEPENDS += " \
 	wlroots \
 "
 
-RDEPENDS:${PN} ?= ""
-
 RRECOMMENDS:${PN} ?= " \
 	foot \
 	jq \
@@ -31,6 +29,7 @@ RRECOMMENDS:${PN} ?= " \
 	slurp \
 	wl-clipboard \
 	hyprland-borders-plus-plus \
+	hyprland-contrib \
 	hyprland-csgo-vulkan \
 	hyprland-hyprbars \
 "
