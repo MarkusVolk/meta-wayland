@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://../LICENSE;md5=e316e9609dd7672b87ff25b46b2cf3e1"
 # Note: meta-qt6 is needed
 DEPENDS = "qtbase"
 RDEPENDS:${PN} = "qtwayland"
-RRECOMMENDS:${PN} = "adwaita-qt"
+RRECOMMENDS:${PN} = "qgnomeplatform"
 
 inherit qt6-cmake features_check
 
