@@ -11,7 +11,7 @@ SRCREV = "bef073cff65917ba2d888aa4dc39bd9868e2b0a4"
 PV = "0.1"
 
 DEPENDS = "scdoc-native"
-RDEPENDS:${PN} = "bash"
+RDEPENDS:${PN} = "bash sed rofi jq libnotify grim slurp wl-clipboard"
 
 EXTRA_OEMAKE += "DESTDIR=${D} PREFIX=${prefix} BINDIR=${D}${bindir} MANDIR=${D}${datadir}/man MAN1DIR=${D}${datadir}/man1"
 
