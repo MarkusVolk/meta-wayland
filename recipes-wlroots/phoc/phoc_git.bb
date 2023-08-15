@@ -9,6 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
+	gi-docgen-native \
 	glib-2.0 \
 	gmobile \
 	gnome-desktop \
@@ -19,25 +20,19 @@ DEPENDS += " \
 	wayland \
 	wayland-native \
 	wayland-protocols \
-"
-#needed to build wlroots as a subproject
-DEPENDS += " \
-	ffmpeg \
-	git-native \
-	libdrm \
-	libcap \
-	virtual/libgbm \
-	virtual/libgles2 \
-	libpng \
+	wlroots-0.16 \
 "
 
 RDEPENDS:${PN} = "mutter"
 
-SRC_URI = "gitsm://gitlab.gnome.org/World/Phosh/phoc.git;protocol=https;nobranch=1"
+SRC_URI = " \
+	git://gitlab.gnome.org/World/Phosh/phoc.git;protocol=https;nobranch=1 \
+	file://0001-meson.build-dont-build-subprojects.patch \
+"
 
 S = "${WORKDIR}/git"
-PV = "0.28.0"
-SRCREV = "ec5e24da547e60ee76df8166e27ea77db5865da5"
+PV = "0.30.0"
+SRCREV = "0b14b8837a37977b3252ce957802469491f58ee2"
 
 inherit features_check gsettings meson pkgconfig
 
@@ -51,7 +46,7 @@ PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
 "
 
-EXTRA_OEMESON += "-Dembed-wlroots=enabled --buildtype=release"
+EXTRA_OEMESON += "-Dembed-wlroots=disabled --buildtype=release"
 
 FILES:${PN} += "${datadir}"
 

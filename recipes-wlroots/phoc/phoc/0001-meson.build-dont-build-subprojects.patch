@@ -1,0 +1,44 @@
+From 92e876d5f678228971512045144b0e8b572b9953 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Tue, 15 Aug 2023 07:23:23 +0200
+Subject: [PATCH] meson.build: dont build subprojects
+
+Upstream-Status: Inappropriate
+
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+---
+ meson.build | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index 77b8971..e5b0908 100644
+--- a/meson.build
++++ b/meson.build
+@@ -40,13 +40,7 @@ wayland_protos = dependency('wayland-protocols', version: '>=1.15')
+ wayland_server = dependency('wayland-server')
+ xkbcommon      = dependency('xkbcommon')
+ math           = cc.find_library('m')
+-gmobile        = subproject('gmobile',
+-                   default_options: [
+-                   'examples=false',
+-                   'gtk_doc=false',
+-                   'tests=false',
+-                 ])
+-gmobile_dep    = gmobile.get_variable('gmobile_dep')
++gmobile_dep    = dependency('gmobile', version: '>= 0.0.3')
+ 
+ embed_wlroots = get_option('embed-wlroots')
+ 
+@@ -66,7 +60,7 @@ endif
+ if not embed_wlroots.disabled() and wlroots_proj.found()
+         wlroots = wlroots_proj.get_variable('wlroots')
+ else
+-        wlroots = dependency('wlroots', version: '>= 0.16.0')
++        wlroots = dependency('wlroots', version: '>= 0.16.2')
+ endif
+ wlroots_has_xwayland = wlroots.get_variable(pkgconfig: 'have_xwayland',
+                                             internal: 'have_xwayland') == 'true'
+
+-- 
+2.41.0
+
