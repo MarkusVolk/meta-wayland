@@ -12,8 +12,8 @@ GO_IMPORT = "github.com/nwg-piotr/nwg-dock-hyprland.git"
 
 SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
-PV = "0.1.2"
-SRCREV = "260872bd240613ef12c44d4c466beb48989322a8"
+PV = "0.1.4"
+SRCREV = "35081ca915b355cd82ae85ef2bd084f00b7fec71"
 
 inherit go go-mod pkgconfig
 
