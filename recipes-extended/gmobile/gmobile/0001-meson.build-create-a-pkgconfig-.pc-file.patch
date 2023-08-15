@@ -34,10 +34,10 @@ index e9f6c62..7e94496 100644
 +pkg = import('pkgconfig')
 +pkg.generate(gm_lib)
 diff --git a/src/meson.build b/src/meson.build
-index ee98a39..55a1bfe 100644
+index ee98a39..8d8fd7d 100644
 --- a/src/meson.build
 +++ b/src/meson.build
-@@ -37,12 +37,14 @@ gm_c_args = [
+@@ -37,12 +37,15 @@ gm_c_args = [
    '-DG_LOG_DOMAIN="gmobile"',
  ]
  
@@ -49,6 +49,7 @@ index ee98a39..55a1bfe 100644
    c_args: gm_c_args,
 -  dependencies: gm_deps)
 +  dependencies: gm_deps,
++  version: meson.project_version(),
 +  install: true,
 +)
  
