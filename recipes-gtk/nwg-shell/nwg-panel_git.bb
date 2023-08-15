@@ -20,6 +20,6 @@ RDEPENDS:${PN} = "\
 inherit setuptools3
 
 S = "${WORKDIR}/git"
-PV = "0.9.10"
-SRCREV = "e9e957289738b6e6559f6ddcc87920102e0d4887"
+PV = "0.9.11"
+SRCREV = "0053515ceed3ab895264d5e87e50495938dc958c"
 
