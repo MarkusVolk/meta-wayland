@@ -17,8 +17,8 @@ inherit meson pkgconfig features_check
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = "git://github.com/cage-kiosk/cage;branch=master;protocol=https"
-SRCREV = "bd5b20e1fab67d7fb548ecde0aade8455df4509c"
-PV = "0.1.4+git${SRCPV}"
+SRCREV = "83ffc574be860527814c595756a558c228a3475d"
+PV = "0.1.5"
 S = "${WORKDIR}/git"
 
 PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'xwayland', d)}"
