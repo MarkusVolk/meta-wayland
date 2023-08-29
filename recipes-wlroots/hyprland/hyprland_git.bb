@@ -39,8 +39,8 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "9654749244117f7f150c6f2a2ce4dede6e8cbb25"
-PV = "0.28.0"
+SRCREV = "0a78f6031c8fcc6773f136fccde3d560aaac239d"
+PV = "0.29.0"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
