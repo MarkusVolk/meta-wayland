@@ -33,8 +33,8 @@ RDEPENDS:${PN} = " \
 inherit meson pkgconfig features_check
 
 S = "${WORKDIR}/git"
-PV = "1.4.0"
-SRCREV = "f728d986ffac89db3bae63459b09f049720e7051"
+PV = "1.4.1"
+SRCREV = "627a7b6c3dd696b6ceaee82af9c9eb14f5bd1c88"
 
 EXTRA_OEMESON += "--buildtype release"
 
