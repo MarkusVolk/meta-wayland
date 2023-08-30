@@ -14,35 +14,44 @@ DEPENDS = " \
 	bison-native \
 	libyaml \
 	fcft \
+	fmt \
 	tllist \
 	pixman \
-	json-c \
 	alsa-lib \
 	scdoc-native \
 "
 
-RRECOMMENDS:${PN} += " \
-	font-awesome-otf \
-"
+RRECOMMENDS:${PN} += "font-awesome-otf"
 
 inherit meson pkgconfig
 
 S = "${WORKDIR}/git"
-PV = "1.9.0"
-SRCREV = "1353d635c211bf563c006a35c70c3e4d5db461a4"
+PV = "1.10.0"
+SRCREV = "9a111a52f5312fe2bd7d9dbd5326d52895a165ee"
 
 PACKAGECONFIG[wayland] = "-Dbackend-wayland=enabled,-Dbackend-wayland=disabled,wayland wayland-native wayland-protocols"
-PACKAGECONFIG[x11] = "-Dbackend-x11=enabled,-Dbackend-x11=disabled,xcb-util xcb-util-cursor xcb-util-wm libxcb"
-PACKAGECONFIG[systemd] = ",,systemd"
-PACKAGECONFIG[sysvinit] = ",,eudev"
+PACKAGECONFIG[x11] = "-Dbackend-x11=enabled -Dplugin-x11-xkb=enabled,-Dbackend-x11=disabled -Dplugin-x11-xkb=disabled,xcb-util xcb-util-cursor xcb-util-wm libxcb"
 PACKAGECONFIG[mpd] = "-Dplugin-mpd=enabled,-Dplugin-mpd=disabled,libmpdclient"
 PACKAGECONFIG[shared-plugins] = "-Dcore-plugins-as-shared-libraries=true,-Dcore-plugins-as-shared-libraries=false"
+PACKAGECONFIG[alsa] = "-Dplugin-alsa=enabled,-Dplugin-alsa=disabled,alsa-lib"
+PACKAGECONFIG[pulseaudio] = "-Dplugin-pulse=enabled,-Dplugin-pulse=disabled,pulseaudio"
+PACKAGECONFIG[pipewire] = "-Dplugin-pipewire=enabled,-Dplugin-pipewire=disabled,pipewire"
+PACKAGECONFIG[sway] = "-Dplugin-i3=enabled -Dplugin-sway-xkb=enabled,-Dplugin-i3=disabled -Dplugin-sway-xkb=disabled,json-c"
+PACKAGECONFIG[cpu] = "-Dplugin-cpu=enabled,-Dplugin-cpu=disabled"
+PACKAGECONFIG[mem] = "-Dplugin-mem=enabled,-Dplugin-mem=disabled"
+PACKAGECONFIG[backlight] = "-Dplugin-backlight=enabled,-Dplugin-backlight=disabled,udev"
+PACKAGECONFIG[clock] = "-Dplugin-clock=enabled,-Dplugin-clock=disabled"
+PACKAGECONFIG[battery] = "-Dplugin-battery=enabled,-Dplugin-battery=disabled"
+PACKAGECONFIG[disk-io] = "-Dplugin-disk-io=enabled,-Dplugin-disk-io=disabled"
+PACKAGECONFIG[network] = "-Dplugin-network=enabled,-Dplugin-network=disabled"
+PACKAGECONFIG[script] = "-Dplugin-script=enabled,-Dplugin-script=disabled"
 
 PACKAGECONFIG ?= " \
-	${@bb.utils.filter('DISTRO_FEATURES', 'wayland', d)} \
-	${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)} \
-	${@bb.utils.filter('DISTRO_FEATURES', 'sysvinit', d)} \
+	${@bb.utils.filter('DISTRO_FEATURES', 'wayland x11 pulseaudio alsa pipewire', d)} \
+	shared-plugins cpu mem disk-io battery clock network script sway \
 "
+
+CFLAGS += "-Wno-format-truncation"
 
 EXTRA_OEMESON += "--buildtype release"
 
