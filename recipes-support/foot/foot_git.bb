@@ -41,6 +41,7 @@ EXTRA_OEMESON += "--buildtype=release -Dterminfo=disabled"
 inherit meson pkgconfig
 
 CFLAGS += "-Wno-unused-but-set-variable"
+CFLAGS += "-Wno-switch"
 
 FILES:${PN} = " \
 	${bindir} \
