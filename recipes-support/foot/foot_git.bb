@@ -21,6 +21,7 @@ RRECOMMENDS:${PN} = "ncurses-terminfo"
 SRC_URI = " \
 	git://codeberg.org/dnkl/foot.git;protocol=https;branch=master \
 	file://0001-generate-version.sh-dont-try-to-fetch-version-from-g.patch \
+	file://0001-wayland-handle-enum-value-XDG_TOPLEVEL_STATE_SUSPEND.patch \
 "
 
 S = "${WORKDIR}/git"
