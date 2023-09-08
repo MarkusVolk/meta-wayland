@@ -28,10 +28,8 @@ RRECOMMENDS:${PN} ?= " \
 	grim \
 	slurp \
 	wl-clipboard \
-	hyprland-borders-plus-plus \
 	hyprland-contrib \
 	hyprland-csgo-vulkan \
-	hyprland-hyprbars \
 "
 
 SRC_URI = " \
@@ -39,7 +37,7 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "96d555e8e794627bfc561e294e148ab8a9961fcc"
+SRCREV = "69439871e60eeb16993fd6044843d14d2191c9fb"
 PV = "0.29.1"
 S = "${WORKDIR}/git"
 
