@@ -24,7 +24,7 @@ EXTRA_OECMAKE += "-DUSE_QT6=ON"
 SRC_URI = "git://github.com/FedoraQt/QGnomePlatform.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
-SRCREV = "1344b7f2db5d9158e94614bccc2298a15fac5ef4"
+SRCREV = "71f1fe577b5b665bc19c7ab3736ffe8387fa52ee"
 
 FILES:${PN} += "${libdir} ${datadir}"
 FILES:${PN}-dev = ""
