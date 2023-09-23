@@ -1,0 +1,22 @@
+From 8d7b941147a48957d8464cce2058d52f37040d26 Mon Sep 17 00:00:00 2001
+From: Markus Volk <f_l_k@t-online.de>
+Date: Wed, 20 Sep 2023 16:56:17 +0200
+Subject: [PATCH] meson.build: Dont build hyprland-share-picker with meson
+
+Signed-off-by: Markus Volk <f_l_k@t-online.de>
+---
+ meson.build | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 77c1a80..3169e9c 100644
+--- a/meson.build
++++ b/meson.build
+@@ -66,4 +66,3 @@ inc = include_directories('.', 'protocols')
+ 
+ subdir('protocols')
+ subdir('src')
+-subdir('hyprland-share-picker')
+-- 
+2.42.0
+
