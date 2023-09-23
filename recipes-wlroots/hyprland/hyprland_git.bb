@@ -19,6 +19,7 @@ DEPENDS += " \
 	libdrm \
 	libxkbcommon \
 	libinput \
+	udis86 \
 	wlroots \
 "
 
@@ -37,8 +38,8 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "69439871e60eeb16993fd6044843d14d2191c9fb"
-PV = "0.29.1"
+SRCREV = "1b48642fd15c433c53876f1b933dcd46265caf8f"
+PV = "0.30.0"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
@@ -50,4 +51,3 @@ PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,libxcb xcb-uti
 PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 
 FILES:${PN} += "${datadir}"
-
