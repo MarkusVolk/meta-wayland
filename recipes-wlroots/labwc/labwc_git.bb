@@ -33,8 +33,8 @@ RRECOMMENDS:${PN} ?= " \
 
 SRC_URI = "git://github.com/labwc/labwc.git;protocol=https;branch=master"
 
-SRCREV = "6b83db34afca59686d36a458b527b71355680d48"
-PV = "0.6.4"
+SRCREV = "48e0b3f6a6bc7a60d8414f5f366a9d7bc3f1c42e"
+PV = "0.6.5"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check gettext
