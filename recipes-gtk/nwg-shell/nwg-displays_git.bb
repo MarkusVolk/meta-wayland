@@ -11,6 +11,7 @@ RDEPENDS:${PN} = "\
 	python3 \
 	python3-pygobject \
 	python-i3ipc \
+	wlr-randr \
 "
 
 inherit setuptools3
