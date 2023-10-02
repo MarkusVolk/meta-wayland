@@ -1,0 +1,23 @@
+From 778bdf730ff957521cc114d170bc82fc44b8be22 Mon Sep 17 00:00:00 2001
+From: gnusenpai <pspslimboy98@gmail.com>
+Date: Mon, 2 Oct 2023 09:51:15 +0000
+Subject: [PATCH 1/7] internal: Add GTK portal as fallback (#3469)
+
+needed for XDP 1.17+ since the fallback to the GTK portal was removed
+---
+ assets/hyprland-portals.conf | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/assets/hyprland-portals.conf b/assets/hyprland-portals.conf
+index 2ec1f0de..da8b5db0 100644
+--- a/assets/hyprland-portals.conf
++++ b/assets/hyprland-portals.conf
+@@ -1,2 +1,2 @@
+ [preferred]
+-default=hyprland
+\ No newline at end of file
++default=hyprland;gtk
+\ No newline at end of file
+-- 
+2.42.0
+
