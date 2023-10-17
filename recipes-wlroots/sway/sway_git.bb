@@ -39,7 +39,7 @@ RRECOMMENDS:${PN} ?= " \
 
 SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=master"
 
-SRCREV = "b3519c2d2f269f34ff3712ebf1903905a56541a6"
+SRCREV = "8a8fb76ec1d0b9a269b86688cff419201d1e6f62"
 PV = "1.9-dev"
 S = "${WORKDIR}/git"
 
