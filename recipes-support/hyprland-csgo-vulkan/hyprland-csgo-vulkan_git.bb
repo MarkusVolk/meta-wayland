@@ -13,7 +13,7 @@ DEPENDS = " \
 "
 
 S = "${WORKDIR}/git/csgo-vulkan-fix"
-SRCREV = "f9578d28d272fb61753417e175b0fcd5bedc1443"
+SRCREV = "fadbcdd24b6f24b169056ed6fcf43d98ef405f87"
 
 inherit meson pkgconfig
 
