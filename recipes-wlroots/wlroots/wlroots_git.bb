@@ -39,7 +39,7 @@ PACKAGECONFIG ?= " \
 "
 
 SRC_URI = "git://gitlab.freedesktop.org/wlroots/wlroots.git;branch=master;protocol=https"
-SRCREV = "98a745d926d8048bc30aef11b421df207a01c279"
+SRCREV = "3406c1b17a4a7e6d4e2a7d9c1176affa72bce1bc"
 PV = "0.17.0-dev"
 
 S = "${WORKDIR}/git"
