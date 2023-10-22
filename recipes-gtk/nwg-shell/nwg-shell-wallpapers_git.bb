@@ -5,8 +5,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=65d3616852dbf7b1a6d4b53b00626032"
 SRC_URI = "git://github.com/nwg-piotr/nwg-shell-wallpapers.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
-PV = "1.2"
-SRCREV = "dfe38ac5af580900f70861f7e7eb8c0074548d09"
+PV = "1.3"
+SRCREV = "93610e70f8fec577c96e226b0f7b960cdfe01d48"
 
 do_install() {
 	install -d ${D}${datadir}/backgrounds/sway
