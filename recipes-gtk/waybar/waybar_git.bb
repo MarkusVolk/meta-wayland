@@ -16,7 +16,7 @@ SRC_URI = " \
 
 S = "${WORKDIR}/git"
 PV = "0.9.22"
-SRCREV = "e30fba0b8f875c7f35e3173be2b9f6f3ffe3641e"
+SRCREV = "9ecdbcc7bc635d6930120eca0eb9ea79c51a7f93"
 
 DEPENDS += " \
 	date \
@@ -37,6 +37,7 @@ DEPENDS += " \
 inherit meson pkgconfig features_check
 
 PACKAGECONFIG[libcxx] = "-Dlibcxx=true,-Dlibcxx=false,libcxx clang-tidy"
+PACKAGECONFIG[dbusmenu-gtk] = "-Ddbusmenu-gtk=enabled,-Ddbusmenu-gtk=disabled,libdbusmenu-gtk"
 PACKAGECONFIG[evdev] = "-Dlibevdev=enabled,-Dlibevdev=disabled,libevdev"
 PACKAGECONFIG[experimental] = "-Dexperimental=true,-Dexperimental=false"
 PACKAGECONFIG[gtk-layer-shell] = "-Dgtk-layer-shell=enabled,-Dgtk-layer-shell=disabled,gtk-layer-shell"
