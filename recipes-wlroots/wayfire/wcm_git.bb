@@ -4,7 +4,7 @@ BUGTRACKER = "https://github.com/WayfireWM/wcm/issues"
 SECTION = "graphics"
 LICENSE = "MIT"
 
-LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=ccb736ab917abd09ce6915fbf9a0f887"
+LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=553c79c4d7ca30085e1d7bfea724a8aa"
 DEPENDS = " \
 	wayfire \
 	wayland \
@@ -17,9 +17,9 @@ DEPENDS = " \
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 SRC_URI = "gitsm://github.com/WayfireWM/wcm.git;protocol=https;nobranch=1"
-SRCREV = "4dff0dfdd840429054b3c1cc10fbf6702227dea9"
+SRCREV = "8b4386ce872023e95b2b6493edb8bb314d2d4747"
 S = "${WORKDIR}/git"
-PV = "0.7.5"
+PV = "0.8.0"
 
 inherit meson pkgconfig features_check
 

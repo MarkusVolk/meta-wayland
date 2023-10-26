@@ -15,14 +15,15 @@ DEPENDS = " \
 	gtk-layer-shell \
 	pulseaudio \
 	libnotify3 \
+	libdbusmenu-gtk \
 "
 
 REQUIRED_DISTRO_FEATURES = "wayland"
 
-SRC_URI = "gitsm://github.com/WayfireWM/wf-shell.git;protocol=https;branch=master"
-SRCREV = "c9639087aca3ad69bbd8f56f4213768639b4c8d0"
+SRC_URI = "gitsm://github.com/WayfireWM/wf-shell.git;protocol=https;branch=0.8.x"
+SRCREV = "65ae2efc5eb27b9b2edb750b676c9ea53cdfeb8a"
 S = "${WORKDIR}/git"
-PV = "0.7.0"
+PV = "0.8.0"
 
 inherit meson pkgconfig features_check
 

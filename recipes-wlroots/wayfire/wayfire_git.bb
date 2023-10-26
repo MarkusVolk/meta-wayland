@@ -45,19 +45,24 @@ PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
 PACKAGECONFIG ?= " \
 	${@bb.utils.filter('DISTRO_FEATURES', 'vulkan x11', d)} \
 	gles32 \
+	use_system_wlroots \
+	use_system_wfconfig \
 "
 
 SRC_URI = "gitsm://github.com/WayfireWM/wayfire.git;protocol=https;nobranch=1"
 
-SRCREV = "e33bf48eca87fbcf24081d2ca2494fadc80ac3de"
-PV = "0.7.5"
+SRCREV = "1d209ce356b449f16d93a77ebad87f4c3b9e7423"
+PV = "0.8.0"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
 
-FILES:${PN} += "${datadir}"
+do_install:append() {
+	rm -rf ${D}${prefix}/man
+}
 
-BBCLASSEXTEND = ""
+FILES:${PN} += "${datadir} ${libdir}"
+FILES:${PN}-dev = "${includedir} ${libdir}/pkgconfig ${libdir}/libwlroots.so ${libdir}/libwf-utils.so ${libdir}/libwf-config.so"
 
