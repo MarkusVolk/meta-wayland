@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/AyatanaIndicators/libdbusmenu"
 LICENSE = "LGPL-3.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6a6a8e020838b23406c81b19c1d46df6"
 
-DEPENDS = "glib-2.0 json-glib dbus gtk+3 libdbusmenu-glib intltool-native"
+DEPENDS = "glib-2.0 json-glib dbus gtk+ gtk+3 libdbusmenu-glib intltool-native"
 RDEPENDS:${PN} = "libdbusmenu-glib"
 
 SRC_URI = "git://github.com/AyatanaIndicators/libdbusmenu.git;protocol=https;branch=master"
@@ -17,15 +17,12 @@ inherit autotools pkgconfig gettext gobject-introspection vala gtk-doc
 
 CFLAGS += "-Wno-error"
 
-do_install:append () {
-	rm -rf ${D}${includedir}/libdbusmenu-glib-0.4
-	rm -rf ${D}${libdir}/girepository-1.0/Dbusmenu-0.4.typelib
-	rm -rf ${D}${libdir}/libdbusmenu-glib* ${D}${libdir}/libdbusmenu-jsonloader* ${D}${libdir}/pkgconfig/dbusmenu-glib-0.4.pc ${D}${libdir}/pkgconfig/dbusmenu-jsonloader-0.4.pc
-	rm -rf ${D}${libexecdir}/dbusmenu-testapp
-	rm -rf ${D}${datadir}/doc
-	rm -rf ${D}${datadir}/vala/vapi/Dbusmenu-0.4.vapi
-	rm -rf ${D}${datadir}/gir-1.0/Dbusmenu-0.4.gir
-	rm -rf ${D}${datadir}/libdbusmenu/json
+do_compile() {
+	oe_runmake
+}
+
+do_install() {
+	oe_runmake -j1 -C libdbusmenu-gtk DESTDIR="${D}" install
 }
 
 FILES:${PN} += "${datadir}"

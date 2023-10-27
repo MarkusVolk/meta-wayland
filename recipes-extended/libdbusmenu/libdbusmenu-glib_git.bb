@@ -17,4 +17,12 @@ CFLAGS += "-Wno-error"
 
 inherit autotools pkgconfig gettext gobject-introspection vala gtk-doc
 
+do_compile() {
+	oe_runmake
+}
+
+do_install() {
+	oe_runmake -j1 -C libdbusmenu-glib DESTDIR="${D}" install
+}
+
 FILES:${PN} += "${datadir}"
