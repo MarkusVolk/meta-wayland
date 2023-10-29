@@ -35,6 +35,7 @@ RDEPENDS:${PN} = " \
     gnome-control-center \
     gnome-session \
     gnome-settings-daemon \
+    gnome-shell \
     gsettings-desktop-schemas \
     phoc \
 "
@@ -57,8 +58,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.31.0"
-SRCREV = "8ecfd6831b7e4b610b064e2183e0498141c69939"
+PV = "0.32.0"
+SRCREV = "2c2e6fef64f30076c2da833cff91fad386961f5a"
 
 EXTRA_OEMESON += "--buildtype=release"
 
