@@ -5,15 +5,16 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=936078e4e67b0e1e1bd1e862d4ffbc25"
 
 SRC_URI = "git://github.com/hyprwm/hyprpicker.git;protocol=https;branch=main"
 
-PV = "0.1.1"
+PV = "0.2.0"
 S = "${WORKDIR}/git"
-SRCREV = "deaca6a4d8e307d90b1f5b1033a8ea6c83b9b260"
+SRCREV = "8a7799ae20f3e2e2e716271c21fc9213319ca2a4"
 
 DEPENDS = " \
 	cairo \
 	fribidi \
 	jpeg \
 	libxdmcp \
+	libxkbcommon \
 	pango \
 	pcre \
 	util-linux \
