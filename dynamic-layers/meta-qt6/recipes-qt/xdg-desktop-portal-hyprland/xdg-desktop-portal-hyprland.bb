@@ -18,7 +18,7 @@ DEPENDS = " \
     virtual/libgbm \
 "
 
-RDEPENDS:${PN} = "hyprland-share-picker"
+RDEPENDS:${PN} = "hyprland-share-picker grim slurp hyprpicker"
 RCONFLICTS:${PN} = "xdg-desktop-portal-wlr xdg-desktop-portal-gnome"
 
 inherit meson pkgconfig features_check
