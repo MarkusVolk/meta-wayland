@@ -15,8 +15,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.9.22"
-SRCREV = "9ecdbcc7bc635d6930120eca0eb9ea79c51a7f93"
+PV = "0.9.24"
+SRCREV = "48ec834ec9c7cdf146169c8b0f669ce1e9a8849e"
 
 DEPENDS += " \
 	date \
