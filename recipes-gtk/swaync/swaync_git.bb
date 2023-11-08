@@ -35,6 +35,8 @@ PACKAGECONFIG ?= " \
 
 inherit meson pkgconfig vala
 
+VALA_MESON_OPTION = ""
+
 EXTRA_OEMESON += "--buildtype release"
 
 FILES:${PN} += "${datadir}"
