@@ -30,7 +30,6 @@ RRECOMMENDS:${PN} ?= " \
 	slurp \
 	wl-clipboard \
 	hyprland-contrib \
-	hyprland-csgo-vulkan \
 "
 
 SRC_URI = " \
@@ -38,8 +37,8 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "5b8cfdf2efc44106b61e60c642fd964823fd89f3"
-PV = "0.31.0"
+SRCREV = "751d2851cc270c3322ffe2eb83c156e4298a0c0e"
+PV = "0.32.0"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
