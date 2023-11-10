@@ -21,7 +21,6 @@ DEPENDS = " \
     gexiv2 \
     gtk+3 \
     harfbuzz \
-    intltool-native \
     json-glib \
     lcms \
     libarchive \
@@ -39,7 +38,7 @@ DEPENDS = " \
 DEPENDS:append:libc-musl = " libexecinfo"
 RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking"
 
-inherit meson gtk-icon-cache mime-xdg pkgconfig features_check gobject-introspection vala
+inherit meson gtk-icon-cache mime-xdg pkgconfig gettext features_check gobject-introspection vala
 GIR_MESON_OPTION = ''
 VALA_MESON_OPTION = "vala"
 VALA_MESON_ENABLE_FLAG = "enabled"
