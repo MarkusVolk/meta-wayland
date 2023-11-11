@@ -1,2 +1,2 @@
 SRC_URI = "git://github.com/hyprwm/hyprland-plugins.git;protocol=https;branch=main"
-SRCREV = "344e5a145e5e91515b801dc89c97678813238df6"
+SRCREV = "2cc193e6dc524baed841c016109b4f48fd0512a3"
