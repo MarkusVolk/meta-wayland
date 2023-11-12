@@ -38,11 +38,14 @@ DEPENDS = " \
 DEPENDS:append:libc-musl = " libexecinfo"
 RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking"
 
-inherit meson gtk-icon-cache mime-xdg pkgconfig gettext features_check gobject-introspection vala
+inherit meson gtk-icon-cache mime-xdg pkgconfig gettext gi-docgen features_check gobject-introspection vala
 GIR_MESON_OPTION = ''
 VALA_MESON_OPTION = "vala"
 VALA_MESON_ENABLE_FLAG = "enabled"
 VALA_MESON_DISABLE_FLAG = "disabled"
+GIDOCGEN_MESON_OPTION = "gi-docgen"
+GIDOCGEN_MESON_ENABLE_FLAG = "enabled"
+GIDOCGEN_MESON_DISABLE_FLAG = "disabled"
 
 SRC_URI = " \
     git://github.com/GNOME/gimp.git;protocol=https;branch=master \
@@ -59,8 +62,7 @@ PACKAGECONFIG[bzip2] = ",,bzip2"
 PACKAGECONFIG[cairo-pdf] = "-Dcairo-pdf=enabled,-Dcairo-pdf=disabled"
 PACKAGECONFIG[check-update] = "-Dcheck-update=yes,-Dcheck-update=no"
 PACKAGECONFIG[enable-console-bin] = "-Denable-console-bin=true,-Denable-console-bin=false"
-PACKAGECONFIG[ghostscript] = "-Dghostscript=enabled,-Dghostscript=disabled,ghostscript"
-PACKAGECONFIG[gi-docgen] = "-Dgi-docgen=enabled,-Dgi-docgen=disabled,gi-docgen-native"
+PACKAGECONFIG[ghostscript] = "-Dghostscript=enabled,-Dghostscript=disabled,ghostscript,ghostscript"
 PACKAGECONFIG[gudev] = "-Dgudev=enabled,-Dgudev=disabled,libgudev"
 PACKAGECONFIG[iso-codes] = ",,iso-codes"
 PACKAGECONFIG[javascript] = "-Djavascript=enabled,-Djavascript=disabled,gjs"
@@ -87,6 +89,7 @@ PACKAGECONFIG ?= " \
     alsa \
     bzip2 \
     cairo-pdf \
+    ghostscript \
     gudev \
     jpeg \
     jpeg2000 \
@@ -109,4 +112,3 @@ EXTRA_OEMESON += " \
     -Dcan-crosscompile-gir=true \
     --buildtype release \
 "
-
