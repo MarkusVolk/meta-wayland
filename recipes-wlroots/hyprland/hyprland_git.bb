@@ -37,20 +37,16 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "eab279984285250bd544de40868888186a8edeb7"
-PV = "0.32.2"
+SRCREV = "f39a6ca17c3abd9ce472e4cf5fd96df462969c4f"
+PV = "0.32.3"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
 
-PACKAGECONFIG ?= "${@bb.utils.filter('DISTRO_FEATURES', 'systemd xwayland vulkan', d)}"
+PACKAGECONFIG ?= "${@bb.utils.filter('DISTRO_FEATURES', 'systemd xwayland', d)}"
 
-PACKAGECONFIG[systemd] = "-Dsystemd=enabled,Dsystemd=disabled,systemd"
+PACKAGECONFIG[systemd] = "-Dsystemd=enabled,Dsystemd=disabled"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,libxcb xcb-util-wm xcb-util-renderutil xwayland,xwayland"
-PACKAGECONFIG[vulkan] = ",,vulkan-loader vulkan-headers glslang-native"
+PACKAGECONFIG[legacy_renderer] = "-Dlegacy_renderer=enabled,-Dlegacy_renderer=disabled"
 
 FILES:${PN} += "${datadir}"
-
-do_install:append() {
-	install -m 0644 ${S}/src/version.h ${D}${includedir}/hyprland/src
-}
