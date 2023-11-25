@@ -20,7 +20,7 @@ DEPENDS += " \
 	libxkbcommon \
 	libinput \
 	udis86 \
-	wlroots \
+	wlroots-0.17 \
 "
 
 RRECOMMENDS:${PN} ?= " \
@@ -37,7 +37,7 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "512a59731b2e579b66325d0e9ce770919eecd685"
+SRCREV = "9afdd61adeaf413afbe853dbc5fdf6853c8bde21"
 PV = "0.32.3"
 S = "${WORKDIR}/git"
 
