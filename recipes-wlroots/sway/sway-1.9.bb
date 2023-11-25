@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=dfc67e5b1fa10ebb4b70eb0c0ca67bea"
 REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS += " \
-	wlroots \
+	wlroots-0.17 \
 	cairo \
 	libevdev \
 	json-c \
@@ -37,10 +37,10 @@ RRECOMMENDS:${PN} ?= " \
 	sway-contrib \
 "
 
-SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=master"
+SRC_URI = "git://github.com/swaywm/sway.git;protocol=https;branch=v1.9"
 
-SRCREV = "bc7d15d64da1d8b97d52928b8f9ce5688c8dbdd0"
-PV = "1.10-dev"
+SRCREV = "064b279e9b04646e66165f1fab14f950d9d2b3df"
+PV = "1.9"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
