@@ -37,7 +37,7 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "512a59731b2e579b66325d0e9ce770919eecd685"
+SRCREV = "68e57b7ee36f015d99988f38cb3a8b83c23ae7c3"
 PV = "0.32.3"
 S = "${WORKDIR}/git"
 
