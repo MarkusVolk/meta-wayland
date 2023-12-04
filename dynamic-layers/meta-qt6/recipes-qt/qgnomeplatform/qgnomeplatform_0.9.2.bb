@@ -4,7 +4,7 @@ LICENSE = "LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=40d2542b8c43a3ec2b7f5da31a697b88"
 
 DEPENDS = " \
-	adwaita-qt-native \
+	adwaita-qt \
 	glib-2.0 \
 	gsettings-desktop-schemas \
 	gtk+3 \
