@@ -12,8 +12,11 @@ EXTRA_OECMAKE += "-DUSE_QT6=ON"
 SRC_URI = "git://github.com/FedoraQt/adwaita-qt.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
-SRCREV = "07859143fd733cfefae687f6967795c7f50d4ca8"
+SRCREV = "3807292acee096459a73732f663544916d9eb0e5"
 
 FILES:${PN} += "${libdir}/plugins/styles/adwaita.so"
 
-BBCLASSEXTEND = "native"
+do_install:append() {
+	# add hack to unbreak crosscompile for qgnomeplatform
+	sed -i "s|include(\"\${CMAKE_CURRENT_LIST_DIR}\/AdwaitaQt6Targets.cmake\")||" ${D}${libdir}/cmake/AdwaitaQt6/AdwaitaQt6Config.cmake
+}
