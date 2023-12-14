@@ -13,8 +13,8 @@ GO_IMPORT = "github.com/nwg-piotr/nwg-drawer.git"
 
 SRC_URI = "git://${GO_IMPORT};nobranch=1;protocol=https"
 
-PV = "0.4.0"
-SRCREV = "67b16ea6a60057690ef13c92d1970b1839834923"
+PV = "0.4.3"
+SRCREV = "223e16f77ca6793bcdb46ae769800718863abdd5"
 
 inherit go go-mod pkgconfig
 
