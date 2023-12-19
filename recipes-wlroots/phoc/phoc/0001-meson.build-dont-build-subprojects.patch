@@ -29,16 +29,15 @@ index 77b8971..e5b0908 100644
  
  embed_wlroots = get_option('embed-wlroots')
  
-@@ -66,7 +60,7 @@ endif
+@@ -70,7 +64,7 @@ endif
  if not embed_wlroots.disabled() and wlroots_proj.found()
          wlroots = wlroots_proj.get_variable('wlroots')
  else
--        wlroots = dependency('wlroots', version: '>= 0.16.0')
-+        wlroots = dependency('wlroots', version: '>= 0.16.2')
+-        wlroots = dependency('wlroots', version: ['>= 0.17.0-dev', '< 0.18.0'])
++        wlroots = dependency('wlroots', version: ['>= 0.17.0', '< 0.18.0'])
  endif
  wlroots_has_xwayland = wlroots.get_variable(pkgconfig: 'have_xwayland',
                                              internal: 'have_xwayland') == 'true'
-
 -- 
 2.41.0
 

@@ -20,7 +20,7 @@ DEPENDS += " \
 	wayland \
 	wayland-native \
 	wayland-protocols \
-	wlroots-0.16 \
+	wlroots-0.17 \
 "
 
 RDEPENDS:${PN} = "mutter"
@@ -31,8 +31,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
-PV = "0.32.0"
-SRCREV = "7c5840f6f14853ad362b52799650966f7a8c864a"
+PV = "0.34.0-beta1"
+SRCREV = "a6796290d8dd4d2de4a4265a87de86597a52b538"
 
 inherit features_check gsettings meson pkgconfig
 
