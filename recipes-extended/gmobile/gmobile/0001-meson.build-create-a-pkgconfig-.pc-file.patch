@@ -18,13 +18,6 @@ diff --git a/meson.build b/meson.build
 index e9f6c62..7e94496 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -1,5 +1,5 @@
- project('gmobile', 'c',
--        version: '0.0.1',
-+        version: '0.0.3',
-         license: 'LGPLv2.1+',
-         meson_version: '>= 0.56.1',
-         default_options: [ 'warning_level=1', 'buildtype=debugoptimized', 'c_std=gnu11' ],
 @@ -99,3 +99,7 @@ summary({
    bool_yn: true,
    section: 'Build',

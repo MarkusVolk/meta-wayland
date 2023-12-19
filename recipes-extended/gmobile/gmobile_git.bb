@@ -7,12 +7,12 @@ inherit meson pkgconfig
 DEPENDS = "glib-2.0 json-glib"
 
 SRC_URI = " \
-	git://gitlab.gnome.org/guidog/gmobile.git;protocol=https;nobranch=1 \
+	git://gitlab.gnome.org/World/Phosh/gmobile.git;protocol=https;branch=main \
 	file://0001-meson.build-create-a-pkgconfig-.pc-file.patch \
 "
 S = "${WORKDIR}/git"
-SRCREV = "f1b50f0f90604e0f125412932dae9b1e08d57ddc"
-PV = "0.0.3"
+SRCREV = "d5ed9ed758bf0deeb050d861fb08518295a42767"
+PV = "0.0.4"
 
 do_install:append() {
 	install -m 0644 ${B}/gm-config.h ${D}${includedir}
