@@ -16,20 +16,13 @@ DEPENDS = " \
             wayland-protocols \
 "
 
-SRC_URI = " \
-	git://github.com/swaywm/swaybg.git;protocol=https;branch=master \
-"
-
-# Reproducibility issue. Fix me!
-CFLAGS:append = " -Wno-error=date-time"
+SRC_URI = "git://github.com/swaywm/swaybg.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 PV = "1.2.0"
-SRCREV = "0e645c4583436692c7ac3983e36b87a3ea325454"
+SRCREV = "eabc06e7eb9e5cb08c8177f49753dedc505076b4"
 
 inherit meson pkgconfig features_check
 
 EXTRA_OEMESON += "--buildtype release"
-
-BBCLASSEXTEND = ""
 
