@@ -13,9 +13,24 @@ RDEPENDS:${PN} = " \
 
 RRECOMMENDS:${PN} = "gnome-themes-extra"
 
-inherit setuptools3
+inherit setuptools3 useradd
 
 S = "${WORKDIR}/git"
-PV = "0.1.4"
-SRCREV = "0f11425c1d9ccbc6de4073b8b95c42e37cbfa606"
+PV = "0.1.5"
+SRCREV = "e3655c7f8a7be6333b290276d2f12e0a7454b673"
 
+USERADD_PACKAGES = "${PN}"
+USERADD_PARAM:${PN} = "--system  --no-create-home --shell /bin/bash greeter"
+
+do_install:append() {
+	install -D -m 644 -t ${D}${sysconfdir}/nwg-hello/ nwg-hello-default.json
+	install -D -m 644 -t ${D}${sysconfdir}/nwg-hello/ nwg-hello-default.css
+	install -D -m 644 -t ${D}${sysconfdir}/nwg-hello/ hyprland.conf
+	install -D -m 644 -t ${D}${sysconfdir}/nwg-hello/ sway-config
+	install -D -m 644 -t ${D}${sysconfdir}/nwg-hello/ README
+	install -D -m 644 -t ${D}${datadir}/nwg-hello/ nwg.jpg
+	install -D -m 644 -t ${D}${datadir}/nwg-hello/ img/*
+
+	install -d ${D}${localstatedir}/nwg-hello
+	install -D -m 644 -t ${D}${localstatedir}/nwg-hello cache.json -o greeter
+}
