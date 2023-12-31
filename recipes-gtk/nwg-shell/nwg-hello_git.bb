@@ -9,6 +9,7 @@ RDEPENDS:${PN} = " \
 	greetd \
 	gtk+3 \
 	gtk-layer-shell \
+	lxc \
 "
 
 RRECOMMENDS:${PN} = "gnome-themes-extra"
@@ -16,8 +17,8 @@ RRECOMMENDS:${PN} = "gnome-themes-extra"
 inherit setuptools3 useradd
 
 S = "${WORKDIR}/git"
-PV = "0.1.5"
-SRCREV = "e3655c7f8a7be6333b290276d2f12e0a7454b673"
+PV = "0.1.6"
+SRCREV = "13dcb00ebbf7f4d9d16374cfb5c7272212a762e3"
 
 USERADD_PACKAGES = "${PN}"
 USERADD_PARAM:${PN} = "--system  --no-create-home --shell /bin/bash greeter"
