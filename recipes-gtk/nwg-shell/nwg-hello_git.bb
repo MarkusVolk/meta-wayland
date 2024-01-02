@@ -9,7 +9,6 @@ RDEPENDS:${PN} = " \
 	greetd \
 	gtk+3 \
 	gtk-layer-shell \
-	lxc \
 "
 
 RRECOMMENDS:${PN} = "gnome-themes-extra"
