@@ -9,17 +9,18 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=a08367f3a4cd5301ba8b88eded36b8fd"
 REQUIRED_DISTRO_FEATURES = "wayland opengl"
 
 DEPENDS += " \
-	virtual/egl \
 	cairo \
-	wayland \
-	wayland-native \
 	jq-native \
+	libdrm \
+	libinput \
+	libxkbcommon \
 	pango \
 	pixman \
-	libdrm \
-	libxkbcommon \
-	libinput \
+	tomlplusplus \
 	udis86 \
+	virtual/egl \
+	wayland \
+	wayland-native \
 	wlroots \
 "
 
@@ -37,8 +38,8 @@ SRC_URI = " \
 	file://meson-build.patch \
 "
 
-SRCREV = "d74607e414dcd16911089a6d4b6aeb661c880923"
-PV = "0.33.1"
+SRCREV = "03ebbe18ed8517ee22591eac82cd54322f42cb7d"
+PV = "0.34.0"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig features_check
