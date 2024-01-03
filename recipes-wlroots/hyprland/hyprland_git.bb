@@ -46,7 +46,7 @@ inherit meson pkgconfig features_check
 
 PACKAGECONFIG ?= "${@bb.utils.filter('DISTRO_FEATURES', 'systemd xwayland', d)}"
 
-PACKAGECONFIG[systemd] = "-Dsystemd=enabled,Dsystemd=disabled"
+PACKAGECONFIG[systemd] = "-Dsystemd=enabled,-Dsystemd=disabled"
 PACKAGECONFIG[xwayland] = "-Dxwayland=enabled,-Dxwayland=disabled,libxcb xcb-util-wm xcb-util-renderutil xwayland,xwayland"
 PACKAGECONFIG[legacy_renderer] = "-Dlegacy_renderer=enabled,-Dlegacy_renderer=disabled"
 
