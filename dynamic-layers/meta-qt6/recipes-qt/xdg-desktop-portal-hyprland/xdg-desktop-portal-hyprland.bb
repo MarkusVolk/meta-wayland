@@ -12,13 +12,14 @@ DEPENDS = " \
     wayland \
     wayland-native \
     wayland-protocols \
+    hyprlang \
     libdrm \
     pipewire \
     sdbus-c++ \
     virtual/libgbm \
 "
 
-RDEPENDS:${PN} = "hyprland-share-picker grim slurp hyprpicker"
+RDEPENDS:${PN} = "hyprland-share-picker grim slurp hyprpicker hyprlang"
 RCONFLICTS:${PN} = "xdg-desktop-portal-wlr xdg-desktop-portal-gnome"
 
 inherit meson pkgconfig features_check
