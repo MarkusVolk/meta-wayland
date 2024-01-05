@@ -1,3 +1,5 @@
+The repository has been moved to https://codeberg.org/flk
+
 Wayland/Wlroots Layer for OpenEmbedded/Yocto
 
 Main layer maintainer: Markus Volk <f_l_k@t-online.de>
